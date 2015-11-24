@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ColoringButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/coloring_button_background</item>
+    </style>
+
+</resources>

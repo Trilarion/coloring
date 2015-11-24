@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Settings">
+
+    <PreferenceCategory android:title="General">
+        <CheckBoxPreference
+            android:key="setting_deletion_allowed"
+            android:title="Enable deletion in Gallery view"
+            android:summary="Tick to set this option"
+            android:defaultValue="false"
+            />
+
+        <CheckBoxPreference
+            android:key="setting_sharing_allowed"
+            android:title="Enable sharing in Gallery view"
+            android:summary="Tick to set this option"
+            android:defaultValue="false"
+            />
+
+        <EditTextPreference
+            android:key="setting_number_color_columns"
+            android:title="Number of color columns"
+            android:summary="In range [1,10]"
+            android:dialogTitle="Enter text"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
