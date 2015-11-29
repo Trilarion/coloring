@@ -16,16 +16,16 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".ui.activity.ColoringActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ui.activity.ColorPickerActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ui.activity.OutlineSelectionActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ui.activity.PictureGalleryActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ui.activity.CategorySelectionMainActivity"
             android:screenOrientation="landscape">
@@ -35,6 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activity.SendLogActivity"
+            android:theme="@android:style/Theme.Dialog"/>
     </application>
 
 </manifest>

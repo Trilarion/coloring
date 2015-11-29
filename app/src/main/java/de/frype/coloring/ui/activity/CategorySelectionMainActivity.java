@@ -8,8 +8,14 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 import de.frype.coloring.R;
 import de.frype.coloring.ui.adapter.CategoryViewAdapter;
+import de.frype.util.Utils;
 
 public class CategorySelectionMainActivity extends Activity {
 
@@ -34,6 +40,19 @@ public class CategorySelectionMainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        String json = null;
+        try {
+            json = Utils.loadJSON("file:///android_asset/categories.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject;
+        try {
+            jsonObject = new JSONObject(json);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         GridView gridView = (GridView) findViewById(R.id.categorySelectionGridView);
         gridView.setAdapter(new CategoryViewAdapter(this));
