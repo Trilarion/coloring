@@ -1,4 +1,4 @@
-package de.frype.coloring.ui.adapter;
+package de.frype.coloring.adapter;
 
 import android.content.Context;
 import android.view.View;

@@ -1,4 +1,4 @@
-package de.frype.coloring.ui.activity;
+package de.frype.coloring.activity;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -21,12 +21,12 @@ public class PictureGalleryActivity extends Activity {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         if (!sharedPref.getBoolean("setting_sharing_allowed", true)) {
             ImageButton imageButton = (ImageButton) findViewById(R.id.shareButton);
-            ((RelativeLayout)imageButton.getParent()).removeView(imageButton);
+            ((RelativeLayout) imageButton.getParent()).removeView(imageButton);
         }
 
         if (!sharedPref.getBoolean("setting_deletion_allowed", true)) {
             ImageButton imageButton = (ImageButton) findViewById(R.id.deleteButton);
-            ((RelativeLayout)imageButton.getParent()).removeView(imageButton);
+            ((RelativeLayout) imageButton.getParent()).removeView(imageButton);
         }
 
     }

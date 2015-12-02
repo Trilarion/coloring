@@ -7,41 +7,41 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.activity.CategorySelectionMainActivity">
+    tools:context=".activity.CategorySelectionMainActivity">
 
     <ImageButton
+        android:id="@+id/backButton"
+        style="@style/ColoringButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/backButton"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_navigate_before_white_48dp"
-        style="@style/ColoringButton" />
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_navigate_before_white_48dp" />
 
     <GridView
+        android:id="@+id/categorySelectionGridView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/categorySelectionGridView"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/backButton"
+        android:layout_alignParentRight="true"
         android:layout_toEndOf="@+id/backButton"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
+        android:layout_toRightOf="@+id/backButton"
         android:gravity="center"
-        android:stretchMode="columnWidth" />
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
 
     <ImageButton
+        android:id="@+id/aboutButton"
+        style="@style/ColoringButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/aboutButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_about_48dp"
-        style="@style/ColoringButton"
-        android:layout_below="@+id/backButton" />
+        android:layout_below="@+id/backButton"
+        android:src="@drawable/ic_about_48dp" />
 
 </RelativeLayout>

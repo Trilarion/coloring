@@ -1,4 +1,4 @@
-package de.frype.coloring.ui.activity;
+package de.frype.coloring.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -35,7 +35,7 @@ public class AboutActivity extends Activity {
         });
 
         WebView webView = (WebView) findViewById(R.id.aboutWebView);
-        webView.getSettings().setJavaScriptEnabled(true);
+        // webView.getSettings().setJavaScriptEnabled(true);
         webView.setBackgroundColor(Color.TRANSPARENT);
         webView.loadUrl("file:///android_asset/about/index.html");
     }

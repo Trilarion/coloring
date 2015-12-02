@@ -7,45 +7,45 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.activity.ColoringActivity">
+    tools:context=".activity.ColoringActivity">
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/backButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/ic_navigate_before_white_48dp"
-        style="@style/ColoringButton" />
-
-    <ImageButton
+        style="@style/ColoringButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/colorPickerButton"
-        android:layout_below="@+id/backButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_settings_white_48dp"
-        style="@style/ColoringButton" />
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_navigate_before_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/colorPickerButton"
+        style="@style/ColoringButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/backButton"
+        android:src="@drawable/ic_settings_white_48dp" />
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/favoriteColorsLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/colorPickerButton"
-        android:layout_alignRight="@+id/colorPickerButton"
         android:layout_alignEnd="@+id/colorPickerButton"
-        android:id="@+id/favoriteColorsLayout"></LinearLayout>
+        android:layout_alignRight="@+id/colorPickerButton"
+        android:layout_below="@+id/colorPickerButton"
+        android:orientation="vertical"></LinearLayout>
 
-    <de.frype.coloring.ui.widget.ColoringView
+    <de.frype.coloring.widget.ColoringView
+        android:id="@+id/coloringView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/coloringView"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/backButton"
-        android:layout_toEndOf="@+id/backButton" />
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/backButton"
+        android:layout_toRightOf="@+id/backButton" />
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package de.frype.coloring.ui.activity;
+package de.frype.coloring.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,13 +8,14 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import de.frype.coloring.R;
-import de.frype.coloring.ui.adapter.CategoryViewAdapter;
+import de.frype.coloring.adapter.CategoryViewAdapter;
 import de.frype.util.Utils;
 
 public class CategorySelectionMainActivity extends Activity {
@@ -43,13 +44,14 @@ public class CategorySelectionMainActivity extends Activity {
 
         String json = null;
         try {
-            json = Utils.loadJSON("file:///android_asset/categories.json");
+            InputStream is = getAssets().open("categories.json");
+            json = Utils.loadJSON(is);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        JSONObject jsonObject;
+        JSONArray jsonObject;
         try {
-            jsonObject = new JSONObject(json);
+            jsonObject = new JSONArray(json);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -63,5 +65,8 @@ public class CategorySelectionMainActivity extends Activity {
                 // parent.getItemAtPosition(position);
             }
         });
+
+        // test exception
+        throw new IllegalArgumentException("test exception");
     }
 }

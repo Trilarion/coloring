@@ -7,47 +7,47 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.activity.PictureGalleryActivity">
+    tools:context=".activity.PictureGalleryActivity">
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/backButton"
+        style="@style/ColoringButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/ic_navigate_before_white_48dp"
-        style="@style/ColoringButton" />
+        android:src="@drawable/ic_navigate_before_white_48dp" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/shareButton"
-        android:layout_below="@+id/backButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/ic_share_white_48dp"
-        style="@style/ColoringButton" />
-
-    <ImageButton
+        style="@style/ColoringButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/deleteButton"
-        android:layout_below="@+id/shareButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_delete_white_48dp"
-        style="@style/ColoringButton" />
+        android:layout_below="@+id/backButton"
+        android:src="@drawable/ic_share_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        style="@style/ColoringButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/shareButton"
+        android:src="@drawable/ic_delete_white_48dp" />
 
     <ViewAnimator
+        android:id="@+id/galleryViewAnimator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/galleryViewAnimator"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/backButton"
-        android:layout_toEndOf="@+id/backButton" />
+        android:layout_toEndOf="@+id/backButton"
+        android:layout_toRightOf="@+id/backButton" />
 
 </RelativeLayout>

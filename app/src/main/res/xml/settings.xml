@@ -4,25 +4,22 @@
 
     <PreferenceCategory android:title="General">
         <CheckBoxPreference
-            android:key="setting_deletion_allowed"
-            android:title="Enable deletion in Gallery view"
-            android:summary="Tick to set this option"
             android:defaultValue="false"
-            />
+            android:key="setting_deletion_allowed"
+            android:summary="Tick to set this option"
+            android:title="Enable deletion in Gallery view" />
 
         <CheckBoxPreference
-            android:key="setting_sharing_allowed"
-            android:title="Enable sharing in Gallery view"
-            android:summary="Tick to set this option"
             android:defaultValue="false"
-            />
+            android:key="setting_sharing_allowed"
+            android:summary="Tick to set this option"
+            android:title="Enable sharing in Gallery view" />
 
         <EditTextPreference
-            android:key="setting_number_color_columns"
-            android:title="Number of color columns"
-            android:summary="In range [1,10]"
             android:dialogTitle="Enter text"
-            />
+            android:key="setting_number_color_columns"
+            android:summary="In range [1,10]"
+            android:title="Number of color columns" />
 
     </PreferenceCategory>
 

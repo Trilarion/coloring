@@ -7,35 +7,35 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.activity.OutlineSelectionActivity">
+    tools:context=".activity.OutlineSelectionActivity">
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/backButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/ic_navigate_before_white_48dp"
-        style="@style/ColoringButton" />
-
-    <ImageButton
+        style="@style/ColoringButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/galleryButton"
-        android:layout_below="@+id/backButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_photo_library_white_48dp"
-        style="@style/ColoringButton" />
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_navigate_before_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/galleryButton"
+        style="@style/ColoringButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/backButton"
+        android:src="@drawable/ic_photo_library_white_48dp" />
 
     <GridView
+        android:id="@+id/outlineSelectionGridView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/outlineSelectionGridView"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/backButton"
-        android:layout_toEndOf="@+id/backButton" />
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/backButton"
+        android:layout_toRightOf="@+id/backButton" />
 </RelativeLayout>

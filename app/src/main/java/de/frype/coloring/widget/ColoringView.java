@@ -1,4 +1,4 @@
-package de.frype.coloring.ui.widget;
+package de.frype.coloring.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,8 +9,7 @@ import android.view.View;
  */
 public class ColoringView extends View {
 
-    public ColoringView(Context context, AttributeSet attrs)
-    {
+    public ColoringView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 }
