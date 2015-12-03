@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Coloring</string>
+    <string name="error_log_file">error_log.txt</string>
 </resources>

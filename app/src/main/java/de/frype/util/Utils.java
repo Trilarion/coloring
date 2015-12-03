@@ -15,11 +15,11 @@ public final class Utils {
     private Utils() {
     }
 
-    public static String loadJSON(InputStream is) throws IOException {
-        return loadJSON(is, "UTF8");
+    public static String readText(InputStream is) throws IOException {
+        return readText(is, "UTF8");
     }
 
-    public static String loadJSON(InputStream is, String charSetName) throws IOException {
+    public static String readText(InputStream is, String charSetName) throws IOException {
 
         InputStreamReader isr = new InputStreamReader(is, charSetName);
         BufferedReader reader = new BufferedReader(isr);
@@ -37,11 +37,11 @@ public final class Utils {
         return sb.toString();
     }
 
-    public static void writeString(OutputStream os, String content) throws IOException {
-        writeString(os, content, "UTF8");
+    public static void writeText(OutputStream os, String content) throws IOException {
+        writeText(os, content, "UTF8");
     }
 
-    public static void writeString(OutputStream os, String content, String charSetName) throws IOException {
+    public static void writeText(OutputStream os, String content, String charSetName) throws IOException {
 
         // final OutputStream out = context.openFileOutput(fileName, Context.MODE_PRIVATE);
         OutputStreamWriter writer = new OutputStreamWriter(os, charSetName);

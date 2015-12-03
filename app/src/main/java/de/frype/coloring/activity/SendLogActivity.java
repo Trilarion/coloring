@@ -1,12 +1,19 @@
 package de.frype.coloring.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 
 import de.frype.coloring.R;
+import de.frype.util.Utils;
 
 public class SendLogActivity extends Activity {
 
@@ -15,43 +22,53 @@ public class SendLogActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_log);
 
-        // alert dialog builder
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        // TODO what if display is rotated...
 
-        // set title
-        alertDialogBuilder.setTitle("Your Title");
+        // test if error log exists
+        File errorLog = getFileStreamPath(getString(R.string.error_log_file));
+        if (!errorLog.exists()) {
+            finish();
+        }
 
-        // set dialog message
-        alertDialogBuilder
-                .setMessage("Click yes to exit!")
-                .setCancelable(false)
-                .setPositiveButton("Send", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // if this button is clicked, close
-                        // current activity
-                        // MainActivity.this.finish();
-                        dialog.cancel();
+        // read and delete
+        InputStream is = null;
+        try {
+            is = openFileInput(getString(R.string.error_log_file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String logText = null;
+        try {
+            logText = Utils.readText(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        errorLog.delete();
 
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("plain/text");
-                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"error_reports@frype.de"});
-                        intent.putExtra(Intent.EXTRA_SUBJECT, "An Error occurred");
-                        intent.putExtra(Intent.EXTRA_TEXT, "body text");
-                        startActivity(intent);
-                    }
-                })
-                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // if this button is clicked, just close
-                        // the dialog box and do nothing
-                        // dialog.cancel();
-                    }
-                });
+        EditText log = (EditText) findViewById(R.id.logEditText);
+        log.setText(logText);
 
-        // create alert dialog
-        AlertDialog alertDialog = alertDialogBuilder.create();
+        Button button = (Button) findViewById(R.id.cancelButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        // show it
-        alertDialog.show();
+        button = (Button) findViewById(R.id.sendButton);
+        final String finalLogText = logText;
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setType("plain/text");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"error_reports@frype.de"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "An Error occurred");
+                intent.putExtra(Intent.EXTRA_TEXT, finalLogText);
+                // TODO, could find noone...
+                startActivity(intent);
+            }
+        });
     }
 }

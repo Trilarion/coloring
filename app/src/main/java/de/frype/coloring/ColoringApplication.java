@@ -27,7 +27,7 @@ public class ColoringApplication extends Application {
                 StringBuilder sb = new StringBuilder();
 
                 // header
-                sb.append("An unexpected exception occurred!");
+                sb.append("An unexpected exception occurred!%n%n");
 
                 // app version
                 String version;
@@ -49,7 +49,7 @@ public class ColoringApplication extends Application {
                 sb.append(String.format("Android SDK level: %d%n", Build.VERSION.SDK_INT));
 
                 // thread name
-                sb.append(String.format("Thread: %s%n", thread.getName()));
+                sb.append(String.format("Thread: %s%n%n", thread.getName()));
 
                 // exception name
                 sb.append(ex.toString());
@@ -59,10 +59,10 @@ public class ColoringApplication extends Application {
 
                 Context c = ColoringApplication.this.getApplicationContext();
                 try {
-                    OutputStream os = c.openFileOutput("error_report.txt", Context.MODE_PRIVATE);
-                    Utils.writeString(os, sb.toString());
+                    OutputStream os = c.openFileOutput(getResources().getString(R.string.error_log_file), Context.MODE_PRIVATE);
+                    Utils.writeText(os, sb.toString());
                 } catch (Exception e) {
-                    // we could not write the error
+                    // we could not write the error, nothing we can do
                 }
 
                 // continue with old handling

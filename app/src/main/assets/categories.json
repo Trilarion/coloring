@@ -1,8 +1,16 @@
 [
   {
-    "name": "Animals"
+    "name": "Animals",
+    "outlines": [
+      "balloons.png",
+      "balloons.png"
+    ]
   },
   {
-    "name": "Abstract"
+    "name": "Abstract",
+    "outlines": [
+      "balloons.png",
+      "balloons.png"
+    ]
   }
 ]

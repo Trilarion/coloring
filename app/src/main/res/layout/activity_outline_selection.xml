@@ -37,5 +37,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_toEndOf="@+id/backButton"
-        android:layout_toRightOf="@+id/backButton" />
+        android:layout_toRightOf="@+id/backButton"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
 </RelativeLayout>
