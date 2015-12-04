@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Coloring</string>
-    <string name="error_log_file">error_log.txt</string>
+    <string name="error_log_file" translatable="false">error_log.txt</string>
+    <string name="outlines_repository_file" translatable="false">outlines_repository.json</string>
 </resources>

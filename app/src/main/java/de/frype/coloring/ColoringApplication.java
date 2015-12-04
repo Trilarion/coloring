@@ -19,15 +19,19 @@ public class ColoringApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        OutlineRepository.setUp(this);
+
         final Thread.UncaughtExceptionHandler oldDefaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
 
             @Override
             public void uncaughtException(Thread thread, Throwable ex) {
+                ex.printStackTrace();
+
                 StringBuilder sb = new StringBuilder();
 
                 // header
-                sb.append("An unexpected exception occurred!%n%n");
+                sb.append("An unexpected exception occurred!\n\n");
 
                 // app version
                 String version;
@@ -36,20 +40,20 @@ public class ColoringApplication extends Application {
                 } catch (PackageManager.NameNotFoundException e) {
                     version = "undefined";
                 }
-                sb.append(String.format("App version: %s%n", version));
+                sb.append(String.format("App version: %s\n", version));
 
                 // device model
                 String model = Build.MODEL;
                 if (!model.startsWith(Build.MANUFACTURER)) {
                     model = Build.MANUFACTURER + " " + model;
                 }
-                sb.append(String.format("Device model: %s%n", model));
+                sb.append(String.format("Device model: %s\n", model));
 
                 // SDK
-                sb.append(String.format("Android SDK level: %d%n", Build.VERSION.SDK_INT));
+                sb.append(String.format("Android SDK level: %d\n", Build.VERSION.SDK_INT));
 
                 // thread name
-                sb.append(String.format("Thread: %s%n%n", thread.getName()));
+                sb.append(String.format("Thread: %s\n\n", thread.getName()));
 
                 // exception name
                 sb.append(ex.toString());

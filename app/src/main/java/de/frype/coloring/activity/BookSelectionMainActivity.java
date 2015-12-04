@@ -8,19 +8,13 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 
+import de.frype.coloring.OutlineRepository;
 import de.frype.coloring.R;
-import de.frype.coloring.adapter.CategorySelectionAdapter;
-import de.frype.util.Utils;
+import de.frype.coloring.adapter.BookSelectionAdapter;
 
-public class CategorySelectionMainActivity extends Activity {
+public class BookSelectionMainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,34 +40,19 @@ public class CategorySelectionMainActivity extends Activity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CategorySelectionMainActivity.this, AboutActivity.class);
+                Intent intent = new Intent(BookSelectionMainActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
         });
 
-        String json = null;
-        try {
-            InputStream is = getAssets().open("categories.json");
-            json = Utils.readText(is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        JSONArray jsonArray = null;
-        try {
-            jsonArray = new JSONArray(json);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         GridView gridView = (GridView) findViewById(R.id.categorySelectionGridView);
-        gridView.setAdapter(new CategorySelectionAdapter(this, jsonArray));
+        gridView.setAdapter(new BookSelectionAdapter(this));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                JSONObject jsonObject = (JSONObject) parent.getItemAtPosition(position);
-                Intent intent = new Intent(CategorySelectionMainActivity.this, OutlineSelectionActivity.class);
-                intent.putExtra("category", jsonObject.toString());
+                Intent intent = new Intent(BookSelectionMainActivity.this, OutlineSelectionActivity.class);
+                OutlineRepository.getInstance().setCurrentBook(position);
                 startActivity(intent);
             }
         });

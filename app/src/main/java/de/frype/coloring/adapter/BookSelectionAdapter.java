@@ -10,34 +10,29 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import de.frype.coloring.OutlineRepository;
 import de.frype.coloring.R;
 
 /**
  * Created by Jan on 22.11.2015.
  */
-public class CategorySelectionAdapter extends BaseAdapter {
+public class BookSelectionAdapter extends BaseAdapter {
 
     private Context context;
-    private JSONArray categories;
+    private OutlineRepository repo = OutlineRepository.getInstance();
 
-    public CategorySelectionAdapter(Context context, JSONArray categories) {
+    public BookSelectionAdapter(Context context) {
         this.context = context;
-        this.categories = categories;
     }
 
     @Override
     public int getCount() {
-        return categories.length();
+        return repo.getNumberBooks();
     }
 
     @Override
     public Object getItem(int position) {
-        try {
-            return categories.getJSONObject(position);
-        } catch (JSONException e) {
-            // it should be a JSONObject, if not we cannot repair it
-            throw new RuntimeException(e);
-        }
+        return null;
     }
 
     @Override
@@ -56,14 +51,9 @@ public class CategorySelectionAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        try {
-            JSONObject jsonObject = categories.getJSONObject(position);
-
-            TextView categoryNameView = (TextView) view.findViewById(R.id.categoryNameTextView);
-            categoryNameView.setText(jsonObject.getString("name"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        repo.setCurrentBook(position);
+        TextView categoryNameView = (TextView) view.findViewById(R.id.categoryNameTextView);
+        categoryNameView.setText(repo.getStringFromCurrentBook("name"));
 
         return view;
 

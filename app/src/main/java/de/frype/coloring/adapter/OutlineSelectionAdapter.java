@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import de.frype.coloring.OutlineRepository;
 import de.frype.coloring.R;
 
 /**
@@ -18,23 +19,15 @@ import de.frype.coloring.R;
 public class OutlineSelectionAdapter extends BaseAdapter {
 
     private Context context;
-    private JSONObject category;
+    private OutlineRepository repo = OutlineRepository.getInstance();
 
-    public OutlineSelectionAdapter(Context context, JSONObject category) {
+    public OutlineSelectionAdapter(Context context) {
         this.context = context;
-        this.category = category;
-
     }
 
     @Override
     public int getCount() {
-        JSONArray jsonArray = null;
-        try {
-            jsonArray = category.getJSONArray("outlines");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return jsonArray.length();
+        return repo.getNumberPagesFromCurrentBook();
     }
 
     @Override
@@ -57,14 +50,9 @@ public class OutlineSelectionAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        try {
-            JSONArray jsonArray = category.getJSONArray("outlines");
-
-            TextView categoryNameView = (TextView) view.findViewById(R.id.outlineNameTextView);
-            categoryNameView.setText(jsonArray.getString(position));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        repo.setCurrentPage(position);
+        TextView categoryNameView = (TextView) view.findViewById(R.id.outlineNameTextView);
+        categoryNameView.setText(repo.getStringFromCurrentPage("name"));
 
         return view;
     }

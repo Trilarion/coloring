@@ -28,14 +28,16 @@
             android:name=".activity.PictureGalleryActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.CategorySelectionMainActivity"
+            android:name=".activity.BookSelectionMainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SendLogActivity"></activity>
+        <activity
+            android:name=".activity.SendLogActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -21,14 +21,6 @@ public class OutlineSelectionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outline_selection);
 
-        Intent intent = getIntent();
-        JSONObject jsonObject = null;
-        try {
-            jsonObject = new JSONObject(intent.getStringExtra("category"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         ImageButton imageButton = (ImageButton) findViewById(R.id.backButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +39,7 @@ public class OutlineSelectionActivity extends Activity {
         });
 
         GridView gridView = (GridView) findViewById(R.id.outlineSelectionGridView);
-        gridView.setAdapter(new OutlineSelectionAdapter(this, jsonObject));
+        gridView.setAdapter(new OutlineSelectionAdapter(this));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

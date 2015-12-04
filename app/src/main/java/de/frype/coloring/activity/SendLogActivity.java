@@ -28,6 +28,7 @@ public class SendLogActivity extends Activity {
         File errorLog = getFileStreamPath(getString(R.string.error_log_file));
         if (!errorLog.exists()) {
             finish();
+            return;
         }
 
         // read and delete
