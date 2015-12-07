@@ -19,8 +19,6 @@ public class ColoringApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        OutlineRepository.setUp(this);
-
         final Thread.UncaughtExceptionHandler oldDefaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
 
@@ -78,5 +76,6 @@ public class ColoringApplication extends Application {
             }
         });
 
+        Library.setUp(this);
     }
 }

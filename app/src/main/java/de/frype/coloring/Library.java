@@ -14,15 +14,15 @@ import de.frype.util.Utils;
 /**
  * Created by Jan on 04.12.2015.
  */
-public class OutlineRepository {
+public class Library {
 
-    private static OutlineRepository instance = null;
+    private static Library instance = null;
 
     private JSONArray books;
     private JSONObject currentBook;
     private JSONObject currentPage;
 
-    private OutlineRepository(String json) {
+    private Library(String json) {
         try {
             books = new JSONArray(json);
         } catch (JSONException e) {
@@ -38,16 +38,16 @@ public class OutlineRepository {
         // read json
         String json = null;
         try {
-            InputStream is = context.getAssets().open(context.getString(R.string.outlines_repository_file));
+            InputStream is = context.getAssets().open(context.getString(R.string.library_file));
             json = Utils.readText(is);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        instance = new OutlineRepository(json);
+        instance = new Library(json);
     }
 
-    public static OutlineRepository getInstance() {
+    public static Library getInstance() {
         return instance;
     }
 
@@ -105,5 +105,9 @@ public class OutlineRepository {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String getCurrentPageFilePath() {
+        return "library/" + getStringFromCurrentBook("folder") + "/" + getStringFromCurrentBook("file");
     }
 }

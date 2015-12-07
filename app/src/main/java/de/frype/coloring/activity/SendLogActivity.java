@@ -1,17 +1,20 @@
 package de.frype.coloring.activity;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
+import de.frype.coloring.ColoringUtils;
 import de.frype.coloring.R;
 import de.frype.util.Utils;
 
@@ -44,7 +47,6 @@ public class SendLogActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        errorLog.delete();
 
         EditText log = (EditText) findViewById(R.id.logEditText);
         log.setText(logText);
@@ -53,6 +55,7 @@ public class SendLogActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ColoringUtils.deleteErrorLogFile(SendLogActivity.this);
                 finish();
             }
         });
@@ -62,13 +65,18 @@ public class SendLogActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ColoringUtils.deleteErrorLogFile(SendLogActivity.this);
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setType("plain/text");
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"error_reports@frype.de"});
                 intent.putExtra(Intent.EXTRA_SUBJECT, "An Error occurred");
                 intent.putExtra(Intent.EXTRA_TEXT, finalLogText);
-                // TODO, could find noone...
-                startActivity(intent);
+                try {
+                    startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    Toast toast = Toast.makeText(SendLogActivity.this, "No service found to send emails.", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
     }

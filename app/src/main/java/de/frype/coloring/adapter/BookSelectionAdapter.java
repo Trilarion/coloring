@@ -6,11 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import de.frype.coloring.OutlineRepository;
+import de.frype.coloring.Library;
 import de.frype.coloring.R;
 
 /**
@@ -19,7 +15,7 @@ import de.frype.coloring.R;
 public class BookSelectionAdapter extends BaseAdapter {
 
     private Context context;
-    private OutlineRepository repo = OutlineRepository.getInstance();
+    private Library repo = Library.getInstance();
 
     public BookSelectionAdapter(Context context) {
         this.context = context;

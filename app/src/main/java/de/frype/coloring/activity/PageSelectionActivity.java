@@ -8,13 +8,11 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import de.frype.coloring.Library;
 import de.frype.coloring.R;
-import de.frype.coloring.adapter.OutlineSelectionAdapter;
+import de.frype.coloring.adapter.PageSelectionAdapter;
 
-public class OutlineSelectionActivity extends Activity {
+public class PageSelectionActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +31,20 @@ public class OutlineSelectionActivity extends Activity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OutlineSelectionActivity.this, PictureGalleryActivity.class);
+                Intent intent = new Intent(PageSelectionActivity.this, PictureGalleryActivity.class);
                 startActivity(intent);
             }
         });
 
         GridView gridView = (GridView) findViewById(R.id.outlineSelectionGridView);
-        gridView.setAdapter(new OutlineSelectionAdapter(this));
+        gridView.setAdapter(new PageSelectionAdapter(this));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Intent intent = new Intent(PageSelectionActivity.this, ColoringActivity.class);
+                Library.getInstance().setCurrentPage(position);
+                startActivity(intent);
             }
         });
     }

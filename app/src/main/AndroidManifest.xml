@@ -22,7 +22,7 @@
             android:name=".activity.ColorPickerActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.OutlineSelectionActivity"
+            android:name=".activity.PageSelectionActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".activity.PictureGalleryActivity"

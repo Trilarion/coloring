@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Animals",
+    "folder": "book_animals",
+    "pages": [
+      {
+        "name": "Balloons",
+        "file": "balloons.png"
+      },
+      {
+        "name": "Balloons"
+      }
+    ]
+  },
+  {
+    "name": "Abstract",
+    "pages": [
+      {
+        "name": "Balloons"
+      },
+      {
+        "name": "Balloons"
+      }
+    ]
+  }
+]

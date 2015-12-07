@@ -6,22 +6,18 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import de.frype.coloring.OutlineRepository;
+import de.frype.coloring.Library;
 import de.frype.coloring.R;
 
 /**
  * Created by Jan on 03.12.2015.
  */
-public class OutlineSelectionAdapter extends BaseAdapter {
+public class PageSelectionAdapter extends BaseAdapter {
 
     private Context context;
-    private OutlineRepository repo = OutlineRepository.getInstance();
+    private Library repo = Library.getInstance();
 
-    public OutlineSelectionAdapter(Context context) {
+    public PageSelectionAdapter(Context context) {
         this.context = context;
     }
 

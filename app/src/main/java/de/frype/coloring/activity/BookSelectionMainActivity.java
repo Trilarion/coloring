@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 import java.io.File;
 
-import de.frype.coloring.OutlineRepository;
+import de.frype.coloring.Library;
 import de.frype.coloring.R;
 import de.frype.coloring.adapter.BookSelectionAdapter;
 
@@ -51,8 +51,8 @@ public class BookSelectionMainActivity extends Activity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(BookSelectionMainActivity.this, OutlineSelectionActivity.class);
-                OutlineRepository.getInstance().setCurrentBook(position);
+                Intent intent = new Intent(BookSelectionMainActivity.this, PageSelectionActivity.class);
+                Library.getInstance().setCurrentBook(position);
                 startActivity(intent);
             }
         });
