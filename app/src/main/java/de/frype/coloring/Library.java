@@ -1,6 +1,9 @@
 package de.frype.coloring;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -107,7 +110,22 @@ public class Library {
         }
     }
 
-    public String getCurrentPageFilePath() {
-        return "library/" + getStringFromCurrentBook("folder") + "/" + getStringFromCurrentBook("file");
+    private String getCurrentPageFilePath() {
+        return "library/" + getStringFromCurrentBook("folder") + "/" + getStringFromCurrentPage("file");
+    }
+
+    public Bitmap loadCurrentPageBitmap(AssetManager assetManager) {
+        String pathName = getCurrentPageFilePath();
+        InputStream is = null;
+        try {
+            is = assetManager.open(pathName);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Bitmap bitmap = BitmapFactory.decodeStream(is);
+        if (bitmap == null) {
+            throw new RuntimeException("Page bitmap could not be loaded!");
+        }
+        return bitmap;
     }
 }

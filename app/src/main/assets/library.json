@@ -8,18 +8,22 @@
         "file": "balloons.png"
       },
       {
-        "name": "Balloons"
+        "name": "Balloons",
+        "file": "balloons.png"
       }
     ]
   },
   {
     "name": "Abstract",
+    "folder": "book_animals",
     "pages": [
       {
-        "name": "Balloons"
+        "name": "Balloons",
+        "file": "balloons.png"
       },
       {
-        "name": "Balloons"
+        "name": "Balloons",
+        "file": "balloons.png"
       }
     ]
   }
