@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 import de.frype.coloring.Library;
@@ -30,5 +31,17 @@ public class ColoringView extends View {
     public void setBitmap(Bitmap bitmap) {
         this.bitmap = Bitmap.createScaledBitmap(bitmap, getWidth(), getHeight(), false);
         invalidate();
+    }
+
+    @Override
+    public boolean onTouchEvent (MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            color((int) event.getX(), (int) event.getY());
+        }
+        return true;
+    }
+
+    private void color(int x, int y) {
+
     }
 }

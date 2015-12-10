@@ -5,8 +5,13 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="ColoringButton" parent="android:Widget.Button">
+    <style name="NavigationButtonStyle" parent="android:Widget.Button">
+        <item name="android:layout_margin">2dp</item>
         <item name="android:background">@drawable/coloring_button_background</item>
+    </style>
+
+    <style name="ColorButtonStyle">
+        <item name="android:layout_margin">2dp</item>
     </style>
 
 </resources>

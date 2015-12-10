@@ -11,7 +11,7 @@
 
     <ImageButton
         android:id="@+id/backButton"
-        style="@style/ColoringButton"
+        style="@style/NavigationButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -20,14 +20,13 @@
         android:src="@drawable/ic_navigate_before_white_48dp" />
 
     <de.frype.coloring.widget.ColorPickerView
-        android:id="@+id/view"
+        android:id="@+id/colorPickerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/backButton"
-        android:layout_toRightOf="@+id/backButton" />
+        android:layout_toRightOf="@+id/backButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
