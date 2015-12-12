@@ -6,12 +6,12 @@
     </style>
 
     <style name="NavigationButtonStyle" parent="android:Widget.Button">
-        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
         <item name="android:background">@drawable/coloring_button_background</item>
     </style>
 
     <style name="ColorButtonStyle">
-        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
     </style>
 
 </resources>

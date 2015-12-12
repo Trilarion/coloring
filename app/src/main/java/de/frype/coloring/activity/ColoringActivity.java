@@ -25,16 +25,16 @@ public class ColoringActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coloring);
 
-        ImageButton imageButton = (ImageButton) findViewById(R.id.backButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        final ImageButton backButton = (ImageButton) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
 
-        imageButton = (ImageButton) findViewById(R.id.colorPickerButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton selectColorButton = (ImageButton) findViewById(R.id.colorPickerButton);
+        selectColorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ColoringActivity.this, ColorPickerActivity.class);
@@ -68,12 +68,29 @@ public class ColoringActivity extends Activity {
                 } else {
                     favoriteColorsLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
+                float density = ColoringActivity.this.getResources().getDisplayMetrics().density;
+
+                float margin_dp = ColoringActivity.this.getResources().getDimension(R.dimen.button_margin) / density;
+
+                int width_px = favoriteColorsLayout.getWidth();
+                float width_dp = width_px / density;
+
+                float available_width = width_dp - 2 * margin_dp;
+
                 int height_px = favoriteColorsLayout.getHeight();
-                // convert to dp
-                float height_dp = height_px / ColoringActivity.this.getResources().getDisplayMetrics().density;
-                View.inflate(ColoringActivity.this, R.layout.element_color_button, favoriteColorsLayout);
-                View.inflate(ColoringActivity.this, R.layout.element_color_button, favoriteColorsLayout);
-                View.inflate(ColoringActivity.this, R.layout.element_color_button, favoriteColorsLayout);
+                float height_dp = height_px / density;
+
+                int height_button_px = backButton.getHeight();
+                float height_button_dp = height_button_px / density;
+
+                float available_height = height_dp - 2 * (height_button_dp + 2 * margin_dp);
+
+                int number_color_button = (int)Math.ceil(available_height / available_width);
+
+                for (int i = 0; i < number_color_button; i++) {
+                    View.inflate(ColoringActivity.this, R.layout.element_color_button, favoriteColorsLayout);
+                }
+
             }
         });
     }

@@ -32,26 +32,28 @@ public class ColorPickerView extends View {
     public void createBitmap() {
         int width = getWidth();
         int height = getHeight();
-        bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        // bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        int[] colors = new int[width * height];
 
         double w2 = (double) width / 2.;
         double h2 = (double) height / 2.;
 
-
         float[] hsv = new float[3];
+        int i = 0;
         for (int h = 0; h < height; h++) {
             double y = h - h2;
             for (int w = 0; w < width; w++) {
                 double x = w - w2;
                 double phi = Math.atan2(y, x);
-                double r = Math.sqrt(x * x + y * y) / (w2 + h2 + Math.sqrt(w2 * w2 + h2 * h2)) * 3;
+                double d = Math.max(Math.abs(x / w2), Math.abs(y / h2)); // Manhattan distance
                 hsv[0] = (float) ((phi + Math.PI) / (2 * Math.PI) * 360);
-                hsv[1] = (float) Math.min(3 * r, 1);
-                hsv[2] = (float) Math.min(3 - 3 * r, 1);
-                bitmap.setPixel(w, h, Color.HSVToColor(hsv));
+                hsv[1] = (float) Math.min(2 * d, 1);
+                hsv[2] = (float) Math.min(3 * (1 - d), 1);
+                colors[i++] = Color.HSVToColor(hsv);
+                //bitmap.setPixel(w, h, Color.HSVToColor(hsv));
             }
         }
-
+        bitmap = Bitmap.createBitmap(colors, width, height, Bitmap.Config.ARGB_8888);
         invalidate();
     }
 
