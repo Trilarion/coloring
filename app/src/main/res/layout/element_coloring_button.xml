@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/color_button_size"
+    android:layout_height="@dimen/color_button_size"
+    android:background="@drawable/color_selection_cell_background">
+
+</View>

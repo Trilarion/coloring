@@ -1,18 +1,19 @@
 package de.frype.coloring.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.GridView;
 import android.widget.ImageButton;
 
-import de.frype.coloring.Library;
 import de.frype.coloring.R;
-import de.frype.coloring.widget.ColorPickerView;
-import de.frype.coloring.widget.ColoringView;
+import de.frype.coloring.adapter.BookSelectionAdapter;
+import de.frype.coloring.adapter.ColorSelectionAdapter;
+import de.frype.util.Utils;
 
 public class ColorPickerActivity extends Activity {
 
@@ -30,18 +31,28 @@ public class ColorPickerActivity extends Activity {
             }
         });
 
-        final ColorPickerView colorPickerView = (ColorPickerView) findViewById(R.id.colorPickerView);
-        final ViewTreeObserver vto = colorPickerView.getViewTreeObserver();
+        final GridView gridView = (GridView) findViewById(R.id.colorSelectionGridView);
+        ViewTreeObserver vto = gridView.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                if (Build.VERSION.SDK_INT < 16) {
-                    colorPickerView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                } else {
-                    colorPickerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                }
-                colorPickerView.createBitmap();
-            }
+                Utils.removeOnGlobalLayoutListener(gridView, this);
+                Context context = ColorPickerActivity.this;
+                float density = context.getResources().getDisplayMetrics().density;
+
+                float color_button_size_dp = context.getResources().getDimension(R.dimen.color_button_size) / density + 4;
+
+                int width_px = gridView.getWidth();
+                float width_dp = width_px / density;
+                int columns = (int) Math.floor(width_dp / color_button_size_dp);
+                gridView.setNumColumns(columns - 3);
+
+                int height_px = gridView.getHeight();
+                float height_dp = height_px / density;
+                int rows = (int) Math.floor(height_dp / color_button_size_dp);
+
+                gridView.setAdapter(new ColorSelectionAdapter(context, columns - 3, rows - 2));
+           }
         });
 
     }
