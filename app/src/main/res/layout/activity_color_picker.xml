@@ -19,14 +19,15 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/ic_navigate_before_white_48dp" />
 
-    <GridView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/colorSelectionGridView"
+    <de.frype.coloring.layout.RegularGridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/colorSelectionGridLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/backButton"
         android:layout_toRightOf="@+id/backButton"
-        android:gravity="center"
-        android:stretchMode="spacingWidthUniform"
-        android:verticalSpacing="2dp"
-        android:horizontalSpacing="2dp" />
+        android:layout_toEndOf="@+id/backButton" />
 
 </RelativeLayout>

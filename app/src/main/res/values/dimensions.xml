@@ -1,6 +1,7 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="button_margin">2dp</dimen>
-    <dimen name="color_button_size">30dp</dimen>
+    <dimen name="navigation_button_margin">5dp</dimen>
+    <dimen name="color_selection_button_size">30dp</dimen>
+    <dimen name="color_selection_button_margin">5dp</dimen>
 </resources>
