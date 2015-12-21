@@ -9,33 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activity.ColoringActivity">
 
-    <LinearLayout
-        android:id="@+id/favoriteColorsLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageButton
-            android:id="@+id/backButton"
-            style="@style/NavigationButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/ic_navigate_before_white_48dp" />
-
-        <ImageButton
-            android:id="@+id/colorPickerButton"
-            style="@style/NavigationButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/backButton"
-            android:src="@drawable/ic_settings_white_48dp" />
-    </LinearLayout>
-
     <de.frype.coloring.widget.ColoringView
         android:id="@+id/coloringView"
         android:layout_width="wrap_content"
@@ -43,7 +16,28 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_toEndOf="@+id/favoriteColorsLayout"
-        android:layout_toRightOf="@+id/favoriteColorsLayout" />
+        android:layout_alignTop="@+id/backButton"
+        android:layout_toRightOf="@+id/backButton"
+        android:layout_toEndOf="@+id/backButton" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        style="@style/NavigationButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_navigate_before_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/colorPickerButton"
+        style="@style/NavigationButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/backButton"
+        android:src="@drawable/ic_settings_white_48dp" />
 
 </RelativeLayout>

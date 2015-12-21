@@ -57,6 +57,7 @@ public class ColoringActivity extends Activity {
             }
         });
 
+        /*
         final LinearLayout favoriteColorsLayout = (LinearLayout) findViewById(R.id.favoriteColorsLayout);
         vto = favoriteColorsLayout.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -68,7 +69,7 @@ public class ColoringActivity extends Activity {
                 } else {
                     favoriteColorsLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
-                float density = ColoringActivity.this.getResources().getDisplayMetrics().density;
+/*                float density = ColoringActivity.this.getResources().getDisplayMetrics().density;
 
                 float margin_dp = ColoringActivity.this.getResources().getDimension(R.dimen.button_margin) / density;
 
@@ -92,7 +93,7 @@ public class ColoringActivity extends Activity {
                 }
 
             }
-        });
+        });*/
     }
 
     @Override

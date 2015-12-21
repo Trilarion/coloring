@@ -19,7 +19,7 @@ public class BookSelectionMainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category_selection_main);
+        setContentView(R.layout.activity_book_selection_main);
 
         // test if error log exists
         File errorLog = getFileStreamPath(getString(R.string.error_log_file));
@@ -45,7 +45,7 @@ public class BookSelectionMainActivity extends Activity {
             }
         });
 
-        GridView gridView = (GridView) findViewById(R.id.categorySelectionGridView);
+        GridView gridView = (GridView) findViewById(R.id.bookSelectionGridView);
         gridView.setAdapter(new BookSelectionAdapter(this));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

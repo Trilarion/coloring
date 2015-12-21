@@ -42,13 +42,13 @@ public class BookSelectionAdapter extends BaseAdapter {
         View view;
 
         if (convertView == null) {
-            view = View.inflate(context, R.layout.element_category_selection, null);
+            view = View.inflate(context, R.layout.element_book_selection, null);
         } else {
             view = convertView;
         }
 
         repo.setCurrentBook(position);
-        TextView categoryNameView = (TextView) view.findViewById(R.id.categoryNameTextView);
+        TextView categoryNameView = (TextView) view.findViewById(R.id.bookNameTextView);
         categoryNameView.setText(repo.getStringFromCurrentBook("name"));
 
         return view;

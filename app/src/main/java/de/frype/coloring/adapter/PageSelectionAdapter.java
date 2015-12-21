@@ -41,13 +41,13 @@ public class PageSelectionAdapter extends BaseAdapter {
         View view;
 
         if (convertView == null) {
-            view = View.inflate(context, R.layout.element_outline_selection, null);
+            view = View.inflate(context, R.layout.element_page_selection, null);
         } else {
             view = convertView;
         }
 
         repo.setCurrentPage(position);
-        TextView categoryNameView = (TextView) view.findViewById(R.id.outlineNameTextView);
+        TextView categoryNameView = (TextView) view.findViewById(R.id.pageNameTextView);
         categoryNameView.setText(repo.getStringFromCurrentPage("name"));
 
         return view;

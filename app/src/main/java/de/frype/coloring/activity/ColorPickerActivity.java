@@ -3,16 +3,13 @@ package de.frype.coloring.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.GridView;
 import android.widget.ImageButton;
 
 import de.frype.coloring.R;
-import de.frype.coloring.adapter.BookSelectionAdapter;
-import de.frype.coloring.adapter.ColorSelectionAdapter;
+import de.frype.coloring.layout.RegularGridLayout;
 import de.frype.util.Utils;
 
 public class ColorPickerActivity extends Activity {
@@ -31,30 +28,31 @@ public class ColorPickerActivity extends Activity {
             }
         });
 
-        final GridView gridView = (GridView) findViewById(R.id.colorSelectionGridView);
-        ViewTreeObserver vto = gridView.getViewTreeObserver();
-        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        final RegularGridLayout layout = (RegularGridLayout) findViewById(R.id.colorSelectionGridLayout);
+        layout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                Utils.removeOnGlobalLayoutListener(gridView, this);
+                Utils.removeOnGlobalLayoutListener(layout, this);
                 Context context = ColorPickerActivity.this;
-                float density = context.getResources().getDisplayMetrics().density;
+                int button_space = (int)(context.getResources().getDimension(R.dimen.color_selection_button_size) + context.getResources().getDimension(R.dimen.color_selection_button_margin));
 
-                float color_button_size_dp = context.getResources().getDimension(R.dimen.color_button_size) / density + 4;
+                int width_px = layout.getWidth();
+                int height_px = layout.getHeight();
 
-                int width_px = gridView.getWidth();
-                float width_dp = width_px / density;
-                int columns = (int) Math.floor(width_dp / color_button_size_dp);
-                gridView.setNumColumns(columns - 3);
+                int columns = (int) Math.floor(width_px / button_space);
+                int rows = (int) Math.floor(height_px / button_space);
 
-                int height_px = gridView.getHeight();
-                float height_dp = height_px / density;
-                int rows = (int) Math.floor(height_dp / color_button_size_dp);
+                layout.setColumns(columns);
+                layout.setRows(rows);
 
-                gridView.setAdapter(new ColorSelectionAdapter(context, columns - 3, rows - 2));
-           }
+                for (int row = 0; row < rows; row++) {
+                    for (int column = 0; column < columns; column++) {
+                        View view = View.inflate(context, R.layout.element_color_selection_grid, layout);
+                    }
+                }
+                layout.requestLayout();
+            }
         });
-
     }
 
     public void colorSelected(int color) {
