@@ -3,6 +3,9 @@ package de.frype.coloring.widget;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,6 +29,21 @@ public class ColoringView extends View {
         if (bitmap != null) {
             canvas.drawBitmap(bitmap, 0, 0, null); // TODO provide a custom Paint?
         }
+
+        Paint wallpaint = new Paint();
+        wallpaint.setColor(Color.GRAY);
+        wallpaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        wallpaint.setStrokeWidth(0);
+
+        Path wallpath = new Path();
+        wallpath.reset(); // only needed when reusing this path for a new build
+        wallpath.moveTo(0, 0); // used for first point
+        wallpath.lineTo(100, 0);
+        wallpath.lineTo(100, 200);
+        wallpath.lineTo(0, 200);
+        wallpath.close();
+
+        canvas.drawPath(wallpath, wallpaint);
     }
 
     public void setBitmap(Bitmap bitmap) {

@@ -4,5 +4,5 @@
     <dimen name="book_page_gridview_spacing">10dp</dimen>
     <dimen name="navigation_button_margin">5dp</dimen>
     <dimen name="color_selection_button_size">30dp</dimen>
-    <dimen name="color_selection_button_margin">5dp</dimen>
+    <dimen name="color_selection_button_margin">4dp</dimen>
 </resources>

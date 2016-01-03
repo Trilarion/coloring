@@ -89,10 +89,10 @@ public class RegularGridLayout extends ViewGroup {
             return;
         }
 
-        final int inside_left = left + getPaddingLeft();
-        final int inside_right = right - getPaddingRight();
-        final int inside_top = top + getPaddingTop();
-        final int inside_bottom = bottom - getPaddingBottom();
+        final int inside_left = getPaddingLeft();
+        final int inside_right = right - left - getPaddingRight();
+        final int inside_top = getPaddingTop();
+        final int inside_bottom = bottom - top - getPaddingBottom();
 
         float child_width = (inside_right - inside_left) / (float) columns;
         float child_height = (inside_bottom - inside_top) / (float) rows;

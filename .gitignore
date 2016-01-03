@@ -1,9 +1,14 @@
+# android
 *.iml
 .gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
+local.properties
+workspace.xml
 .DS_Store
-/build
-/app/build
-/captures
+android/app/build
+
+
+# python
+workspace.xml
+build
+__pycache__
+
