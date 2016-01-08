@@ -16,19 +16,19 @@
             android:name=".activity.AboutActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.ColoringActivity"
+            android:name=".coloring.ColoringActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.ColorPickerActivity"
+            android:name=".color_picker.ColorPickerActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.PageSelectionActivity"
+            android:name=".page_selection.PageSelectionActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".activity.PictureGalleryActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.BookSelectionMainActivity"
+            android:name=".book_selection.BookSelectionMainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

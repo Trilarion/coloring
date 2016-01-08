@@ -1,4 +1,4 @@
-package de.frype.coloring.adapter;
+package de.frype.coloring.page_selection;
 
 import android.content.Context;
 import android.view.View;
@@ -10,20 +10,20 @@ import de.frype.coloring.Library;
 import de.frype.coloring.R;
 
 /**
- * Created by Jan on 22.11.2015.
+ * Created by Jan on 03.12.2015.
  */
-public class BookSelectionAdapter extends BaseAdapter {
+public class PageSelectionAdapter extends BaseAdapter {
 
     private Context context;
     private Library repo = Library.getInstance();
 
-    public BookSelectionAdapter(Context context) {
+    public PageSelectionAdapter(Context context) {
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return repo.getNumberBooks();
+        return repo.getNumberPagesFromCurrentBook();
     }
 
     @Override
@@ -38,20 +38,18 @@ public class BookSelectionAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         View view;
 
         if (convertView == null) {
-            view = View.inflate(context, R.layout.element_book_selection, null);
+            view = View.inflate(context, R.layout.element_page_selection, null);
         } else {
             view = convertView;
         }
 
-        repo.setCurrentBook(position);
-        TextView categoryNameView = (TextView) view.findViewById(R.id.bookNameTextView);
-        categoryNameView.setText(repo.getStringFromCurrentBook("name"));
+        repo.setCurrentPage(position);
+        TextView categoryNameView = (TextView) view.findViewById(R.id.pageNameTextView);
+        categoryNameView.setText(repo.getStringFromCurrentPage("name"));
 
         return view;
-
     }
 }

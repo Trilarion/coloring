@@ -1,4 +1,4 @@
-package de.frype.coloring.activity;
+package de.frype.coloring.page_selection;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,8 @@ import android.widget.ImageButton;
 
 import de.frype.coloring.Library;
 import de.frype.coloring.R;
-import de.frype.coloring.adapter.PageSelectionAdapter;
+import de.frype.coloring.coloring.ColoringActivity;
+import de.frype.coloring.activity.PictureGalleryActivity;
 
 public class PageSelectionActivity extends Activity {
 

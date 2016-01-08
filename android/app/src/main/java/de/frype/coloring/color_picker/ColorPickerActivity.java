@@ -1,17 +1,18 @@
-package de.frype.coloring.activity;
+package de.frype.coloring.color_picker;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
 
+import de.frype.coloring.ColoringUtils;
 import de.frype.coloring.R;
 import de.frype.coloring.layout.RegularGridLayout;
 import de.frype.util.Utils;
@@ -69,19 +70,18 @@ public class ColorPickerActivity extends Activity {
                         }
 
                         final int color = Color.HSVToColor(hsv);
-                        GradientDrawable drawable = (GradientDrawable) view.getBackground();
-                        drawable.mutate();
+                        int[] gradientColors = ColoringUtils.colorSelectionButtonBackgroundGradient(color);
 
-                        float v = hsv[2];
-                        int[] gradientColors = new int[2];
-                        // darken
-                        hsv[2] *= 0.8f;
-                        gradientColors[0] = Color.HSVToColor(hsv);
-                        // lighten
-                        hsv[2] = 1 - 0.8f * (1 - v);
-                        gradientColors[1] = Color.HSVToColor(hsv);
-
-                        drawable.setColors(gradientColors);
+                        if (Build.VERSION.SDK_INT < 16) {
+                            GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
+                            newGradientDrawable.setStroke(1, Color.parseColor("#bbbbbb"));
+                            newGradientDrawable.setCornerRadius(5);
+                            view.setBackgroundDrawable(newGradientDrawable);
+                        } else {
+                            GradientDrawable drawable = (GradientDrawable) view.getBackground();
+                            drawable.mutate();
+                            drawable.setColors(gradientColors);
+                        }
 
                         view.setOnClickListener(new View.OnClickListener() {
                             @Override

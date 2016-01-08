@@ -9,13 +9,12 @@
     <corners
         android:radius="5px" />
 
-
     <gradient
         android:angle="90"
         android:centerX="0.5"
         android:centerY="0.5"
-        android:startColor="#aaaaaa"
-        android:endColor="#bbbbbb"
+        android:startColor="#88aaee"
+        android:endColor="#eeaa88"
         android:type="linear" />
 
 </shape>

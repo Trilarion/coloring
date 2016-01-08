@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.ColorPickerActivity">
+    tools:context=".color_picker.ColorPickerActivity">
 
     <ImageButton
         android:id="@+id/backButton"
@@ -17,7 +17,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_navigate_before_white_48dp" />
+        android:src="@drawable/ic_navigate_before_white_48dp"
+        android:background="@drawable/navigation_button_bg" />
 
     <de.frype.coloring.layout.RegularGridLayout
         android:layout_width="match_parent"

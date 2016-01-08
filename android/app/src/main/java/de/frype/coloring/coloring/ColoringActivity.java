@@ -1,24 +1,25 @@
-package de.frype.coloring.activity;
+package de.frype.coloring.coloring;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 
+import de.frype.coloring.ColoringUtils;
 import de.frype.coloring.Library;
 import de.frype.coloring.R;
-import de.frype.coloring.widget.ColoringView;
+import de.frype.coloring.color_picker.ColorPickerActivity;
 
 public class ColoringActivity extends Activity {
 
     private static final int PICK_COLOR_REQUEST = 1;
+    private int selectedColor = Color.BLUE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,49 +58,31 @@ public class ColoringActivity extends Activity {
             }
         });
 
-        /*
-        final LinearLayout favoriteColorsLayout = (LinearLayout) findViewById(R.id.favoriteColorsLayout);
-        vto = favoriteColorsLayout.getViewTreeObserver();
-        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        updateSelectedColorButton();
+    }
 
-            @Override
-            public void onGlobalLayout() {
-                if (Build.VERSION.SDK_INT < 16) {
-                    favoriteColorsLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                } else {
-                    favoriteColorsLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                }
-/*                float density = ColoringActivity.this.getResources().getDisplayMetrics().density;
+    private void updateSelectedColorButton() {
+        View view = findViewById(R.id.selectedColorView);
 
-                float margin_dp = ColoringActivity.this.getResources().getDimension(R.dimen.button_margin) / density;
+        int[] gradientColors = ColoringUtils.colorSelectionButtonBackgroundGradient(selectedColor);
 
-                int width_px = favoriteColorsLayout.getWidth();
-                float width_dp = width_px / density;
-
-                float available_width = width_dp - 2 * margin_dp;
-
-                int height_px = favoriteColorsLayout.getHeight();
-                float height_dp = height_px / density;
-
-                int height_button_px = backButton.getHeight();
-                float height_button_dp = height_button_px / density;
-
-                float available_height = height_dp - 2 * (height_button_dp + 2 * margin_dp);
-
-                int number_color_button = (int)Math.ceil(available_height / available_width);
-
-                for (int i = 0; i < number_color_button; i++) {
-                    View.inflate(ColoringActivity.this, R.layout.element_color_button, favoriteColorsLayout);
-                }
-
-            }
-        });*/
+        if (Build.VERSION.SDK_INT < 16) {
+            GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
+            newGradientDrawable.setStroke(1, Color.parseColor("#bbbbbb"));
+            newGradientDrawable.setCornerRadius(5);
+            view.setBackgroundDrawable(newGradientDrawable);
+        } else {
+            GradientDrawable drawable = (GradientDrawable) view.getBackground();
+            drawable.mutate();
+            drawable.setColors(gradientColors);
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PICK_COLOR_REQUEST && resultCode == RESULT_OK) {
-                int color = data.getIntExtra("color", 0);
+                selectedColor = data.getIntExtra("color", 0);
+                updateSelectedColorButton();
         }
     }
 }

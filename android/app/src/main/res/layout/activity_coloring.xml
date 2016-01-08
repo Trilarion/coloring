@@ -7,9 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.ColoringActivity">
+    tools:context=".coloring.ColoringActivity">
 
-    <de.frype.coloring.widget.ColoringView
+    <de.frype.coloring.coloring.ColoringView
         android:id="@+id/coloringView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +28,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_navigate_before_white_48dp" />
+        android:src="@drawable/ic_navigate_before_white_48dp"
+        android:background="@drawable/navigation_button_bg" />
 
     <ImageButton
         android:id="@+id/colorPickerButton"
@@ -38,18 +39,18 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/backButton"
-        android:src="@drawable/ic_settings_white_48dp" />
+        android:src="@drawable/ic_settings_white_48dp"
+        android:background="@drawable/navigation_button_bg" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/colorPickerButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/coloringView"
-        android:layout_toStartOf="@+id/coloringView"
-        android:gravity="center"
-        android:id="@+id/favoriteColorsLayout"></LinearLayout>
+    <View
+        android:layout_width="@dimen/color_selection_button_size"
+        android:layout_height="@dimen/color_selection_button_size"
+        android:background="@drawable/color_selection_button_bg"
+        android:id="@+id/selectedColorView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/colorPickerButton"
+        android:layout_alignStart="@+id/colorPickerButton">
+    </View>
+
 
 </RelativeLayout>

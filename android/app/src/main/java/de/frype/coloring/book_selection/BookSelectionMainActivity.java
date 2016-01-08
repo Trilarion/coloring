@@ -1,4 +1,4 @@
-package de.frype.coloring.activity;
+package de.frype.coloring.book_selection;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,9 @@ import java.io.File;
 
 import de.frype.coloring.Library;
 import de.frype.coloring.R;
-import de.frype.coloring.adapter.BookSelectionAdapter;
+import de.frype.coloring.activity.AboutActivity;
+import de.frype.coloring.page_selection.PageSelectionActivity;
+import de.frype.coloring.activity.SendLogActivity;
 
 public class BookSelectionMainActivity extends Activity {
 
