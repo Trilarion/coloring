@@ -1,9 +1,10 @@
-package de.frype.coloring;
+package de.frype.coloring.library;
 
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,6 +13,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
+import de.frype.coloring.R;
 import de.frype.util.Utils;
 
 /**
@@ -24,6 +26,8 @@ public class Library {
     private JSONArray books;
     private JSONObject currentBook;
     private JSONObject currentPage;
+
+    private int selectedColor = Color.BLUE;
 
     private Library(String json) {
         try {
@@ -127,5 +131,13 @@ public class Library {
             throw new RuntimeException("Page bitmap could not be loaded!");
         }
         return bitmap;
+    }
+
+    public void setSelectedColor(int color) {
+        selectedColor = color;
+    }
+
+    public int getSelectedColor() {
+        return selectedColor;
     }
 }

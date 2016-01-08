@@ -20,7 +20,7 @@
         android:src="@drawable/ic_navigate_before_white_48dp"
         android:background="@drawable/navigation_button_bg" />
 
-    <de.frype.coloring.layout.RegularGridLayout
+    <de.frype.ui.RegularGridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/colorSelectionGridLayout"

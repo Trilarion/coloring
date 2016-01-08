@@ -8,10 +8,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
-import de.frype.coloring.Library;
+import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 import de.frype.coloring.coloring.ColoringActivity;
-import de.frype.coloring.activity.PictureGalleryActivity;
+import de.frype.coloring.picture_gallery.PictureGalleryActivity;
 
 public class PageSelectionActivity extends Activity {
 

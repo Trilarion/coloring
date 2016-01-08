@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name=".settings.SettingsActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.AboutActivity"
+            android:name=".about.AboutActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".coloring.ColoringActivity"
@@ -25,7 +25,7 @@
             android:name=".page_selection.PageSelectionActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.PictureGalleryActivity"
+            android:name=".picture_gallery.PictureGalleryActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".book_selection.BookSelectionMainActivity"
@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.SendLogActivity"
+            android:name=".error_log.SendLogActivity"
             android:screenOrientation="portrait" />
     </application>
 

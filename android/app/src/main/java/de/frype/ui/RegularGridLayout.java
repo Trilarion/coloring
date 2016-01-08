@@ -1,4 +1,4 @@
-package de.frype.coloring.layout;
+package de.frype.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

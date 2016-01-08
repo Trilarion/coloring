@@ -1,4 +1,4 @@
-package de.frype.coloring.activity;
+package de.frype.coloring.picture_gallery;
 
 import android.app.Activity;
 import android.content.Intent;

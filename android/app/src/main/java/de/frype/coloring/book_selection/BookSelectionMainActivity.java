@@ -10,11 +10,11 @@ import android.widget.ImageButton;
 
 import java.io.File;
 
-import de.frype.coloring.Library;
+import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
-import de.frype.coloring.activity.AboutActivity;
+import de.frype.coloring.about.AboutActivity;
 import de.frype.coloring.page_selection.PageSelectionActivity;
-import de.frype.coloring.activity.SendLogActivity;
+import de.frype.coloring.error_log.SendLogActivity;
 
 public class BookSelectionMainActivity extends Activity {
 

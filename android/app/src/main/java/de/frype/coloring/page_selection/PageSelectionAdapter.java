@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import de.frype.coloring.Library;
+import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 
 /**

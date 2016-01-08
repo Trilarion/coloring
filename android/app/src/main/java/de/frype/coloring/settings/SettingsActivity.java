@@ -1,4 +1,4 @@
-package de.frype.coloring.activity;
+package de.frype.coloring.settings;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

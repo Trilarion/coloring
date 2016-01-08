@@ -1,4 +1,4 @@
-package de.frype.coloring.activity;
+package de.frype.coloring.error_log;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;

@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 
 import de.frype.coloring.ColoringUtils;
 import de.frype.coloring.R;
-import de.frype.coloring.layout.RegularGridLayout;
+import de.frype.ui.RegularGridLayout;
 import de.frype.util.Utils;
 
 public class ColorPickerActivity extends Activity {

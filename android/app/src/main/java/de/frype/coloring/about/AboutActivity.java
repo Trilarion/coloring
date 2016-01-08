@@ -1,4 +1,4 @@
-package de.frype.coloring.activity;
+package de.frype.coloring.about;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.webkit.WebView;
 import android.widget.ImageButton;
 
 import de.frype.coloring.R;
+import de.frype.coloring.settings.SettingsActivity;
 
 public class AboutActivity extends Activity {
 

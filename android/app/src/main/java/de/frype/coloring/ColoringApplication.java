@@ -8,6 +8,7 @@ import android.util.Log;
 
 import java.io.OutputStream;
 
+import de.frype.coloring.library.Library;
 import de.frype.util.Utils;
 
 /**
