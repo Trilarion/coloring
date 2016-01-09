@@ -3,16 +3,12 @@ package de.frype.coloring.coloring;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 import de.frype.coloring.library.Library;
-import de.frype.fill.Fill;
+import de.frype.fill.FloodFill;
 import de.frype.fill.Point2D;
 
 /**
@@ -62,7 +58,7 @@ public class ColoringView extends View {
         // get pixels
         int n = width * height;
         data = new int[n];
-        bitmap.getPixels(data, 0, width, 0, 0, width, height);
+        this.bitmap.getPixels(data, 0, width, 0, 0, width, height);
 
         // create mask (0 for non-white, 1 for white)
         mask = new byte[n];
@@ -94,7 +90,7 @@ public class ColoringView extends View {
         // test if there is some white area
         if (mask[x + y * width] == 1) {
             // start filling
-            Fill.fill(new Point2D(x, y), mask, data, width, height, color);
+            FloodFill.advanced_fill(new Point2D(x, y), mask, data, width, height, color);
 
             // update bitmap
             bitmap.setPixels(data, 0, width, 0, 0, width, height);
