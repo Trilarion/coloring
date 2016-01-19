@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.util.TimingLogger;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -22,6 +24,7 @@ public class ColoringView extends View {
     private int width;
     private int height;
     private byte[] mask;
+    private byte[] temporary_mask;
     private int[] data;
 
     public ColoringView(Context context, AttributeSet attrs) {
@@ -63,10 +66,11 @@ public class ColoringView extends View {
         // create mask (0 for non-white, 1 for white)
         mask = new byte[n];
         for (int i = 0; i < n; i++) {
-            if (((data[i] >> 16) & 0xff) > 20) {
+            if (((data[i] >> 16) & 0xff) == 255) {
                 mask[i] = 1;
             }
         }
+        temporary_mask = new byte[n];
     }
 
     @Override
@@ -87,13 +91,26 @@ public class ColoringView extends View {
     private void color(int x, int y) {
         // get actual color
         int color = Library.getInstance().getSelectedColor();
-        // test if there is some white area
-        if (mask[x + y * width] == 1) {
-            // start filling
+        // test if there is some white area in the mask and the data has not yet that color
+        if (mask[x + y * width] == 1 && data[x + y * width] != color) {
+            // fill
+
+            // copy mask to temporary mask
+            System.arraycopy(mask, 0, temporary_mask, 0, width * height);
+
+            long t0 = System.nanoTime();
             FloodFill.advanced_fill(new Point2D(x, y), mask, data, width, height, color);
+            // FloodFill.simple_fill(new Point2D(x, y), temporary_mask, data, width, height, color);
+            long t1 = System.nanoTime();
 
             // update bitmap
+            long t2 = System.nanoTime();
             bitmap.setPixels(data, 0, width, 0, 0, width, height);
+            long t3 = System.nanoTime();
+            Log.v("COL", "test");
+            Log.v("COL", String.format("fill algorithm: %.4fms", (t1 - t0) / 1e6));
+            Log.v("COL", String.format("copy pixels:    %.4fms", (t3 - t2) / 1e6));
+            Log.v("COL", String.format("width %d, height %d", width, height));
 
             // invalidate
             invalidate();

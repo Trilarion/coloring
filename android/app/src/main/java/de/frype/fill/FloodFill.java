@@ -4,6 +4,8 @@ import android.graphics.Point;
 import android.graphics.Rect;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -13,11 +15,7 @@ public class FloodFill {
 
     private FloodFill() {}
 
-    public static Rect simple_fill(Point2D position, byte[] mask, int[] data, int width, int height, int value) {
-
-        // left, top and right, bottom position
-        Point2D lt = new Point2D(position);
-        Point2D rb = new Point2D(position);
+    public static void simple_fill(Point2D position, byte[] mask, int[] data, int width, int height, int value) {
 
         // create queue and add initial position
         Queue<Point2D> queue = new ArrayDeque<>();
@@ -29,24 +27,10 @@ public class FloodFill {
             Point2D p = queue.remove();
             int i = p.x + p.y * width;
 
-            if (mask[i] == 1) {
+            if (mask[i] != 0) {
                 // mark as processed and set data to value
-                mask[i] = 2;
+                mask[i] = 0;
                 data[i] = value;
-
-                // update lt, rb
-                if (p.x < lt.x) {
-                    lt.x = p.x;
-                }
-                if (p.x > rb.x) {
-                    rb.x = p.x;
-                }
-                if (p.y < lt.y) {
-                    lt.y = p.y;
-                }
-                if (p.y > rb.y) {
-                    rb.y = p.y;
-                }
 
                 // up
                 if (p.y > 0) {
@@ -66,98 +50,100 @@ public class FloodFill {
                 }
             }
         }
-
-        // reset mask to 1 where it is 2
-        for (int y = lt.y; y <= rb.y; y++) {
-            for (int x = lt.x; x <= rb.x; x++) {
-                int i = x + y * width;
-                if (mask[i] == 2) {
-                    mask[i] = 1;
-                }
-            }
-        }
-
-        // bounding box
-        Rect box = new Rect(lt.x, lt.y, rb.x - lt.x + 1, rb.y - lt.y + 1);
-        return box;
     }
 
-    public static Rect advanced_fill(Point2D position, byte[] mask, int[] data, int width, int height, int value) {
-
-        // left, top and right, bottom position
-        Point2D lt = new Point2D(position);
-        Point2D rb = new Point2D(position);
+    /**
+     * nonzero areas of mask should be filled, zero areas should be avoided.
+     *
+     * @param position
+     * @param mask
+     * @param data
+     * @param width
+     * @param height
+     * @param value
+     */
+    public static void advanced_fill(Point2D position, byte[] mask, int[] data, int width, int height, int value) {
 
         // create queue and add initial position
-        Queue<Point2D> queue = new ArrayDeque<>();
-        queue.add(position);
+        Queue<LineSegment> queue = new ArrayDeque<>();
+        queue.add(new LineSegment(position));
 
         // the heap loop
         while (!queue.isEmpty()) {
             // get next point
-            Point2D p = queue.remove();
-            int i = p.x + p.y * width;
+            LineSegment l = queue.remove();
 
-            if (mask[i] == 1) {
+            int o = l.y * width; // line offset
 
-                // go left until not possible anymore
-                int l = 0;
-                while (l < p.x && mask[i - l - 1] == 1) {
-                    l++;
-                }
-
-                // go right until not possible anymore
-                int r = 0;
-                while (r < width - p.x - 1 && mask[i + r + 1] == 1) {
-                    r++;
-                }
-
-                // go from p.x-l to p.x+r
-                for (int c = -l; c <= r; c++) {
-
-                    // mark and set value
-                    mask[i + c] = 2;
-                    data[i + c] = value;
-
-                    // up
-                    if (p.y > 0) {
-                        queue.add(new Point2D(p.x + c, p.y - 1));
-                    }
-                    // down
-                    if (p.y < height - 1) {
-                        queue.add(new Point2D(p.x + c, p.y + 1));
-                    }
-                }
-
-                // update lt, rb
-                if (p.x - l < lt.x) {
-                    lt.x = p.x - l;
-                }
-                if (p.x + r > rb.x) {
-                    rb.x = p.x + r;
-                }
-                if (p.y < lt.y) {
-                    lt.y = p.y;
-                }
-                if (p.y > rb.y) {
-                    rb.y = p.y;
-                }
-
+            // starting from xl search right for first appearance
+            int xl = l.xl;
+            while (xl <= l.xr && mask[o + xl] == 0) {
+                xl++;
             }
-        }
+            // xl now points to a valid position in the line sigment or to l.xr+1 and there is no valid position at all
 
-        // reset mask to 1 where it is 2
-        for (int y = lt.y; y <= rb.y; y++) {
-            for (int x = lt.x; x <= rb.x; x++) {
-                int i = x + y * width;
-                if (mask[i] == 2) {
-                    mask[i] = 1;
+            // if it points to a valid position
+            if (xl <= l.xr) {
+
+                // store xl to xr
+                int xr = xl;
+
+                // search left with xl once (to catch anything left of l.xl)
+                while (xl > 0 && mask[o + xl - 1] != 0) {
+                    xl--;
+                }
+                // xl is now a left valid position
+
+                // is this already the last new line segment
+                while (xl <= l.xr) {
+
+                    // extend xr to the right as much as possible
+                    while (xr < width - 1 && mask[o + xr + 1] != 0) {
+                        xr++;
+                    }
+
+                    // [xl, xr] is new valid line segment
+
+                    // fill it
+                    Arrays.fill(mask, o + xl, o + xr + 1, (byte) 0);
+                    Arrays.fill(data, o + xl, o + xr + 1, value);
+
+                    // add new intervals if necessary
+                    if (l.y > 0) {
+                        queue.add(new LineSegment(xl, xr, l.y - 1));
+                    }
+                    if (l.y < height - 1) {
+                        queue.add(new LineSegment(xl, xr, l.y + 1));
+                    }
+
+                    // set xl to xr + 1
+                    xl = xr + 1;
+                    while (xl <= l.xr && mask[o + xl] == 0) {
+                        xl++;
+                    }
+                    // xl is now the next valid position or l.xr+1
+
+                    // set xr to xl
+                    xr = xl;
                 }
             }
         }
+    }
 
-        // bounding box
-        Rect box = new Rect(lt.x, lt.y, rb.x - lt.x + 1, rb.y - lt.y + 1);
-        return box;
+    private static class LineSegment {
+        int xl, xr;
+        int y;
+
+        LineSegment(int xl, int xr, int y) {
+            this.xl = xl;
+            this.xr = xr;
+            this.y = y;
+        }
+
+        LineSegment(Point2D p) {
+            xl = p.x;
+            xr = p.x;
+            y = p.y;
+        }
     }
 }
