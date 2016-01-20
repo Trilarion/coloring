@@ -12,3 +12,4 @@ workspace.xml
 build
 __pycache__
 
+/tools/pngs

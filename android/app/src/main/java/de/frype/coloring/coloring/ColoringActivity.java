@@ -33,8 +33,9 @@ public class ColoringActivity extends Activity {
             }
         });
 
-        ImageButton selectColorButton = (ImageButton) findViewById(R.id.colorPickerButton);
-        selectColorButton.setOnClickListener(new View.OnClickListener() {
+        // if color picker button is pressed, show color picker activity
+        View colorPickerButton = findViewById(R.id.colorPickerButton);
+        colorPickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ColoringActivity.this, ColorPickerActivity.class);
@@ -58,11 +59,11 @@ public class ColoringActivity extends Activity {
             }
         });
 
-        updateSelectedColorButton();
+        updateColorOfColorPickerButton();
     }
 
-    private void updateSelectedColorButton() {
-        View view = findViewById(R.id.selectedColorView);
+    private void updateColorOfColorPickerButton() {
+        View view = findViewById(R.id.colorPickerButton);
 
         int color = Library.getInstance().getSelectedColor();
         int[] gradientColors = ColoringUtils.colorSelectionButtonBackgroundGradient(color);
@@ -84,7 +85,7 @@ public class ColoringActivity extends Activity {
         if (requestCode == PICK_COLOR_REQUEST && resultCode == RESULT_OK) {
             int color = data.getIntExtra("color", 0);
             Library.getInstance().setSelectedColor(color);
-            updateSelectedColorButton();
+            updateColorOfColorPickerButton();
         }
     }
 }

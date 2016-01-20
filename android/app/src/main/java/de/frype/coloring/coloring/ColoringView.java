@@ -63,7 +63,7 @@ public class ColoringView extends View {
         data = new int[n];
         this.bitmap.getPixels(data, 0, width, 0, 0, width, height);
 
-        // create mask (0 for non-white, 1 for white)
+        // create mask (== 0 for non-white, != 0 (=1) for white/fill)
         mask = new byte[n];
         for (int i = 0; i < n; i++) {
             if (((data[i] >> 16) & 0xff) == 255) {
@@ -92,14 +92,14 @@ public class ColoringView extends View {
         // get actual color
         int color = Library.getInstance().getSelectedColor();
         // test if there is some white area in the mask and the data has not yet that color
-        if (mask[x + y * width] == 1 && data[x + y * width] != color) {
+        if (mask[x + y * width] != 0 && data[x + y * width] != color) {
             // fill
 
             // copy mask to temporary mask
             System.arraycopy(mask, 0, temporary_mask, 0, width * height);
 
             long t0 = System.nanoTime();
-            FloodFill.advanced_fill(new Point2D(x, y), mask, data, width, height, color);
+            FloodFill.advanced_fill(new Point2D(x, y), temporary_mask, data, width, height, color);
             // FloodFill.simple_fill(new Point2D(x, y), temporary_mask, data, width, height, color);
             long t1 = System.nanoTime();
 
