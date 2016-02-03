@@ -2,4 +2,6 @@
     <string name="app_name">Coloring</string>
     <string name="error_log_file" translatable="false">error_log.txt</string>
     <string name="library_file" translatable="false">library.json</string>
+    <string name="page_image_content_description">Preview of a page to be colored.</string>
+    <string name="book_image_content_description">Preview of a book to be colored.</string>
 </resources>

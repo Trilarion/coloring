@@ -31,7 +31,7 @@
         android:layout_toRightOf="@+id/backButton"
         android:gravity="center"
         android:horizontalSpacing="@dimen/book_page_gridview_spacing"
-        android:numColumns="auto_fit"
+        android:numColumns="4"
         android:stretchMode="columnWidth"
         android:verticalSpacing="@dimen/book_page_gridview_spacing" />
 

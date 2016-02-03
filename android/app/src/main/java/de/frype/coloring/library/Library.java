@@ -26,15 +26,17 @@ public class Library {
     private JSONArray books;
     private JSONObject currentBook;
     private JSONObject currentPage;
+    private AssetManager assetManager;
 
     private int selectedColor = Color.BLUE;
 
-    private Library(String json) {
+    private Library(String json, AssetManager assetManager) {
         try {
             books = new JSONArray(json);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+        this.assetManager = assetManager;
     }
 
     public static void setUp(Context context) {
@@ -51,7 +53,7 @@ public class Library {
             throw new RuntimeException(e);
         }
 
-        instance = new Library(json);
+        instance = new Library(json, context.getAssets());
     }
 
     public static Library getInstance() {
@@ -118,9 +120,9 @@ public class Library {
         return "library/" + getStringFromCurrentBook("folder") + "/" + getStringFromCurrentPage("file");
     }
 
-    public Bitmap loadCurrentPageBitmap(AssetManager assetManager) {
+    public Bitmap loadCurrentPageBitmap() {
         String pathName = getCurrentPageFilePath();
-        InputStream is = null;
+        InputStream is;
         try {
             is = assetManager.open(pathName);
         } catch (IOException e) {

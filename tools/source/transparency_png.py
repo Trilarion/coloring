@@ -1,11 +1,11 @@
 import os
 import numpy as np
-from scipy import ndimage
 from PIL import Image
 
 # get input files
 input_path = os.path.join('..', 'pngs', 'cleaned')
 input_files = [f for f in os.listdir(input_path) if os.path.isfile(os.path.join(input_path, f)) and f.endswith('.png')]
+output_path = os.path.join('..', 'pngs', 'transparent')
 
 # loop over input files
 for file in input_files:
@@ -14,12 +14,15 @@ for file in input_files:
     im = Image.open(os.path.join(input_path, file))
     print('Image {} with size {}, format {}, mode {}'.format(file, im.size, im.format, im.mode))
 
-    # count segments
+    # convert structure to transparency
     a = np.array(im)
-    segmented_image, number_segments = ndimage.measurements.label(a>50)
+    b = np.zeros(a.shape + (2,), dtype=np.uint8)
+    b[:,:,0] = a
+    b[:,:,1] = (a != 255) * 255
 
-    print('segments {}'.format(number_segments))
+    # save again
+    im_out = Image.fromarray(b, mode='LA')
+    im_out.save(os.path.join(output_path, file), compress_level=9)
 
-    # save again if needed
-    im_out = Image.fromarray(segmented_image.astype(np.uint8), mode=im.mode)
-    #im_out.save(os.path.join('..', 'pngs', 'test.png'), compress_level=9)
+
+

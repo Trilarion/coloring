@@ -15,7 +15,7 @@ import de.frype.coloring.R;
 public class BookSelectionAdapter extends BaseAdapter {
 
     private Context context;
-    private Library repo = Library.getInstance();
+    private Library library = Library.getInstance();
 
     public BookSelectionAdapter(Context context) {
         this.context = context;
@@ -23,7 +23,7 @@ public class BookSelectionAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return repo.getNumberBooks();
+        return library.getNumberBooks();
     }
 
     @Override
@@ -47,9 +47,9 @@ public class BookSelectionAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        repo.setCurrentBook(position);
+        library.setCurrentBook(position);
         TextView categoryNameView = (TextView) view.findViewById(R.id.bookNameTextView);
-        categoryNameView.setText(repo.getStringFromCurrentBook("name"));
+        categoryNameView.setText(library.getStringFromCurrentBook("name"));
 
         return view;
 

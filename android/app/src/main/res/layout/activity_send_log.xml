@@ -17,7 +17,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Log" />
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/sendButton"

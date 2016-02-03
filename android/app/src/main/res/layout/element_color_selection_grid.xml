@@ -4,5 +4,6 @@
     android:layout_height="@dimen/color_selection_button_size"
     android:layout_margin="@dimen/color_selection_button_margin"
     android:layout_gravity="center"
-    android:background="@drawable/color_selection_button_bg">
+    android:background="@drawable/color_selection_button_bg"
+    android:id="@+id/colorPickingView">
 </View>

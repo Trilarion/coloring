@@ -1,9 +1,11 @@
 package de.frype.coloring.page_selection;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import de.frype.coloring.library.Library;
@@ -15,7 +17,7 @@ import de.frype.coloring.R;
 public class PageSelectionAdapter extends BaseAdapter {
 
     private Context context;
-    private Library repo = Library.getInstance();
+    private Library library = Library.getInstance();
 
     public PageSelectionAdapter(Context context) {
         this.context = context;
@@ -23,7 +25,7 @@ public class PageSelectionAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return repo.getNumberPagesFromCurrentBook();
+        return library.getNumberPagesFromCurrentBook();
     }
 
     @Override
@@ -46,9 +48,12 @@ public class PageSelectionAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        repo.setCurrentPage(position);
+        library.setCurrentPage(position);
         TextView categoryNameView = (TextView) view.findViewById(R.id.pageNameTextView);
-        categoryNameView.setText(repo.getStringFromCurrentPage("name"));
+        categoryNameView.setText(library.getStringFromCurrentPage("name"));
+        ImageView previewImageView = (ImageView) view.findViewById(R.id.pagePreviewImageView);
+        Bitmap bitmap = library.loadCurrentPageBitmap();
+        previewImageView.setImageBitmap(bitmap);
 
         return view;
     }

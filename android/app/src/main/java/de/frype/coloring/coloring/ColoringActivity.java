@@ -53,7 +53,7 @@ public class ColoringActivity extends Activity {
                 } else {
                     coloringView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
-                Bitmap bitmap = Library.getInstance().loadCurrentPageBitmap(getAssets());
+                Bitmap bitmap = Library.getInstance().loadCurrentPageBitmap();
                 coloringView.setBitmap(bitmap);
                 coloringView.invalidate();
             }
