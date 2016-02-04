@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,10 +18,12 @@ import de.frype.coloring.R;
 public class PageSelectionAdapter extends BaseAdapter {
 
     private Context context;
+    private int size;
     private Library library = Library.getInstance();
 
-    public PageSelectionAdapter(Context context) {
+    public PageSelectionAdapter(Context context, int size) {
         this.context = context;
+        this.size = size;
     }
 
     @Override
@@ -44,6 +47,8 @@ public class PageSelectionAdapter extends BaseAdapter {
 
         if (convertView == null) {
             view = View.inflate(context, R.layout.element_page_selection, null);
+
+            view.setLayoutParams(new GridView.LayoutParams(size, size));
         } else {
             view = convertView;
         }

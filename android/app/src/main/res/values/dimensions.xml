@@ -1,7 +1,10 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="book_page_gridview_spacing">10dp</dimen>
+    <dimen name="book_gridview_spacing">20dp</dimen>
+    <dimen name="book_preview_width">200dp</dimen>
+    <dimen name="page_gridview_spacing">20dp</dimen>
+    <dimen name="page_preview_width">200dp</dimen>
     <dimen name="navigation_button_margin">4dp</dimen>
     <dimen name="navigation_button_size">48dp</dimen>
     <dimen name="color_selection_button_size">38dp</dimen>

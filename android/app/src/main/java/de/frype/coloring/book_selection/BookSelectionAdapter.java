@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import de.frype.coloring.library.Library;
@@ -15,10 +16,12 @@ import de.frype.coloring.R;
 public class BookSelectionAdapter extends BaseAdapter {
 
     private Context context;
+    private int size;
     private Library library = Library.getInstance();
 
-    public BookSelectionAdapter(Context context) {
+    public BookSelectionAdapter(Context context, int size) {
         this.context = context;
+        this.size = size;
     }
 
     @Override
@@ -43,6 +46,8 @@ public class BookSelectionAdapter extends BaseAdapter {
 
         if (convertView == null) {
             view = View.inflate(context, R.layout.element_book_selection, null);
+
+            view.setLayoutParams(new GridView.LayoutParams(size, size));
         } else {
             view = convertView;
         }

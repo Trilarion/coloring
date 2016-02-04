@@ -54,6 +54,8 @@ public class ColoringActivity extends Activity {
                     coloringView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
                 Bitmap bitmap = Library.getInstance().loadCurrentPageBitmap();
+
+                // bitmap.setHasAlpha(false); // API level 12
                 coloringView.setBitmap(bitmap);
                 coloringView.invalidate();
             }

@@ -63,6 +63,14 @@ public class ColoringView extends View {
         data = new int[n];
         this.bitmap.getPixels(data, 0, width, 0, 0, width, height);
 
+        // unset transparency
+        for (int i = 0; i < n; i++) {
+            if (((data[i] >> 24) & 0xFF) == 0) {
+                data[i] = 0xFFFFFFFF;
+            }
+        }
+        this.bitmap.setPixels(data, 0, width, 0, 0, width, height);
+
         // create mask (== 0 for non-white, != 0 (=1) for white/fill)
         mask = new byte[n];
         for (int i = 0; i < n; i++) {
