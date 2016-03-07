@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TimingLogger;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 
 import de.frype.coloring.library.Library;
@@ -26,17 +27,44 @@ public class ColoringView extends View {
     private byte[] mask;
     private byte[] temporary_mask;
     private int[] data;
+    private boolean modified = false;
+    private ScaleGestureDetector scale_detector;
+    private float scale_factor = 1.f;
 
     public ColoringView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        scale_detector = new ScaleGestureDetector(context, new ScaleGestureDetector.OnScaleGestureListener() {
+            @Override
+            public boolean onScale(ScaleGestureDetector detector) {
+                scale_factor *= detector.getScaleFactor();
+                scale_factor = Math.max(.5f, Math.min(scale_factor, 2.f));
+
+                invalidate();
+                return true;
+            }
+
+            @Override
+            public boolean onScaleBegin(ScaleGestureDetector detector) {
+                return true;
+            }
+
+            @Override
+            public void onScaleEnd(ScaleGestureDetector detector) {
+            }
+        });
     }
 
     protected void onDraw (Canvas canvas) {
         super.onDraw(canvas);
 
+        canvas.save();
+        canvas.scale(2*scale_factor, 2*scale_factor);
+
         if (bitmap != null) {
             canvas.drawBitmap(bitmap, offset_width, offset_height, null); // TODO provide a custom Paint?
         }
+
+        canvas.restore();
     }
 
     public void setBitmap(Bitmap bitmap) {
@@ -63,17 +91,10 @@ public class ColoringView extends View {
         data = new int[n];
         this.bitmap.getPixels(data, 0, width, 0, 0, width, height);
 
-        // unset transparency
-        for (int i = 0; i < n; i++) {
-            if (((data[i] >> 24) & 0xFF) == 0) {
-                data[i] = 0xFFFFFFFF;
-            }
-        }
-        this.bitmap.setPixels(data, 0, width, 0, 0, width, height);
-
         // create mask (== 0 for non-white, != 0 (=1) for white/fill)
         mask = new byte[n];
         for (int i = 0; i < n; i++) {
+            // just test for the second byte
             if (((data[i] >> 16) & 0xff) == 255) {
                 mask[i] = 1;
             }
@@ -81,16 +102,22 @@ public class ColoringView extends View {
         temporary_mask = new byte[n];
     }
 
+    public Bitmap getBitmap() {
+        return this.bitmap;
+    }
+
     @Override
     public boolean onTouchEvent (MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            // get event position and correct for bitmap offsets
-            int x = (int) event.getX() - offset_width;
-            int y = (int) event.getY() - offset_height;
-            // test if within bitmap
-            if (x >= 0 && x < bitmap.getWidth() && y >= 0 && y < bitmap.getHeight()) {
-                // go for the coloring
-                color(x, y);
+        if (!scale_detector.onTouchEvent(event)) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                // get event position and correct for bitmap offsets
+                int x = (int) event.getX() - offset_width;
+                int y = (int) event.getY() - offset_height;
+                // test if within bitmap
+                if (x >= 0 && x < bitmap.getWidth() && y >= 0 && y < bitmap.getHeight()) {
+                    // go for the coloring
+                    color(x, y);
+                }
             }
         }
         return true;
@@ -102,6 +129,11 @@ public class ColoringView extends View {
         // test if there is some white area in the mask and the data has not yet that color
         if (mask[x + y * width] != 0 && data[x + y * width] != color) {
             // fill
+
+            // set modified flag
+            if (!this.modified) {
+                this.modified = true;
+            }
 
             // copy mask to temporary mask
             System.arraycopy(mask, 0, temporary_mask, 0, width * height);
@@ -123,5 +155,9 @@ public class ColoringView extends View {
             // invalidate
             invalidate();
         }
+    }
+
+    public boolean isModified() {
+        return this.modified;
     }
 }

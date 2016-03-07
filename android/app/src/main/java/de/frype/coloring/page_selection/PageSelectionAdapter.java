@@ -56,6 +56,9 @@ public class PageSelectionAdapter extends BaseAdapter {
         library.setCurrentPage(position);
         TextView categoryNameView = (TextView) view.findViewById(R.id.pageNameTextView);
         categoryNameView.setText(library.getStringFromCurrentPage("name"));
+        categoryNameView.setText("test");
+
+        // TODO transparency after loading and scaling
         ImageView previewImageView = (ImageView) view.findViewById(R.id.pagePreviewImageView);
         Bitmap bitmap = library.loadCurrentPageBitmap();
         previewImageView.setImageBitmap(bitmap);

@@ -1,3 +1,7 @@
+'''
+    Prints how many segments there are per image using a scipy function.
+'''
+
 import os
 import numpy as np
 from scipy import ndimage

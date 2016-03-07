@@ -1,20 +1,31 @@
 package de.frype.coloring.coloring;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.media.MediaScannerConnection;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 import de.frype.coloring.ColoringUtils;
 import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 import de.frype.coloring.color_picker.ColorPickerActivity;
+import de.frype.util.Utils;
 
 public class ColoringActivity extends Activity {
 
@@ -24,14 +35,6 @@ public class ColoringActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coloring);
-
-        final ImageButton backButton = (ImageButton) findViewById(R.id.backButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         // if color picker button is pressed, show color picker activity
         View colorPickerButton = findViewById(R.id.colorPickerButton);
@@ -43,17 +46,18 @@ public class ColoringActivity extends Activity {
             }
         });
 
+        // coloring view
         final ColoringView coloringView = (ColoringView) findViewById(R.id.coloringView);
         ViewTreeObserver vto = coloringView.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                if (Build.VERSION.SDK_INT < 16) {
-                    coloringView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                } else {
-                    coloringView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                }
+                Utils.removeOnGlobalLayoutListener(coloringView, this);
+
+                // load the bitmap when we see it the first time
                 Bitmap bitmap = Library.getInstance().loadCurrentPageBitmap();
+
+                // TODO should maybe also have a nice border
 
                 // bitmap.setHasAlpha(false); // API level 12
                 coloringView.setBitmap(bitmap);
@@ -61,6 +65,52 @@ public class ColoringActivity extends Activity {
             }
         });
 
+        // back button
+        final ImageButton backButton = (ImageButton) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!coloringView.isModified()) {
+                    // not modified just finish
+                    finish();
+                } else {
+                    // modified, show alert dialog
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ColoringActivity.this);
+                    builder.setTitle(R.string.coloring_end_dialog_title);
+                    builder.setNegativeButton(R.string.coloring_end_dialog_negative, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            finish();
+                        }
+                    });
+                    builder.setNeutralButton(R.string.coloring_end_dialog_neutral, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                        }
+                    });
+                    builder.setPositiveButton(R.string.coloring_end_dialog_positive, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Context context = ColoringActivity.this;
+                            File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+                            File file = new File(path, "DemoPicture.png");
+                            // getExternalStorageState
+                            OutputStream out = null;
+                            try {
+                                out = new FileOutputStream(file);
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+                            Bitmap bitmap = coloringView.getBitmap();
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+
+                            MediaScannerConnection.scanFile(context, new String[] { file.toString() }, null, null);
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+            }
+        });
+
+        // update color picker button with current active color
         updateColorOfColorPickerButton();
     }
 

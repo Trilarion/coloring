@@ -55,6 +55,7 @@ public class BookSelectionAdapter extends BaseAdapter {
         library.setCurrentBook(position);
         TextView categoryNameView = (TextView) view.findViewById(R.id.bookNameTextView);
         categoryNameView.setText(library.getStringFromCurrentBook("name"));
+        categoryNameView.setText("test");
 
         return view;
 

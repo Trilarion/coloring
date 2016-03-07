@@ -1,3 +1,7 @@
+'''
+    Not used anymore, we do the transparency directly in the app, if needed.
+'''
+
 import os
 import numpy as np
 from PIL import Image

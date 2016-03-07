@@ -1,3 +1,7 @@
+'''
+    True black and white.
+'''
+
 import os
 import numpy as np
 from PIL import Image
@@ -17,7 +21,9 @@ for file in input_files:
     # clean (colors)
     a = np.array(im)
     a[a > 50] = 255
-    a[a < 50] /= 2
+    a[a < 50] = 0
+
+    # smooth edges (morphological closing, dilate followed by erode)
 
     # save again
     im_out = Image.fromarray(a, mode=im.mode)

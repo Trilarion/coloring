@@ -4,4 +4,8 @@
     <string name="library_file" translatable="false">library.json</string>
     <string name="page_image_content_description">Preview of a page to be colored.</string>
     <string name="book_image_content_description">Preview of a book to be colored.</string>
+    <string name="coloring_end_dialog_title">Finished?</string>
+    <string name="coloring_end_dialog_positive">Save and exit</string>
+    <string name="coloring_end_dialog_neutral">Cancel</string>
+    <string name="coloring_end_dialog_negative">Just Exit</string>
 </resources>
