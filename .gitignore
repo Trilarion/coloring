@@ -1,16 +1,18 @@
 # android
-*.iml
-.gradle
-local.properties
-workspace.xml
-.DS_Store
+android/.gradle
+android/local.properties
 android/app/build
+*.iml
 
+# intellij
+android/.idea
+android/build
 
-# python
-workspace.xml
-build
+# pycharm / python
+tools/.idea
+tools/build
 __pycache__
 
+# own
 /tools/pngs
 /resources
