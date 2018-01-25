@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 /**
- * Created by Jan on 18.12.2015.
+ * Layout that has a number of rows and columns and reserves an equal amount of space for every child. Not scrolling.
  */
 public class RegularGridLayout extends ViewGroup {
 

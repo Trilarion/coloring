@@ -27,6 +27,9 @@ import de.frype.coloring.R;
 import de.frype.coloring.color_picker.ColorPickerActivity;
 import de.frype.util.Utils;
 
+/**
+ * This is the main activity of the app, controlling the coloring of a picture (page in a book).
+ */
 public class ColoringActivity extends Activity {
 
     private static final int PICK_COLOR_REQUEST = 1;
@@ -36,7 +39,7 @@ public class ColoringActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coloring);
 
-        // if color picker button is pressed, show color picker activity
+        // color picker button action: show color picker activity
         View colorPickerButton = findViewById(R.id.colorPickerButton);
         colorPickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +50,7 @@ public class ColoringActivity extends Activity {
         });
 
         // coloring view
-        final ColoringView coloringView = (ColoringView) findViewById(R.id.coloringView);
+        final ColoringView coloringView = findViewById(R.id.coloringView);
         ViewTreeObserver vto = coloringView.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -65,8 +68,8 @@ public class ColoringActivity extends Activity {
             }
         });
 
-        // back button
-        final ImageButton backButton = (ImageButton) findViewById(R.id.backButton);
+        // back button action
+        final ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,6 +127,7 @@ public class ColoringActivity extends Activity {
             GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
             newGradientDrawable.setStroke(1, Color.parseColor("#bbbbbb"));
             newGradientDrawable.setCornerRadius(5);
+            //noinspection deprecation
             view.setBackgroundDrawable(newGradientDrawable);
         } else {
             GradientDrawable drawable = (GradientDrawable) view.getBackground();

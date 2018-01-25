@@ -1,11 +1,12 @@
 package de.frype.fill;
 
 /**
- * Created by Jan on 08.01.2016.
+ * Immutable Point class.
  */
 public class Point2D {
 
-    int x, y;
+    final int x;
+    final int y;
 
     public Point2D(int x, int y) {
         this.x = x;
@@ -15,5 +16,13 @@ public class Point2D {
     public Point2D(Point2D other) {
         x = other.x;
         y = other.y;
+    }
+
+    public Point2D plus(Point2D other) {
+        return new Point2D(x + other.x, y + other.y);
+    }
+
+    public Point2D minus(Point2D other) {
+        return new Point2D(x - other.x, y - other.y);
     }
 }

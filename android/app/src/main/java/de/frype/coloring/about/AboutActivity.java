@@ -11,6 +11,9 @@ import android.widget.ImageButton;
 import de.frype.coloring.R;
 import de.frype.coloring.settings.SettingsActivity;
 
+/**
+ *
+ */
 public class AboutActivity extends Activity {
 
     @Override
@@ -18,7 +21,8 @@ public class AboutActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        ImageButton imageButton = (ImageButton) findViewById(R.id.backButton);
+        // back button action: go back
+        ImageButton imageButton = findViewById(R.id.backButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +30,8 @@ public class AboutActivity extends Activity {
             }
         });
 
-        imageButton = (ImageButton) findViewById(R.id.settingsButton);
+        // settings button action: show settings
+        imageButton = findViewById(R.id.settingsButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,8 +40,8 @@ public class AboutActivity extends Activity {
             }
         });
 
-        WebView webView = (WebView) findViewById(R.id.aboutWebView);
-        // webView.getSettings().setJavaScriptEnabled(true);
+        // show about/help url in web view
+        WebView webView = findViewById(R.id.aboutWebView);
         webView.setBackgroundColor(Color.TRANSPARENT);
         webView.loadUrl("file:///android_asset/about/index.html");
     }

@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.TimingLogger;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -28,7 +27,7 @@ public class ColoringView extends View {
     private byte[] temporary_mask;
     private int[] data;
     private boolean modified = false;
-    private ScaleGestureDetector scale_detector;
+    private final ScaleGestureDetector scale_detector;
     private float scale_factor = 1.f;
 
     public ColoringView(Context context, AttributeSet attrs) {
@@ -121,6 +120,12 @@ public class ColoringView extends View {
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean performClick () {
+        // TODO call from onTouchEvent here or so? see Lint warning
+        return super.performClick();
     }
 
     private void color(int x, int y) {

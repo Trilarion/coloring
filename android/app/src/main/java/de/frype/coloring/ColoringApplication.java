@@ -7,12 +7,14 @@ import android.os.Build;
 import android.util.Log;
 
 import java.io.OutputStream;
+import java.util.Locale;
 
 import de.frype.coloring.library.Library;
 import de.frype.util.Utils;
 
+// TODO copyright notices on top of source files
 /**
- * Created by Jan on 30.11.2015.
+ * Application of the coloring app.
  */
 public class ColoringApplication extends Application {
 
@@ -20,6 +22,7 @@ public class ColoringApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // general exception handler, enables us to get error logs by email
         final Thread.UncaughtExceptionHandler oldDefaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
 
@@ -27,6 +30,7 @@ public class ColoringApplication extends Application {
             public void uncaughtException(Thread thread, Throwable ex) {
                 ex.printStackTrace();
 
+                // collect error information
                 StringBuilder sb = new StringBuilder();
 
                 // header
@@ -49,7 +53,7 @@ public class ColoringApplication extends Application {
                 sb.append(String.format("Device model: %s\n", model));
 
                 // SDK
-                sb.append(String.format("Android SDK level: %d\n", Build.VERSION.SDK_INT));
+                sb.append(String.format(Locale.US, "Android SDK level: %d\n", Build.VERSION.SDK_INT));
 
                 // thread name
                 sb.append(String.format("Thread: %s\n\n", thread.getName()));
@@ -65,7 +69,7 @@ public class ColoringApplication extends Application {
                     OutputStream os = c.openFileOutput(getResources().getString(R.string.error_log_file), Context.MODE_PRIVATE);
                     Utils.writeText(os, sb.toString());
                 } catch (Exception e) {
-                    // we could not write the error, nothing we can do
+                    // we could not write the error, nothing we can do there
                 }
 
                 // continue with old handling
@@ -77,6 +81,7 @@ public class ColoringApplication extends Application {
             }
         });
 
+        // set up the coloring library
         Library.setUp(this);
     }
 }

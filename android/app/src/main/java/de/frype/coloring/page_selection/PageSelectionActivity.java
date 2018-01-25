@@ -10,13 +10,15 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
-import de.frype.coloring.book_selection.BookSelectionAdapter;
 import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 import de.frype.coloring.coloring.ColoringActivity;
 import de.frype.coloring.picture_gallery.PictureGalleryActivity;
 import de.frype.util.Utils;
 
+/**
+ * Once a coloring book has been chosen, select a page here.
+ */
 public class PageSelectionActivity extends Activity {
 
     @Override
@@ -24,8 +26,8 @@ public class PageSelectionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_selection);
 
-        // back button
-        ImageButton imageButton = (ImageButton) findViewById(R.id.backButton);
+        // back button action: go back
+        ImageButton imageButton = findViewById(R.id.backButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,8 +35,8 @@ public class PageSelectionActivity extends Activity {
             }
         });
 
-        // picture gallery button
-        imageButton = (ImageButton) findViewById(R.id.galleryButton);
+        // picture gallery button action: start picture gallery activity
+        imageButton = findViewById(R.id.galleryButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,8 +45,8 @@ public class PageSelectionActivity extends Activity {
             }
         });
 
-        // grid view
-        final GridView gridView = (GridView) findViewById(R.id.pageSelectionGridView);
+        // populate the grid view using a PageSelectionAdapter
+        final GridView gridView = findViewById(R.id.pageSelectionGridView);
         gridView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -68,8 +70,10 @@ public class PageSelectionActivity extends Activity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(PageSelectionActivity.this, ColoringActivity.class);
+                // current page in library
                 Library.getInstance().setCurrentPage(position);
+                // start coloring activity
+                Intent intent = new Intent(PageSelectionActivity.this, ColoringActivity.class);
                 startActivity(intent);
             }
         });

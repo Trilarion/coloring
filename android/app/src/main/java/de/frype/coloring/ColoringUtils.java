@@ -17,6 +17,7 @@ public final class ColoringUtils {
     public static void deleteErrorLogFile(Context c) {
         File errorLog = c.getFileStreamPath(c.getString(R.string.error_log_file));
         if (errorLog.exists()) {
+            //noinspection ResultOfMethodCallIgnored
             errorLog.delete();
         }
     }

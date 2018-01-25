@@ -20,20 +20,20 @@
         android:inputType="textMultiLine" />
 
     <Button
-        android:id="@+id/sendButton"
+        android:id="@+id/cancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Send report" />
+        android:text="Cancel" />
 
     <Button
-        android:id="@+id/cancelButton"
+        android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/sendButton"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="Cancel" />
+        android:text="Send report" />
 </RelativeLayout>

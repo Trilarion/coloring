@@ -17,9 +17,9 @@ import de.frype.coloring.R;
  */
 public class PageSelectionAdapter extends BaseAdapter {
 
-    private Context context;
-    private int size;
-    private Library library = Library.getInstance();
+    private final Context context;
+    private final int size;
+    private final Library library = Library.getInstance();
 
     public PageSelectionAdapter(Context context, int size) {
         this.context = context;
@@ -54,12 +54,12 @@ public class PageSelectionAdapter extends BaseAdapter {
         }
 
         library.setCurrentPage(position);
-        TextView categoryNameView = (TextView) view.findViewById(R.id.pageNameTextView);
+        TextView categoryNameView = view.findViewById(R.id.pageNameTextView);
         categoryNameView.setText(library.getStringFromCurrentPage("name"));
         categoryNameView.setText("test");
 
         // TODO transparency after loading and scaling
-        ImageView previewImageView = (ImageView) view.findViewById(R.id.pagePreviewImageView);
+        ImageView previewImageView = view.findViewById(R.id.pagePreviewImageView);
         Bitmap bitmap = library.loadCurrentPageBitmap();
         previewImageView.setImageBitmap(bitmap);
 

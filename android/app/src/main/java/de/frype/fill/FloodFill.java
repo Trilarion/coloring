@@ -1,25 +1,36 @@
 package de.frype.fill;
 
-import android.graphics.Point;
-import android.graphics.Rect;
-
 import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Created by Jan on 08.01.2016.
+ * Floodfill algorithm adapted for coloring, i.e. all values in a 2D data array matching a given value are marked in
+ * a mask starting from a given starting position.
  */
 public class FloodFill {
 
     private FloodFill() {}
 
+    /**
+     * Simple version (testing one by one), which is very slow. Only for testing purposes.
+     *
+     * @param position
+     * @param mask
+     * @param data
+     * @param width
+     * @param height
+     * @param value
+     */
     public static void simple_fill(Point2D position, byte[] mask, int[] data, int width, int height, int value) {
 
         // create queue and add initial position
         Queue<Point2D> queue = new ArrayDeque<>();
         queue.add(position);
+
+        // unit vectors in x and y direction
+        final Point2D ex = new Point2D(1, 0);
+        final Point2D ey = new Point2D(0, 1);
 
         // the heap loop
         while (!queue.isEmpty()) {
@@ -34,19 +45,19 @@ public class FloodFill {
 
                 // up
                 if (p.y > 0) {
-                    queue.add(new Point2D(p.x, p.y - 1));
+                    queue.add(p.minus(ey));
                 }
                 // down
                 if (p.y < height - 1) {
-                    queue.add(new Point2D(p.x, p.y + 1));
+                    queue.add(p.plus(ey));
                 }
                 // left
                 if (p.x > 0) {
-                    queue.add(new Point2D(p.x - 1, p.y));
+                    queue.add(p.minus(ex));
                 }
                 // right
                 if (p.x < width - 1) {
-                    queue.add(new Point2D(p.x + 1, p.y));
+                    queue.add(p.plus(ex));
                 }
             }
         }
@@ -55,12 +66,12 @@ public class FloodFill {
     /**
      * nonzero areas of mask should be filled, zero areas should be avoided.
      *
-     * @param position
-     * @param mask
-     * @param data
-     * @param width
-     * @param height
-     * @param value
+     * @param position initial position
+     * @param mask map of possible positions
+     * @param data actual data
+     * @param width width of array
+     * @param height height of array
+     * @param value matching value
      */
     public static void advanced_fill(Point2D position, byte[] mask, int[] data, int width, int height, int value) {
 
@@ -80,7 +91,7 @@ public class FloodFill {
             while (xl <= l.xr && mask[o + xl] == 0) {
                 xl++;
             }
-            // xl now points to a valid position in the line sigment or to l.xr+1 and there is no valid position at all
+            // xl now points to a valid position in the line segment or to l.xr+1 and there is no valid position at all
 
             // if it points to a valid position
             if (xl <= l.xr) {
@@ -130,9 +141,13 @@ public class FloodFill {
         }
     }
 
+    /**
+     * Immutable line segment. Consisting of left and right x position and y position
+     */
     private static class LineSegment {
-        int xl, xr;
-        int y;
+        final int xl;
+        final int xr;
+        final int y;
 
         LineSegment(int xl, int xr, int y) {
             this.xl = xl;

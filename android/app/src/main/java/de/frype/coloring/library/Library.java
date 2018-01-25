@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -17,16 +18,16 @@ import de.frype.coloring.R;
 import de.frype.util.Utils;
 
 /**
- * Created by Jan on 04.12.2015.
+ * This holds important information in a singleton which is persistent.
  */
 public class Library {
 
     private static Library instance = null;
 
-    private JSONArray books;
+    private final AssetManager assetManager;
+    private final JSONArray books;
     private JSONObject currentBook;
     private JSONObject currentPage;
-    private AssetManager assetManager;
 
     private int selectedColor = Color.BLUE;
 
@@ -34,18 +35,30 @@ public class Library {
         try {
             books = new JSONArray(json);
         } catch (JSONException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("library json content problem: top level is not a json array", e);
         }
         this.assetManager = assetManager;
     }
 
+    /**
+     * @return The singleton instance of the Library.
+     */
+    public static Library getInstance() {
+        return Utils.verifyNotNull(instance);
+    }
+
+    /**
+     * Reads the library information about coloring books and pages from a json file.
+     *
+     * @param context App context.
+     */
     public static void setUp(Context context) {
         if (instance != null) {
-            throw new RuntimeException("Method can only be called once.");
+            throw new RuntimeException("Library.setUP can only be called once.");
         }
 
         // read json
-        String json = null;
+        String json;
         try {
             InputStream is = context.getAssets().open(context.getString(R.string.library_file));
             json = Utils.readText(is);
@@ -56,10 +69,10 @@ public class Library {
         instance = new Library(json, context.getAssets());
     }
 
-    public static Library getInstance() {
-        return instance;
-    }
-
+    /**
+     *
+     * @return The number of books in the library.
+     */
     public int getNumberBooks() {
         return books.length();
     }
@@ -68,7 +81,7 @@ public class Library {
         try {
             return books.getJSONObject(position);
         } catch (JSONException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("library json content problem: retrieving book", e);
         }
     }
 
@@ -83,7 +96,7 @@ public class Library {
         try {
             return currentBook.getString(name);
         } catch (JSONException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("library json content problem: retrieving named value from book", e);
         }
     }
 
@@ -92,7 +105,7 @@ public class Library {
             JSONArray pages = currentBook.getJSONArray("pages");
             return pages.length();
         } catch (JSONException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("library json content problem: retrieving number of pages entries in book", e);
         }
     }
 
@@ -104,7 +117,7 @@ public class Library {
             }
             currentPage = pages.getJSONObject(position);
         } catch (JSONException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("library json content problem: getting a certain page from a book", e);
         }
     }
 
@@ -112,12 +125,12 @@ public class Library {
         try {
             return currentPage.getString(name);
         } catch (JSONException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("library json content problem: retrieving named value from page", e);
         }
     }
 
     private String getCurrentPageFilePath() {
-        return "library/" + getStringFromCurrentBook("folder") + "/" + getStringFromCurrentPage("file");
+        return "library" + File.separator + getStringFromCurrentBook("folder") + File.separator + getStringFromCurrentPage("file");
     }
 
     public Bitmap loadCurrentPageBitmap() {

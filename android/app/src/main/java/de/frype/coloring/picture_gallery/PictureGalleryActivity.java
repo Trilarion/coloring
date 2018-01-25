@@ -11,6 +11,9 @@ import android.widget.RelativeLayout;
 
 import de.frype.coloring.R;
 
+/**
+ *
+ */
 public class PictureGalleryActivity extends Activity {
 
     @Override
@@ -18,7 +21,8 @@ public class PictureGalleryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_gallery);
 
-        ImageButton imageButton = (ImageButton) findViewById(R.id.backButton);
+        // back button action: go back
+        ImageButton imageButton = findViewById(R.id.backButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,13 +33,15 @@ public class PictureGalleryActivity extends Activity {
         // if the settings say so, remove the share and delete button from the gallery view
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
-        imageButton = (ImageButton) findViewById(R.id.shareButton);
+        // share button action
+        imageButton = findViewById(R.id.shareButton);
         if (!sharedPref.getBoolean("setting_sharing_allowed", true)) {
             ((RelativeLayout) imageButton.getParent()).removeView(imageButton);
         } else {
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // TODO share the currently selected image
                     Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                     sharingIntent.setType("image/png");
                     // sharingIntent.putExtra(Intent.EXTRA_STREAM, _newImageUri);
@@ -44,14 +50,15 @@ public class PictureGalleryActivity extends Activity {
             });
         }
 
-        imageButton = (ImageButton) findViewById(R.id.deleteButton);
+        // delete button action
+        imageButton = findViewById(R.id.deleteButton);
         if (!sharedPref.getBoolean("setting_deletion_allowed", true)) {
             ((RelativeLayout) imageButton.getParent()).removeView(imageButton);
         } else {
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    // TODO not yet implemented
                 }
             });
         }

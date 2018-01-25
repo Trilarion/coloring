@@ -18,6 +18,10 @@ import de.frype.coloring.ColoringUtils;
 import de.frype.coloring.R;
 import de.frype.util.Utils;
 
+/**
+ * Simple page that displays the content of the error log and prompts the user to push a button and start an
+ * email client, so the error log can be sent to the developer.
+ */
 public class SendLogActivity extends Activity {
 
     @Override
@@ -27,14 +31,14 @@ public class SendLogActivity extends Activity {
 
         // TODO what if display is rotated...
 
-        // test if error log exists
+        // if error log file does not exist, return immediately
         File errorLog = getFileStreamPath(getString(R.string.error_log_file));
         if (!errorLog.exists()) {
             finish();
             return;
         }
 
-        // read and delete
+        // read error log file
         InputStream is = null;
         try {
             is = openFileInput(getString(R.string.error_log_file));
@@ -48,28 +52,32 @@ public class SendLogActivity extends Activity {
             e.printStackTrace();
         }
 
-        EditText log = (EditText) findViewById(R.id.logEditText);
+        EditText log = findViewById(R.id.logEditText);
         log.setText(logText);
 
-        Button button = (Button) findViewById(R.id.cancelButton);
+        Button button = findViewById(R.id.cancelButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // user clicked cancel, delete log and return
                 ColoringUtils.deleteErrorLogFile(SendLogActivity.this);
                 finish();
             }
         });
 
-        button = (Button) findViewById(R.id.sendButton);
+        button = findViewById(R.id.sendButton);
         final String finalLogText = logText;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // user clicked submit, delete log and start intent
                 ColoringUtils.deleteErrorLogFile(SendLogActivity.this);
+
+                // send to intent
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setType("plain/text");
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"error_reports@frype.de"});
-                intent.putExtra(Intent.EXTRA_SUBJECT, "An Error occurred");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Coloring app: An Error occurred");
                 intent.putExtra(Intent.EXTRA_TEXT, finalLogText);
                 try {
                     startActivity(intent);

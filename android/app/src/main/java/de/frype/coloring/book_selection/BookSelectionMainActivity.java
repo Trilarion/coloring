@@ -19,6 +19,9 @@ import de.frype.coloring.page_selection.PageSelectionActivity;
 import de.frype.coloring.error_log.SendLogActivity;
 import de.frype.util.Utils;
 
+/**
+ * Launcher activity of the app. Select a book for coloring.
+ */
 public class BookSelectionMainActivity extends Activity {
 
     @Override
@@ -26,15 +29,15 @@ public class BookSelectionMainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_selection_main);
 
-        // test if error log exists, if so, show log activity
+        // test first if error log file exists, if so, start send log activity
         File errorLog = getFileStreamPath(getString(R.string.error_log_file));
         if (errorLog.exists()) {
             Intent intent = new Intent(this, SendLogActivity.class);
             startActivity(intent);
         }
 
-        // back button
-        ImageButton imageButton = (ImageButton) findViewById(R.id.backButton);
+        // back button action: go back
+        ImageButton imageButton = findViewById(R.id.backButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,8 +45,8 @@ public class BookSelectionMainActivity extends Activity {
             }
         });
 
-        // about button
-        imageButton = (ImageButton) findViewById(R.id.aboutButton);
+        // about button action: show about activity
+        imageButton = findViewById(R.id.aboutButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,8 +55,8 @@ public class BookSelectionMainActivity extends Activity {
             }
         });
 
-        // grid view
-        final GridView gridView = (GridView) findViewById(R.id.bookSelectionGridView);
+        // populate grid view using a BookSelectionAdapter
+        final GridView gridView = findViewById(R.id.bookSelectionGridView);
         gridView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -77,13 +80,15 @@ public class BookSelectionMainActivity extends Activity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(BookSelectionMainActivity.this, PageSelectionActivity.class);
+                // set current book in library
                 Library.getInstance().setCurrentBook(position);
+                // start new activity
+                Intent intent = new Intent(BookSelectionMainActivity.this, PageSelectionActivity.class);
                 startActivity(intent);
             }
         });
 
-        // test exception
+        // debugging: for test exception handling, throw a test exception here
         // throw new IllegalArgumentException("test exception");
     }
 }

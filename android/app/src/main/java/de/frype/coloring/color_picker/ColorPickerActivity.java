@@ -17,6 +17,10 @@ import de.frype.coloring.R;
 import de.frype.ui.RegularGridLayout;
 import de.frype.util.Utils;
 
+/**
+ * Shows a selection of colors as grid of small buttons filled with the color. Upon touch of a button, this color is
+ * selected (stored in the Library instance), and the activity returns.
+ */
 public class ColorPickerActivity extends Activity {
 
     @Override
@@ -24,7 +28,8 @@ public class ColorPickerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_picker);
 
-        ImageButton imageButton = (ImageButton) findViewById(R.id.backButton);
+        // back button action: set result as canceled and go back
+        ImageButton imageButton = findViewById(R.id.backButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +38,7 @@ public class ColorPickerActivity extends Activity {
             }
         });
 
-        final RegularGridLayout layout = (RegularGridLayout) findViewById(R.id.colorSelectionGridLayout);
+        final RegularGridLayout layout = findViewById(R.id.colorSelectionGridLayout);
         layout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -76,6 +81,7 @@ public class ColorPickerActivity extends Activity {
                             GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
                             newGradientDrawable.setStroke(1, Color.parseColor("#bbbbbb"));
                             newGradientDrawable.setCornerRadius(5);
+                            //noinspection deprecation
                             view.setBackgroundDrawable(newGradientDrawable);
                         } else {
                             GradientDrawable drawable = (GradientDrawable) view.getBackground();
@@ -96,7 +102,7 @@ public class ColorPickerActivity extends Activity {
         });
     }
 
-    public void colorSelected(int color) {
+    private void colorSelected(int color) {
         Intent data = new Intent();
         data.putExtra("color", color);
         setResult(RESULT_OK, data);
