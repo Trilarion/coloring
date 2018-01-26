@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +19,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/backButton"
-        android:layout_toRightOf="@+id/backButton" />
+        android:layout_toRightOf="@+id/backButton"
+        android:background="@drawable/bg_view_border"/>
 
     <ImageButton
         android:id="@+id/backButton"
@@ -29,7 +31,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/ic_navigate_before_white_48dp"
-        android:background="@drawable/navigation_button_bg" />
+        android:background="@drawable/bg_button_navigation"
+        android:contentDescription="@string/content_description_back_button"/>
 
     <ImageButton
         android:id="@+id/settingsButton"
@@ -40,5 +43,6 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/backButton"
         android:src="@drawable/ic_settings_white_48dp"
-        android:background="@drawable/navigation_button_bg" />
+        android:background="@drawable/bg_button_navigation"
+        android:contentDescription="@string/content_description_preferences_button"/>
 </RelativeLayout>

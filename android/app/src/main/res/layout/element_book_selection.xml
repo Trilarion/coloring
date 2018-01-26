@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/book_background"
@@ -20,7 +21,7 @@
         android:id="@+id/bookPreviewImageView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/book_image_content_description"
+        android:contentDescription="@string/content_description_book_image"
         android:src="@drawable/ic_about_48dp" />
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/page_background"
@@ -13,7 +14,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/pagePreviewImageView"
         android:layout_centerHorizontal="true"
-        android:textColor="#0b0f3c" />
+        android:textColor="#212121" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -21,6 +22,6 @@
         android:id="@+id/pagePreviewImageView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/page_image_content_description" />
+        android:contentDescription="@string/content_description_page_image" />
 
 </RelativeLayout>

@@ -2,10 +2,17 @@
     <string name="app_name">Coloring</string>
     <string name="error_log_file" translatable="false">error_log.txt</string>
     <string name="library_file" translatable="false">library.json</string>
-    <string name="page_image_content_description">Preview of a page to be colored.</string>
-    <string name="book_image_content_description">Preview of a book to be colored.</string>
+    <string name="content_description_page_image">Preview of a page to be colored</string>
+    <string name="content_description_book_image">Preview of a book to be colored</string>
     <string name="coloring_end_dialog_title">Finished?</string>
     <string name="coloring_end_dialog_positive">Save and exit</string>
-    <string name="coloring_end_dialog_neutral">Cancel</string>
     <string name="coloring_end_dialog_negative">Just Exit</string>
+    <string name="content_description_back_button">Goes back</string>
+    <string name="content_description_image_gallery">Shows the image gallery</string>
+    <string name="content_description_share_button">Shares the selected image</string>
+    <string name="content_description_delete_button">Deletes the selected image</string>
+    <string name="content_description_about_button">Shows information about the app</string>
+    <string name="content_description_preferences_button">Shows the preferences</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="error_log_dialog_send_report">Send report</string>
 </resources>

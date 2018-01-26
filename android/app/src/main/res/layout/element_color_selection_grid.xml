@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<View xmlns:android="http://schemas.android.com/apk/res/android"
+<View
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/color_selection_button_size"
     android:layout_height="@dimen/color_selection_button_size"
     android:layout_margin="@dimen/color_selection_button_margin"
     android:layout_gravity="center"
-    android:background="@drawable/color_selection_button_bg"
+    android:background="@drawable/bg_button_color_selection"
     android:id="@+id/colorPickingView">
 </View>

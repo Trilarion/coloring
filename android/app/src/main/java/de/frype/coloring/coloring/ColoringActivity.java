@@ -85,7 +85,7 @@ public class ColoringActivity extends Activity {
                             finish();
                         }
                     });
-                    builder.setNeutralButton(R.string.coloring_end_dialog_neutral, new DialogInterface.OnClickListener() {
+                    builder.setNeutralButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                         }
                     });

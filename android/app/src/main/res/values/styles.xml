@@ -7,7 +7,7 @@
 
     <style name="NavigationButtonStyle" parent="android:Widget.Button">
         <item name="android:layout_margin">@dimen/navigation_button_margin</item>
-        <item name="android:background">@drawable/navigation_button_bg</item>
+        <item name="android:background">@drawable/bg_button_navigation</item>
     </style>
 
 </resources>

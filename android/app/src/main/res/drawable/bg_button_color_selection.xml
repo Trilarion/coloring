@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
     <stroke
         android:width="1px"
-        android:color="#bbbbbb"/>
-
-    <corners
-        android:radius="5px" />
+        android:color="@color/border_button"/>
 
     <gradient
         android:angle="90"
@@ -16,5 +14,4 @@
         android:startColor="#88aaee"
         android:endColor="#eeaa88"
         android:type="linear" />
-
 </shape>
