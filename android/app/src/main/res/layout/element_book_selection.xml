@@ -10,10 +10,10 @@
         android:id="@+id/bookNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/bookPreviewImageView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_color_books_pages" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -21,7 +21,6 @@
         android:id="@+id/bookPreviewImageView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/content_description_book_image"
-        android:src="@drawable/ic_about_48dp" />
+        android:contentDescription="@string/content_description_book_image" />
 
 </RelativeLayout>

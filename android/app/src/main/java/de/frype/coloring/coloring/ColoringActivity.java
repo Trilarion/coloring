@@ -60,15 +60,13 @@ public class ColoringActivity extends Activity {
                 // load the bitmap when we see it the first time
                 Bitmap bitmap = Library.getInstance().loadCurrentPageBitmap();
 
-                // TODO should maybe also have a nice border
-
                 // bitmap.setHasAlpha(false); // API level 12
                 coloringView.setBitmap(bitmap);
                 coloringView.invalidate();
             }
         });
 
-        // back button action
+        // back button action: check if modified (if so, ask for desired action)
         final ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,8 +123,8 @@ public class ColoringActivity extends Activity {
 
         if (Build.VERSION.SDK_INT < 16) {
             GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
-            newGradientDrawable.setStroke(1, Color.parseColor("#bbbbbb"));
-            newGradientDrawable.setCornerRadius(5);
+            //noinspection deprecation
+            newGradientDrawable.setStroke(1, this.getResources().getColor(R.color.border_button));
             //noinspection deprecation
             view.setBackgroundDrawable(newGradientDrawable);
         } else {

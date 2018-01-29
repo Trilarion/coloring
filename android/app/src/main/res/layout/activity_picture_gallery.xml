@@ -53,7 +53,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/backButton"
         android:layout_toEndOf="@+id/backButton"
         android:layout_toRightOf="@+id/backButton" />
 

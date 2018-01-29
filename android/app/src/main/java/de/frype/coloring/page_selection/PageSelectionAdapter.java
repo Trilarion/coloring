@@ -13,13 +13,13 @@ import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 
 /**
- * Created by Jan on 03.12.2015.
+ * Provides the pages in a book for a grid view of pages.
  */
 public class PageSelectionAdapter extends BaseAdapter {
 
     private final Context context;
     private final int size;
-    private final Library library = Library.getInstance();
+    private final Library library = Library.getInstance(); // just convenience
 
     public PageSelectionAdapter(Context context, int size) {
         this.context = context;
@@ -47,7 +47,6 @@ public class PageSelectionAdapter extends BaseAdapter {
 
         if (convertView == null) {
             view = View.inflate(context, R.layout.element_page_selection, null);
-
             view.setLayoutParams(new GridView.LayoutParams(size, size));
         } else {
             view = convertView;

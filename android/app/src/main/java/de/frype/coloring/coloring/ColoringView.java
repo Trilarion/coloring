@@ -14,7 +14,7 @@ import de.frype.fill.FloodFill;
 import de.frype.fill.Point2D;
 
 /**
- * Created by Jan on 19.11.2015.
+ * The view in the coloring activity that performs the coloring of a bitmap consisting of black lines (a page in a coloring book).
  */
 public class ColoringView extends View {
 
@@ -32,10 +32,12 @@ public class ColoringView extends View {
 
     public ColoringView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
         scale_detector = new ScaleGestureDetector(context, new ScaleGestureDetector.OnScaleGestureListener() {
             @Override
             public boolean onScale(ScaleGestureDetector detector) {
                 scale_factor *= detector.getScaleFactor();
+                // limits of the scaling
                 scale_factor = Math.max(.5f, Math.min(scale_factor, 2.f));
 
                 invalidate();
@@ -56,14 +58,14 @@ public class ColoringView extends View {
     protected void onDraw (Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.save();
-        canvas.scale(2*scale_factor, 2*scale_factor);
+        //canvas.save();
+        //canvas.scale(2*scale_factor, 2*scale_factor);
 
         if (bitmap != null) {
             canvas.drawBitmap(bitmap, offset_width, offset_height, null); // TODO provide a custom Paint?
         }
 
-        canvas.restore();
+        //canvas.restore();
     }
 
     public void setBitmap(Bitmap bitmap) {
@@ -107,7 +109,7 @@ public class ColoringView extends View {
 
     @Override
     public boolean onTouchEvent (MotionEvent event) {
-        if (!scale_detector.onTouchEvent(event)) {
+        //if (!scale_detector.onTouchEvent(event)) {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 // get event position and correct for bitmap offsets
                 int x = (int) event.getX() - offset_width;
@@ -118,7 +120,7 @@ public class ColoringView extends View {
                     color(x, y);
                 }
             }
-        }
+        //}
         return true;
     }
 

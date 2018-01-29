@@ -2,11 +2,11 @@
 android/.gradle
 android/local.properties
 android/app/build
-*.iml
 
 # intellij
 android/.idea
 android/build
+*.iml
 
 # pycharm / python
 tools/.idea
@@ -15,4 +15,3 @@ __pycache__
 
 # own
 /tools/pngs
-/resources
