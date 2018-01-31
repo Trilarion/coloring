@@ -21,9 +21,9 @@ public class PageSelectionAdapter extends BaseAdapter {
     private final int size;
     private final Library library = Library.getInstance(); // just convenience
 
-    public PageSelectionAdapter(Context context, int size) {
+    public PageSelectionAdapter(Context context) {
         this.context = context;
-        this.size = size;
+        this.size = context.getResources().getDimensionPixelSize(R.dimen.page_preview_width);
     }
 
     @Override

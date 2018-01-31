@@ -1,4 +1,6 @@
-package de.frype.fill;
+package de.frype.algorithm;
+
+import de.frype.util.Point2D;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;

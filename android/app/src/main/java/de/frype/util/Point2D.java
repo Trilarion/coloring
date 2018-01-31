@@ -1,12 +1,12 @@
-package de.frype.fill;
+package de.frype.util;
 
 /**
  * Immutable Point class.
  */
 public class Point2D {
 
-    final int x;
-    final int y;
+    public final int x;
+    public final int y;
 
     public Point2D(int x, int y) {
         this.x = x;

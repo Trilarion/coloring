@@ -10,12 +10,14 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 /**
- * Layout that has a number of rows and columns and reserves an equal amount of space for every child. Not scrolling.
+ * Layout that has a number of rows and columns and reserves an equal amount of space for every child. No scrolling.
  */
 public class RegularGridLayout extends ViewGroup {
 
     private int rows;
     private int columns;
+    private Rect tempContainerRect = new Rect(); // used in onLayout, only to avoid object allocation there
+    private Rect tempChildRect = new Rect(); // used in onLayout, only to avoid object allocation there
 
     public RegularGridLayout(Context context) {
         super(context);
@@ -96,9 +98,6 @@ public class RegularGridLayout extends ViewGroup {
 
         float child_width = (inside_right - inside_left) / (float) columns;
         float child_height = (inside_bottom - inside_top) / (float) rows;
-
-        final Rect tempContainerRect = new Rect();
-        final Rect tempChildRect = new Rect();
 
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {

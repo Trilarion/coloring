@@ -34,10 +34,13 @@ public class BookSelectionMainActivity extends Activity {
         if (errorLog.exists()) {
             Intent intent = new Intent(this, SendLogActivity.class);
             startActivity(intent);
+            // in any case we want to finish this activity and not customize it any further
+            finish();
+            return;
         }
 
         // back button action: go back
-        ImageButton imageButton = findViewById(R.id.backButton);
+        ImageButton imageButton = findViewById(R.id.exitButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,25 +59,8 @@ public class BookSelectionMainActivity extends Activity {
         });
 
         // populate grid view using a BookSelectionAdapter
-        final GridView gridView = findViewById(R.id.bookSelectionGridView);
-        gridView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                Utils.removeOnGlobalLayoutListener(gridView, this);
-                Context context = BookSelectionMainActivity.this;
-                float layout_spacing = context.getResources().getDimension(R.dimen.book_gridview_spacing);
-                float book_page_preview_width = context.getResources().getDimension(R.dimen.book_preview_width);
-
-                int width_px = gridView.getWidth();
-
-                // set number of columns
-                int columns = (int) Math.floor(width_px / (book_page_preview_width + layout_spacing));
-                gridView.setNumColumns(columns);
-
-                // finally set the adapter
-                gridView.setAdapter(new BookSelectionAdapter(BookSelectionMainActivity.this, (int) Math.floor(book_page_preview_width)));
-            }
-        });
+        GridView gridView = findViewById(R.id.bookSelectionGridView);
+        gridView.setAdapter(new BookSelectionAdapter(this));
 
         // on item click listener for grid view, start page selection
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

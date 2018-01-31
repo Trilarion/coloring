@@ -19,9 +19,9 @@ public class BookSelectionAdapter extends BaseAdapter {
     private final int size;
     private final Library library = Library.getInstance();
 
-    public BookSelectionAdapter(Context context, int size) {
+    public BookSelectionAdapter(Context context) {
         this.context = context;
-        this.size = size;
+        this.size = context.getResources().getDimensionPixelSize(R.dimen.book_preview_width);
     }
 
     @Override
@@ -46,7 +46,6 @@ public class BookSelectionAdapter extends BaseAdapter {
 
         if (convertView == null) {
             view = View.inflate(context, R.layout.element_book_selection, null);
-
             view.setLayoutParams(new GridView.LayoutParams(size, size));
         } else {
             view = convertView;

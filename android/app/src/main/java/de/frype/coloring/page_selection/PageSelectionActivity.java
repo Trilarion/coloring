@@ -47,24 +47,7 @@ public class PageSelectionActivity extends Activity {
 
         // populate the grid view using a PageSelectionAdapter
         final GridView gridView = findViewById(R.id.pageSelectionGridView);
-        gridView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                Utils.removeOnGlobalLayoutListener(gridView, this);
-                Context context = PageSelectionActivity.this;
-                float layout_spacing = context.getResources().getDimension(R.dimen.page_gridview_spacing);
-                float page_preview_width = context.getResources().getDimension(R.dimen.page_preview_width);
-
-                int width_px = gridView.getWidth();
-
-                // set number of columns
-                int columns = (int) Math.floor(width_px / (page_preview_width + layout_spacing));
-                gridView.setNumColumns(columns);
-
-                // finally set the adapter
-                gridView.setAdapter(new PageSelectionAdapter(PageSelectionActivity.this, (int) Math.floor(page_preview_width)));
-            }
-        });
+        gridView.setAdapter(new PageSelectionAdapter(this));
 
         // on item click listener for grid view, start coloring
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

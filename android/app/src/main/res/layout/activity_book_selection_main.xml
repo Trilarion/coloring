@@ -11,14 +11,14 @@
     tools:context=".book_selection.BookSelectionMainActivity">
 
     <ImageButton
-        android:id="@+id/backButton"
+        android:id="@+id/exitButton"
         style="@style/NavigationButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_navigate_before_white_48dp"
+        android:src="@drawable/ic_close_white_48dp"
         android:background="@drawable/bg_button_navigation"
         android:contentDescription="@string/content_description_back_button"/>
 
@@ -29,13 +29,14 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/backButton"
-        android:layout_toEndOf="@+id/backButton"
-        android:layout_toRightOf="@+id/backButton"
+        android:layout_alignTop="@+id/exitButton"
+        android:layout_toEndOf="@+id/exitButton"
+        android:layout_toRightOf="@+id/exitButton"
         android:gravity="center"
-        android:horizontalSpacing="@dimen/book_gridview_spacing"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="@dimen/book_gridview_spacing" />
+        android:stretchMode="spacingWidthUniform"
+        android:columnWidth="@dimen/book_preview_width"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="@dimen/book_gridview_vertical_spacing" />
 
     <ImageButton
         android:id="@+id/aboutButton"
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/backButton"
+        android:layout_below="@+id/exitButton"
         android:src="@drawable/ic_about_48dp"
         android:background="@drawable/bg_button_navigation"
         android:contentDescription="@string/content_description_about_button"/>

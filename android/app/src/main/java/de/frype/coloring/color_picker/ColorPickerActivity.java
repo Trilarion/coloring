@@ -66,16 +66,17 @@ public class ColorPickerActivity extends Activity {
                         View view = inflater.inflate(R.layout.element_color_selection_grid, layout, false);
                         layout.addView(view);
                         float row_fraction = (float) row / rows; // in [0,1)
+                        float value = 1 - 0.7f * (float)Math.exp(-row_fraction / 0.5f); // saturated increase
                         if (column == 0) {
                             // first column is gray level only
                             hsv[0] = 0; // hue = 0
                             hsv[1] = 0; // saturation = 0
-                            hsv[2] = row_fraction * 0.8f + 0.1f; // ramp with offset
+                            hsv[2] = 0.8f * row_fraction + 0.1f;
                         } else {
                             // rainbow where hue is column fraction and saturation as well as brightness is row fraction
                             hsv[0] = (float) (column - 1) / (columns - 1) * 360; // [0,360)
-                            hsv[1] = (0.2f - 1) * row_fraction + 1 + row_fraction * (1 - row_fraction); // saturation
-                            hsv[2] = (1 - 0.2f) * row_fraction + 0.2f + row_fraction * (1 - row_fraction); // row_fraction
+                            hsv[1] = 0.3f * row_fraction + 0.7f; // saturation
+                            hsv[2] = 0.8f * row_fraction + 0.2f;
                         }
 
                         // convert hsv to rgb

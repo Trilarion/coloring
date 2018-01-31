@@ -10,8 +10,8 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 
 import de.frype.coloring.library.Library;
-import de.frype.fill.FloodFill;
-import de.frype.fill.Point2D;
+import de.frype.algorithm.FloodFill;
+import de.frype.util.Point2D;
 
 /**
  * The view in the coloring activity that performs the coloring of a bitmap consisting of black lines (a page in a coloring book).
