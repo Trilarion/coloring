@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaScannerConnection;
 import android.os.Build;
@@ -32,8 +31,6 @@ import de.frype.util.Utils;
  */
 public class ColoringActivity extends Activity {
 
-    private static final int PICK_COLOR_REQUEST = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +42,7 @@ public class ColoringActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ColoringActivity.this, ColorPickerActivity.class);
-                startActivityForResult(intent, PICK_COLOR_REQUEST);
+                startActivityForResult(intent, ColorPickerActivity.PICK_COLOR_REQUEST);
             }
         });
 
@@ -57,10 +54,8 @@ public class ColoringActivity extends Activity {
             public void onGlobalLayout() {
                 Utils.removeOnGlobalLayoutListener(coloringView, this);
 
-                // load the bitmap when we see it the first time
+                // load and set the coloring page bitmap after the ColoringView has been laid out and knows its size
                 Bitmap bitmap = Library.getInstance().loadCurrentPageBitmap();
-
-                // bitmap.setHasAlpha(false); // API level 12
                 coloringView.setBitmap(bitmap);
                 coloringView.invalidate();
             }
@@ -75,24 +70,25 @@ public class ColoringActivity extends Activity {
                     // not modified just finish
                     finish();
                 } else {
-                    // modified, show alert dialog
+                    // modified, show alert dialog asking for "Finish?"
                     AlertDialog.Builder builder = new AlertDialog.Builder(ColoringActivity.this);
                     builder.setTitle(R.string.coloring_end_dialog_title);
-                    builder.setNegativeButton(R.string.coloring_end_dialog_negative, new DialogInterface.OnClickListener() {
+                    // negative answer is cancel, which just doesn't do anything
+                    builder.setNegativeButton(R.string.dialog_cancel, null);
+                    // neutral answer is to finish the dialog without saving
+                    builder.setNeutralButton(R.string.coloring_end_dialog_neutral, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             finish();
                         }
                     });
-                    builder.setNeutralButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                        }
-                    });
+                    // positive answer is to save and exit
                     builder.setPositiveButton(R.string.coloring_end_dialog_positive, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             Context context = ColoringActivity.this;
                             File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
                             File file = new File(path, "DemoPicture.png");
                             // getExternalStorageState
+                            // TODO this does crash
                             OutputStream out = null;
                             try {
                                 out = new FileOutputStream(file);
@@ -115,16 +111,18 @@ public class ColoringActivity extends Activity {
         updateColorOfColorPickerButton();
     }
 
+    /**
+     * Updates the color of the color picker selected button with the actual color (a gradient from it).
+     */
     private void updateColorOfColorPickerButton() {
         View view = findViewById(R.id.colorPickerButton);
 
+        // takes the actually selected color
         int color = Library.getInstance().getSelectedColor();
         int[] gradientColors = ColoringUtils.colorSelectionButtonBackgroundGradient(color);
 
         if (Build.VERSION.SDK_INT < 16) {
             GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
-            //noinspection deprecation
-            newGradientDrawable.setStroke(1, this.getResources().getColor(R.color.border_button));
             //noinspection deprecation
             view.setBackgroundDrawable(newGradientDrawable);
         } else {
@@ -136,9 +134,12 @@ public class ColoringActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == PICK_COLOR_REQUEST && resultCode == RESULT_OK) {
+        // handling of color picker activity result
+        if (requestCode == ColorPickerActivity.PICK_COLOR_REQUEST && resultCode == RESULT_OK) {
             int color = data.getIntExtra("color", 0);
+            // set color in library
             Library.getInstance().setSelectedColor(color);
+            // updaste color of button
             updateColorOfColorPickerButton();
         }
     }

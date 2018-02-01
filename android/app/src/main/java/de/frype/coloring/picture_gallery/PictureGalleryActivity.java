@@ -12,7 +12,8 @@ import android.widget.RelativeLayout;
 import de.frype.coloring.R;
 
 /**
- *
+ * A picture gallery (book specific). Sorted by page and date. Ability to show stored images, delete images and
+ * share images.
  */
 public class PictureGalleryActivity extends Activity {
 
@@ -27,6 +28,15 @@ public class PictureGalleryActivity extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        // view button action:
+        imageButton = findViewById(R.id.viewButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO show the currently selected image in full screen
             }
         });
 
@@ -50,7 +60,7 @@ public class PictureGalleryActivity extends Activity {
             });
         }
 
-        // delete button action
+        // delete button action: delete the currently selected image
         imageButton = findViewById(R.id.deleteButton);
         if (!sharedPref.getBoolean("setting_deletion_allowed", true)) {
             ((RelativeLayout) imageButton.getParent()).removeView(imageButton);
@@ -62,5 +72,7 @@ public class PictureGalleryActivity extends Activity {
                 }
             });
         }
+
+        // TODO viewanimator or grid view as before?
     }
 }

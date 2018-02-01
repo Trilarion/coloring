@@ -14,60 +14,47 @@ import de.frype.algorithm.FloodFill;
 import de.frype.util.Point2D;
 
 /**
- * The view in the coloring activity that performs the coloring of a bitmap consisting of black lines (a page in a coloring book).
+ * The view in the coloring activity that performs the coloring of a bitmap that is mostly black and white (a page in a coloring book).
  */
 public class ColoringView extends View {
 
+    /**
+     * The bitmap holding the colored image. Initially a bitmap is loaded and transfered to here via setBitmap() where
+     * it is scaled and copied.
+     */
     private Bitmap bitmap;
-    private int offset_width = 0;
+    private int offset_width = 0; // TODO used Point2D for offset
     private int offset_height = 0;
     private int width;
     private int height;
     private byte[] mask;
     private byte[] temporary_mask;
     private int[] data;
+    /**
+     * Initially the bitmap is not modified, but as soon as a single fill operation has been performed it counts as
+     * modified.
+     */
     private boolean modified = false;
-    private final ScaleGestureDetector scale_detector;
-    private float scale_factor = 1.f;
 
     public ColoringView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-        scale_detector = new ScaleGestureDetector(context, new ScaleGestureDetector.OnScaleGestureListener() {
-            @Override
-            public boolean onScale(ScaleGestureDetector detector) {
-                scale_factor *= detector.getScaleFactor();
-                // limits of the scaling
-                scale_factor = Math.max(.5f, Math.min(scale_factor, 2.f));
-
-                invalidate();
-                return true;
-            }
-
-            @Override
-            public boolean onScaleBegin(ScaleGestureDetector detector) {
-                return true;
-            }
-
-            @Override
-            public void onScaleEnd(ScaleGestureDetector detector) {
-            }
-        });
     }
 
     protected void onDraw (Canvas canvas) {
         super.onDraw(canvas);
 
-        //canvas.save();
-        //canvas.scale(2*scale_factor, 2*scale_factor);
-
+        // until we have a bitmap
         if (bitmap != null) {
-            canvas.drawBitmap(bitmap, offset_width, offset_height, null); // TODO provide a custom Paint?
+            canvas.drawBitmap(bitmap, offset_width, offset_height, null);
         }
-
-        //canvas.restore();
     }
 
+    /**
+     * Called right after the ColoringView has been laid out and knows its size. Inputs the current coloring page
+     * and expects it to be drawn with a reasonable position and scale.
+     *
+     * @param bitmap The current coloring page.
+     */
     public void setBitmap(Bitmap bitmap) {
         // scale so that aspect ratio is kept and canvas is filled
 
@@ -103,24 +90,26 @@ public class ColoringView extends View {
         temporary_mask = new byte[n];
     }
 
+    /**
+     * Called at the end of the coloring process. Contains the initially scaled and colored bitmap.
+     * @return
+     */
     public Bitmap getBitmap() {
         return this.bitmap;
     }
 
     @Override
     public boolean onTouchEvent (MotionEvent event) {
-        //if (!scale_detector.onTouchEvent(event)) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                // get event position and correct for bitmap offsets
-                int x = (int) event.getX() - offset_width;
-                int y = (int) event.getY() - offset_height;
-                // test if within bitmap
-                if (x >= 0 && x < bitmap.getWidth() && y >= 0 && y < bitmap.getHeight()) {
-                    // go for the coloring
-                    color(x, y);
-                }
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            // get event position and correct for bitmap offsets
+            int x = (int) event.getX() - offset_width;
+            int y = (int) event.getY() - offset_height;
+            // test if within bitmap
+            if (x >= 0 && x < bitmap.getWidth() && y >= 0 && y < bitmap.getHeight()) {
+                // go for the coloring
+                color(x, y);
             }
-        //}
+        }
         return true;
     }
 
@@ -130,6 +119,12 @@ public class ColoringView extends View {
         return super.performClick();
     }
 
+    /**
+     * Performs a fill operation with starting position (x,y).
+     *
+     * @param x x position in the bitmap of start position
+     * @param y y position in the bitmap of start position
+     */
     private void color(int x, int y) {
         // get actual color
         int color = Library.getInstance().getSelectedColor();
@@ -164,6 +159,11 @@ public class ColoringView extends View {
         }
     }
 
+    /**
+     * Has any fill operation taken place?
+     *
+     * @return True if yes.
+     */
     public boolean isModified() {
         return this.modified;
     }

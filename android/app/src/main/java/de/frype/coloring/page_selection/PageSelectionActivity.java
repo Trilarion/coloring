@@ -17,7 +17,7 @@ import de.frype.coloring.picture_gallery.PictureGalleryActivity;
 import de.frype.util.Utils;
 
 /**
- * Once a coloring book has been chosen, select a page here.
+ * Once a coloring book has been chosen, select a page here. Also a way to show the gallery for this book.
  */
 public class PageSelectionActivity extends Activity {
 

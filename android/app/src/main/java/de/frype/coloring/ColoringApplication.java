@@ -12,7 +12,7 @@ import java.util.Locale;
 import de.frype.coloring.library.Library;
 import de.frype.util.Utils;
 
-// TODO copyright notices on top of source files
+// TODO copyright notices on top of all source files
 /**
  * Application of the coloring app.
  */

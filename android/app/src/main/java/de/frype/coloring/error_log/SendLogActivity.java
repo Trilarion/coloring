@@ -29,8 +29,6 @@ public class SendLogActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_log);
 
-        // TODO what if display is rotated...
-
         // if error log file does not exist, return immediately
         File errorLog = getFileStreamPath(getString(R.string.error_log_file));
         if (!errorLog.exists()) {

@@ -20,7 +20,7 @@ import de.frype.coloring.error_log.SendLogActivity;
 import de.frype.util.Utils;
 
 /**
- * Launcher activity of the app. Select a book for coloring.
+ * Launcher activity of the app. Select a book for coloring in a grid view.
  */
 public class BookSelectionMainActivity extends Activity {
 
@@ -39,7 +39,7 @@ public class BookSelectionMainActivity extends Activity {
             return;
         }
 
-        // back button action: go back
+        // exit button action: going back which basically means finish
         ImageButton imageButton = findViewById(R.id.exitButton);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override

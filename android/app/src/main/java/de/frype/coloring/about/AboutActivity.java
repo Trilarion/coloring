@@ -12,7 +12,8 @@ import de.frype.coloring.R;
 import de.frype.coloring.settings.SettingsActivity;
 
 /**
- *
+ * The about activity. Shows a button which shows preferences and a web view which shows an about web page stored
+ * in the assets.
  */
 public class AboutActivity extends Activity {
 

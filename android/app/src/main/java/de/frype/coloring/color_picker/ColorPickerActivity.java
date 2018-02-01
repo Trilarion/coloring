@@ -23,6 +23,8 @@ import de.frype.util.Utils;
  */
 public class ColorPickerActivity extends Activity {
 
+    public static final int PICK_COLOR_REQUEST = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,8 +89,6 @@ public class ColorPickerActivity extends Activity {
 
                         if (Build.VERSION.SDK_INT < 16) {
                             GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
-                            //noinspection deprecation
-                            newGradientDrawable.setStroke(1, context.getResources().getColor(R.color.border_button));
                             //noinspection deprecation
                             view.setBackgroundDrawable(newGradientDrawable);
                         } else {

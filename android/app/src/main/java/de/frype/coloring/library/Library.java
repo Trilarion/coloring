@@ -29,7 +29,7 @@ public class Library {
     private JSONObject currentBook;
     private JSONObject currentPage;
 
-    private int selectedColor = Color.BLUE;
+    private int selectedColor = Color.BLUE; // of the color picker on the coloring activity
 
     private Library(String json, AssetManager assetManager) {
         try {

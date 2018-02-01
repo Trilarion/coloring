@@ -13,12 +13,12 @@ import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 
 /**
- * Provides the pages in a book for a grid view of pages.
+ * Page selection adapter providing the coloring pages from the current coloring book in a grid view.
  */
 public class PageSelectionAdapter extends BaseAdapter {
 
     private final Context context;
-    private final int size;
+    private final int size; // it's the same same for all elements
     private final Library library = Library.getInstance(); // just convenience
 
     public PageSelectionAdapter(Context context) {
@@ -43,8 +43,12 @@ public class PageSelectionAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view;
+        // returns a single page preview
 
+        // update page in library
+        library.setCurrentPage(position);
+
+        View view;
         if (convertView == null) {
             view = View.inflate(context, R.layout.element_page_selection, null);
             view.setLayoutParams(new GridView.LayoutParams(size, size));
@@ -52,12 +56,11 @@ public class PageSelectionAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        library.setCurrentPage(position);
+        // customize page view
         TextView categoryNameView = view.findViewById(R.id.pageNameTextView);
         categoryNameView.setText(library.getStringFromCurrentPage("name"));
-        categoryNameView.setText("test");
 
-        // TODO transparency after loading and scaling
+        // TODO set transparency after loading and scaling
         ImageView previewImageView = view.findViewById(R.id.pagePreviewImageView);
         Bitmap bitmap = library.loadCurrentPageBitmap();
         previewImageView.setImageBitmap(bitmap);

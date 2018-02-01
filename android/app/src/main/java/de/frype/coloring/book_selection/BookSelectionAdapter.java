@@ -11,13 +11,13 @@ import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 
 /**
- * Created by Jan on 22.11.2015.
+ * Book selection adapter providing the book images in the coloring book selection grid view.
  */
 public class BookSelectionAdapter extends BaseAdapter {
 
     private final Context context;
-    private final int size;
-    private final Library library = Library.getInstance();
+    private final int size; // it's the same for all elements
+    private final Library library = Library.getInstance(); // just for convenience
 
     public BookSelectionAdapter(Context context) {
         this.context = context;
@@ -41,9 +41,12 @@ public class BookSelectionAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        // returns a single book preview
+
+        // update book in library
+        library.setCurrentBook(position);
 
         View view;
-
         if (convertView == null) {
             view = View.inflate(context, R.layout.element_book_selection, null);
             view.setLayoutParams(new GridView.LayoutParams(size, size));
@@ -51,10 +54,11 @@ public class BookSelectionAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        library.setCurrentBook(position);
+        // set text in book view
+        // TODO show a thumbnail image for the book?
+
         TextView categoryNameView = view.findViewById(R.id.bookNameTextView);
         categoryNameView.setText(library.getStringFromCurrentBook("name"));
-        categoryNameView.setText("test");
 
         return view;
 

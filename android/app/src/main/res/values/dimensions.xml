@@ -1,6 +1,6 @@
 <resources>
-    <dimen name="activity_horizontal_margin">12dp</dimen>
-    <dimen name="activity_vertical_margin">12dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="book_gridview_vertical_spacing">40dp</dimen>
     <dimen name="book_preview_width">180dp</dimen>
     <dimen name="page_gridview_spacing">15dp</dimen>
