@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Coloring</string>
     <string name="error_log_file" translatable="false">error_log.txt</string>
+    <string name="library_root_folder" translatable="false">library</string>
     <string name="library_file" translatable="false">library.json</string>
     <string name="content_description_page_image">Preview of a page to be colored</string>
     <string name="content_description_book_image">Preview of a book to be colored</string>

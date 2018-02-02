@@ -1,7 +1,7 @@
 package de.frype.coloring.page_selection;
 
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.graphics.*;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
+import de.frype.util.Utils;
 
 /**
  * Page selection adapter providing the coloring pages from the current coloring book in a grid view.
@@ -58,11 +59,11 @@ public class PageSelectionAdapter extends BaseAdapter {
 
         // customize page view
         TextView categoryNameView = view.findViewById(R.id.pageNameTextView);
-        categoryNameView.setText(library.getStringFromCurrentPage("name"));
+        categoryNameView.setText(library.getStringFromCurrentPage("name") + "\nEasy");
 
-        // TODO set transparency after loading and scaling
         ImageView previewImageView = view.findViewById(R.id.pagePreviewImageView);
-        Bitmap bitmap = library.loadCurrentPageBitmap();
+        Bitmap bitmap = library.loadCurrentPageBitmapDownscaled(size, size);
+        bitmap = Utils.replaceColorInBitmap(bitmap, Color.WHITE, Color.TRANSPARENT);
         previewImageView.setImageBitmap(bitmap);
 
         return view;

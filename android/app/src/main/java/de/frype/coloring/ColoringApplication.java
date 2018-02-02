@@ -13,6 +13,7 @@ import de.frype.coloring.library.Library;
 import de.frype.util.Utils;
 
 // TODO copyright notices on top of all source files
+// TODO store global state differently see https://stackoverflow.com/questions/708012/how-to-declare-global-variables-in-android#708317
 /**
  * Application of the coloring app.
  */
@@ -82,6 +83,6 @@ public class ColoringApplication extends Application {
         });
 
         // set up the coloring library
-        Library.setUp(this);
+        Library.initialize(this);
     }
 }

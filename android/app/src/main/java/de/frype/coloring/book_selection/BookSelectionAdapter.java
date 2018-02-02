@@ -1,14 +1,18 @@
 package de.frype.coloring.book_selection;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
+import de.frype.util.Utils;
 
 /**
  * Book selection adapter providing the book images in the coloring book selection grid view.
@@ -54,13 +58,15 @@ public class BookSelectionAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        // set text in book view
-        // TODO show a thumbnail image for the book?
-
+        // customize book view
         TextView categoryNameView = view.findViewById(R.id.bookNameTextView);
         categoryNameView.setText(library.getStringFromCurrentBook("name"));
 
-        return view;
+        ImageView previewImageView = view.findViewById(R.id.bookPreviewImageView);
+        Bitmap bitmap = library.loadCurrentBookCoverBitmapDownscaled(size, size);
+        bitmap = Utils.replaceColorInBitmap(bitmap, Color.WHITE, Color.TRANSPARENT);
+        previewImageView.setImageBitmap(bitmap);
 
+        return view;
     }
 }

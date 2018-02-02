@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 
+import de.frype.util.InputStreamProvider;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,20 +25,34 @@ public class Library {
 
     private static Library instance = null;
 
-    private final AssetManager assetManager;
+    private final Context context;
+    private final String libraryFileRootFolder;
     private final JSONArray books;
     private JSONObject currentBook;
     private JSONObject currentPage;
 
     private int selectedColor = Color.BLUE; // of the color picker on the coloring activity
 
-    private Library(String json, AssetManager assetManager) {
+    private Library(Context context) {
+        this.context = context;
+        libraryFileRootFolder = context.getString(R.string.library_root_folder) + File.separator;
+
+        String libraryFilePath = libraryFileRootFolder + context.getString(R.string.library_file);
+        // read json
+        String json;
+        try {
+            InputStream is = context.getAssets().open(libraryFilePath);
+            json = Utils.readText(is);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+
+        }
+
         try {
             books = new JSONArray(json);
         } catch (JSONException e) {
             throw new RuntimeException("library json content problem: top level is not a json array", e);
         }
-        this.assetManager = assetManager;
     }
 
     /**
@@ -52,21 +67,12 @@ public class Library {
      *
      * @param context App context.
      */
-    public static void setUp(Context context) {
+    public static void initialize(Context context) {
         if (instance != null) {
-            throw new RuntimeException("Library.setUP can only be called once.");
+            throw new RuntimeException("Library initialize can only be called once.");
         }
 
-        // read json
-        String json;
-        try {
-            InputStream is = context.getAssets().open(context.getString(R.string.library_file));
-            json = Utils.readText(is);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        instance = new Library(json, context.getAssets());
+        instance = new Library(context);
     }
 
     /**
@@ -109,6 +115,22 @@ public class Library {
         }
     }
 
+    private String getCurrentBookCoverFilePath() {
+        return libraryFileRootFolder + getStringFromCurrentBook("folder") + File.separator + getStringFromCurrentBook("cover");
+    }
+
+    public Bitmap loadCurrentBookCoverBitmapDownscaled(int requiredWidth, int requiredHeight) {
+        String pathName = getCurrentBookCoverFilePath();
+        InputStreamProvider inputStreamProvider = getInputStreamProviderForAssetPath(pathName);
+        Bitmap bitmap = Utils.decodeSampledBitmapFromStream(inputStreamProvider, requiredWidth, requiredHeight);
+        if (bitmap == null) {
+            throw new RuntimeException("Bitmap could not be loaded!");
+        }
+        return bitmap;
+    }
+
+
+
     public void setCurrentPage(int position) {
         try {
             JSONArray pages = currentBook.getJSONArray("pages");
@@ -130,22 +152,42 @@ public class Library {
     }
 
     private String getCurrentPageFilePath() {
-        return "library" + File.separator + getStringFromCurrentBook("folder") + File.separator + getStringFromCurrentPage("file");
+        return libraryFileRootFolder + getStringFromCurrentBook("folder") + File.separator + getStringFromCurrentPage("file");
     }
 
     public Bitmap loadCurrentPageBitmap() {
         String pathName = getCurrentPageFilePath();
-        InputStream is;
-        try {
-            is = assetManager.open(pathName);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Bitmap bitmap = BitmapFactory.decodeStream(is);
+        Bitmap bitmap = BitmapFactory.decodeStream(getInputStreamProviderForAssetPath(pathName).getStream());
         if (bitmap == null) {
             throw new RuntimeException("Page bitmap could not be loaded!");
         }
         return bitmap;
+    }
+
+    public Bitmap loadCurrentPageBitmapDownscaled(int requiredWidth, int requiredHeight) {
+        String pathName = getCurrentPageFilePath();
+        InputStreamProvider inputStreamProvider = getInputStreamProviderForAssetPath(pathName);
+        Bitmap bitmap = Utils.decodeSampledBitmapFromStream(inputStreamProvider, requiredWidth, requiredHeight);
+        if (bitmap == null) {
+            throw new RuntimeException("Bitmap could not be loaded!");
+        }
+        return bitmap;
+    }
+
+    private InputStreamProvider getInputStreamProviderForAssetPath(final String pathName) {
+        return new InputStreamProvider() {
+
+            @Override
+            public InputStream getStream() {
+                InputStream is;
+                try {
+                    is = context.getAssets().open(pathName);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                return is;
+            }
+        };
     }
 
     public void setSelectedColor(int color) {

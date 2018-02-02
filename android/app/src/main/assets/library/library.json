@@ -2,6 +2,7 @@
   {
     "name": "Animals",
     "folder": "book_animals",
+    "cover": "balloons.png",
     "pages": [
       {
         "name": "Balloons",
@@ -36,6 +37,7 @@
   {
     "name": "Abstract",
     "folder": "book_animals",
+    "cover": "balloons.png",
     "pages": [
       {
         "name": "Balloons",
@@ -50,6 +52,7 @@
   {
     "name": "Abstract",
     "folder": "book_animals",
+    "cover": "balloons.png",
     "pages": [
       {
         "name": "Balloons",
@@ -64,6 +67,7 @@
   {
     "name": "Abstract",
     "folder": "book_animals",
+    "cover": "balloons.png",
     "pages": [
       {
         "name": "Balloons",
@@ -78,6 +82,7 @@
   {
     "name": "Abstract",
     "folder": "book_animals",
+    "cover": "balloons.png",
     "pages": [
       {
         "name": "Balloons",
@@ -92,6 +97,7 @@
   {
     "name": "Abstract",
     "folder": "book_animals",
+    "cover": "balloons.png",
     "pages": [
       {
         "name": "Balloons",

@@ -2,6 +2,5 @@
 <resources>
     <color name="bg_button_enabled">#212121</color>
     <color name="bg_button_pressed">#616161</color>
-    <color name="border_button">#616161</color>
-    <color name="text_color_books_pages">#0d47a1</color>
+    <color name="text_color_books_pages">#448aff</color>
 </resources>

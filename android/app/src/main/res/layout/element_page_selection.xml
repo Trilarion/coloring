@@ -4,23 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/page_background"
-    android:padding="20dp">
-
-    <TextView
-        android:id="@+id/pageNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/pagePreviewImageView"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/text_color_books_pages" />
+    android:padding="@dimen/page_preview_padding">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/pagePreviewImageView"
-        android:layout_centerVertical="true"
+        android:layout_above="@+id/pageNameTextView"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/content_description_page_image" />
+
+    <TextView
+        android:id="@+id/pageNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:lines="2"
+        android:gravity="center"
+        android:textColor="@color/text_color_books_pages" />
+
+
 
 </RelativeLayout>
