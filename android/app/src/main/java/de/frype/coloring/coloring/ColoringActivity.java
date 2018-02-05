@@ -11,6 +11,7 @@ import android.media.MediaScannerConnection;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
@@ -19,8 +20,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import android.widget.Toast;
 import de.frype.coloring.ColoringUtils;
+import de.frype.coloring.error_log.SendLogActivity;
 import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 import de.frype.coloring.color_picker.ColorPickerActivity;
@@ -70,58 +75,78 @@ public class ColoringActivity extends Activity {
                     // not modified just finish
                     finish();
                 } else {
-                    // modified, show alert dialog asking for "Finish?"
+                    final Context context = ColoringActivity.this;
+
+                    boolean externalStorageAvailable = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+                    if (!externalStorageAvailable) {
+                        Toast toast = Toast.makeText(context, getString(R.string.toast_external_storage_unavailable), Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
+                    DialogInterface.OnClickListener finishListener = new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            finish();
+                        }
+                    };
+
+                    DialogInterface.OnClickListener saveImageListener = new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // we checked before that the external storage is available
+
+                            File externalStorageDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+                            File base_directory = new File(externalStorageDir, Library.getInstance().getStringFromCurrentBook("name"));
+                            // make sure it exists
+                            base_directory.mkdirs();
+
+                            // TODO encode date and time in file name
+                            String name = Library.getInstance().getStringFromCurrentPage("file");
+                            name = name.substring(0, name.length()-4);
+                            SimpleDateFormat sdf = new SimpleDateFormat("_yyyy-MM-dd_HH-mm");
+                            name += sdf.format(new Date());
+                            name += ".png";
+                            Log.v("COL", name);
+                            File file = new File(base_directory, name);
+
+                            // we overwrite everything that exists already
+                            if (file.exists()) {
+                                file.delete();
+                            }
+
+                            OutputStream out;
+                            try {
+                                out = new FileOutputStream(file);
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            }
+
+                            Bitmap bitmap = coloringView.getBitmap();
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+
+                            // tell the media scanner about it
+                            MediaScannerConnection.scanFile(context, new String[]{file.toString()}, null, null);
+
+                            // finish this activity
+                            finish();
+                        }
+                    };
+
+                    // show alert dialog asking for "Finish?"
                     AlertDialog.Builder builder = new AlertDialog.Builder(ColoringActivity.this);
                     builder.setTitle(R.string.coloring_end_dialog_title);
 
                     // negative answer is cancel, which just doesn't do anything
                     builder.setNegativeButton(R.string.dialog_cancel, null);
 
-                    // neutral answer is to finish the dialog without saving
-                    builder.setNeutralButton(R.string.coloring_end_dialog_neutral, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            finish();
-                        }
-                    });
+                    if (externalStorageAvailable) {
+                        // neutral answer is to finish the dialog without saving
+                        builder.setNeutralButton(R.string.coloring_end_dialog_neutral, finishListener);
+                        // positive answer is to save and exit
+                        builder.setPositiveButton(R.string.coloring_end_dialog_positive, saveImageListener);
+                    } else {
+                        // positive answer is to finish the dialog without saving
+                        builder.setPositiveButton(R.string.coloring_end_dialog_neutral, finishListener);
+                    }
 
-                    // positive answer is to save and exit
-                    builder.setPositiveButton(R.string.coloring_end_dialog_positive, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            Context context = ColoringActivity.this;
-                            if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-                                return;
-                            }
-
-                            /*
-                             * Note: We cannot use Context.getExternalFilesDir because this would require additional
-                             * permissions before Kitkat.
-                             * See also:
-                             * https://developer.android.com/reference/android/content/Context.html#getExternalFilesDir%28java.lang.String%29
-                             */
-                            File externalStorageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-                            if (externalStorageDir == null) {
-                                // no external storage available, we just finish
-                                // TODO maybe a toast
-                                finish();
-                                return;
-                            }
-                            File file = new File(externalStorageDir, "DemoPicture.png");
-                            // file.mkdirs();
-                            OutputStream out = null;
-                            try {
-                                out = new FileOutputStream(file);
-                            } catch (FileNotFoundException e) {
-                                throw new RuntimeException(e);
-                            }
-                            Bitmap bitmap = coloringView.getBitmap();
-                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
-
-                            MediaScannerConnection.scanFile(context, new String[] { file.toString() }, null, null);
-
-                            // finish this activity
-                            finish();
-                        }
-                    });
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }

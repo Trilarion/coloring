@@ -17,4 +17,6 @@
     <string name="dialog_cancel">Cancel</string>
     <string name="error_log_dialog_send_report">Send report</string>
     <string name="content_description_view_image_button">Shows selected image in full screen.</string>
+    <string name="toast_external_storage_unavailable">External storage unavailable. Cannot store or retrieve pictures.</string>
+    <string name="toast_gallery_no_pictures">No colored pictures available yet for that book.</string>
 </resources>
