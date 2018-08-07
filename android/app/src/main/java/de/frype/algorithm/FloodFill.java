@@ -1,6 +1,6 @@
 package de.frype.algorithm;
 
-import de.frype.util.Point2D;
+import de.frype.util.Vector2D;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -24,20 +24,20 @@ public class FloodFill {
      * @param height
      * @param value
      */
-    public static void simple_fill(Point2D position, byte[] mask, int[] data, int width, int height, int value) {
+    public static void simple_fill(Vector2D position, byte[] mask, int[] data, int width, int height, int value) {
 
         // create queue and add initial position
-        Queue<Point2D> queue = new ArrayDeque<>();
+        Queue<Vector2D> queue = new ArrayDeque<>();
         queue.add(position);
 
         // unit vectors in x and y direction
-        final Point2D ex = new Point2D(1, 0);
-        final Point2D ey = new Point2D(0, 1);
+        final Vector2D ex = new Vector2D(1, 0);
+        final Vector2D ey = new Vector2D(0, 1);
 
         // the heap loop
         while (!queue.isEmpty()) {
             // get next point
-            Point2D p = queue.remove();
+            Vector2D p = queue.remove();
             int i = p.x + p.y * width;
 
             if (mask[i] != 0) {
@@ -47,19 +47,19 @@ public class FloodFill {
 
                 // up
                 if (p.y > 0) {
-                    queue.add(p.minus(ey));
+                    queue.add(Vector2D.subtract(p, ey));
                 }
                 // down
                 if (p.y < height - 1) {
-                    queue.add(p.plus(ey));
+                    queue.add(Vector2D.add(p, ey));
                 }
                 // left
                 if (p.x > 0) {
-                    queue.add(p.minus(ex));
+                    queue.add(Vector2D.subtract(p, ex));
                 }
                 // right
                 if (p.x < width - 1) {
-                    queue.add(p.plus(ex));
+                    queue.add(Vector2D.add(p, ex));
                 }
             }
         }
@@ -75,7 +75,7 @@ public class FloodFill {
      * @param height height of array
      * @param value matching value
      */
-    public static void advanced_fill(Point2D position, byte[] mask, int[] data, int width, int height, int value) {
+    public static void advanced_fill(Vector2D position, byte[] mask, int[] data, int width, int height, int value) {
 
         // create queue and add initial position
         Queue<LineSegment> queue = new ArrayDeque<>();
@@ -157,7 +157,7 @@ public class FloodFill {
             this.y = y;
         }
 
-        LineSegment(Point2D p) {
+        LineSegment(Vector2D p) {
             xl = p.x;
             xr = p.x;
             y = p.y;

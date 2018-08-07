@@ -35,7 +35,7 @@ public class ColoringApplication extends Application {
                 StringBuilder sb = new StringBuilder();
 
                 // header
-                sb.append("An unexpected exception occurred!\n\n");
+                sb.append("An unexpected exception occurred!\n\nPlease send an error report to the developers!\n\n");
 
                 // app version
                 String version;
@@ -60,7 +60,7 @@ public class ColoringApplication extends Application {
                 sb.append(String.format("Thread: %s\n\n", thread.getName()));
 
                 // exception name
-                sb.append(ex.toString());
+                sb.append("Stacktrace:\n");
 
                 // exception trace
                 sb.append(Log.getStackTraceString(ex));

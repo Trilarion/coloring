@@ -3,12 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="Settings">
 
-    <PreferenceCategory android:title="General">
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="setting_deletion_allowed"
-            android:summary="Tick to set this option"
-            android:title="Enable deletion in Gallery view" />
+    <PreferenceCategory
+        android:title="Coloring">
+
+        <ListPreference
+            android:entries="@array/setting_coloring_scale_behavior_entries"
+            android:entryValues="@array/setting_coloring_scale_behavior_values"
+            android:defaultValue="1"
+            android:key="setting_coloring_scale_behavior"
+            android:title="Scaling behavior of coloring images" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Picture Gallery">
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -16,11 +24,11 @@
             android:summary="Tick to set this option"
             android:title="Enable sharing in Gallery view" />
 
-        <EditTextPreference
-            android:dialogTitle="Enter text"
-            android:key="setting_number_color_columns"
-            android:summary="In range [1,10]"
-            android:title="Number of color columns" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="setting_deletion_allowed"
+            android:summary="Tick to set this option"
+            android:title="Enable deletion in Gallery view" />
 
     </PreferenceCategory>
 

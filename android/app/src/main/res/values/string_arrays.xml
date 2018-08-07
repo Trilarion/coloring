@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array
+        name="setting_coloring_scale_behavior_entries">
+
+        <item>Show full picture, keep aspect ratio</item>
+        <item>Fill space, keep aspect ratio</item>
+        <item>Compromise picture and empty space</item>
+        <item>Stretch picture to fill space</item>
+
+    </string-array>
+
+    <string-array
+        name="setting_coloring_scale_behavior_values">
+
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+
+    </string-array>
+
+</resources>

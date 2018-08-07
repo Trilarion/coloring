@@ -62,11 +62,13 @@
         android:id="@+id/galleryImageDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/galleryImageSwitcher"
+        android:layout_alignRight="@id/galleryImageSwitcher"
+        android:layout_alignBottom="@id/galleryImageSwitcher"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:lines="1"
         android:gravity="center"
-        android:textColor="@color/text_color_books_pages" />
+        android:textColor="@color/text_color_books_pages"
+        android:background="@color/text_background_overlay_image"/>
 
 </RelativeLayout>

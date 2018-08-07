@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaScannerConnection;
 import android.os.Build;
@@ -169,6 +170,8 @@ public class ColoringActivity extends Activity {
 
         if (Build.VERSION.SDK_INT < 16) {
             GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
+            newGradientDrawable.setStroke(1, Color.parseColor("#bbbbbb"));
+            newGradientDrawable.setCornerRadius(ColoringActivity.this.getResources().getDimension(R.dimen.color_selection_button_corner_radius));
             //noinspection deprecation
             view.setBackgroundDrawable(newGradientDrawable);
         } else {

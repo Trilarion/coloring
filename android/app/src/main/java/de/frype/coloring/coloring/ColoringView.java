@@ -10,7 +10,7 @@ import android.view.View;
 
 import de.frype.coloring.library.Library;
 import de.frype.algorithm.FloodFill;
-import de.frype.util.Point2D;
+import de.frype.util.Vector2D;
 
 import java.util.Arrays;
 
@@ -24,7 +24,7 @@ public class ColoringView extends View {
      * it is scaled and copied.
      */
     private Bitmap bitmap;
-    private Point2D offset;
+    private Vector2D offset;
     private byte[] fill_mask;
     private int[] bitmap_pixels;
     /**
@@ -74,7 +74,7 @@ public class ColoringView extends View {
         this.bitmap = Bitmap.createScaledBitmap(bitmap, width, height, false);
 
         // compute offset
-        offset = new Point2D((int) Math.floor((getWidth() - width) / 2), (int) Math.floor((getHeight() - height) / 2));
+        offset = new Vector2D((int) Math.floor((getWidth() - width) / 2), (int) Math.floor((getHeight() - height) / 2));
 
         // get pixel information from bitmap in int array (a copy is made)
         int n = width * height;
@@ -103,7 +103,7 @@ public class ColoringView extends View {
     public boolean onTouchEvent (MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             // get event position and correct for bitmap offsets
-            Point2D p = new Point2D((int) event.getX() - offset.x,(int) event.getY() - offset.y);
+            Vector2D p = new Vector2D((int) event.getX() - offset.x,(int) event.getY() - offset.y);
             // test if within bitmap
             if (p.x >= 0 && p.x < bitmap.getWidth() && p.y >= 0 && p.y < bitmap.getHeight()) {
                 // go for the coloring
@@ -125,7 +125,7 @@ public class ColoringView extends View {
      *
      * @param p start position in the bitmap
      */
-    private void color(Point2D p) {
+    private void color(Vector2D p) {
         // get selected coloring color
         int color = Library.getInstance().getSelectedColor();
 

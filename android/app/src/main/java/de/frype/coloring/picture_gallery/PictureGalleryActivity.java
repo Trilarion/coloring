@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.net.URI;
+import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * A picture gallery (book specific). Sorted by page and date. Ability to show stored images, delete images and
@@ -71,6 +73,14 @@ public class PictureGalleryActivity extends Activity {
             finish();
             return;
         }
+        // sort by last modified date in descending order
+        Arrays.sort(pictures, new Comparator<File>() {
+            @Override
+            public int compare(File f1, File f2) {
+                // later modified (lastModified() larger) shall compare as being smaller
+                return (int) f2.lastModified() - (int) f1.lastModified();
+            }
+        });
 
         // back button action: go back
         ImageButton imageButton = findViewById(R.id.backButton);

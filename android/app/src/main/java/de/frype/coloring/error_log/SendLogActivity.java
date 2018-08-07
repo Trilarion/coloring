@@ -3,6 +3,7 @@ package de.frype.coloring.error_log;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -73,8 +74,9 @@ public class SendLogActivity extends Activity {
 
                 // send to intent
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setType("plain/text");
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"error_reports@frype.de"});
+                intent.setData(Uri.fromParts("mailto","abc@gmail.com", null));
+                // intent.setType("plain/text");
+                // intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"error_reports@frype.de"});
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Coloring app: An Error occurred");
                 intent.putExtra(Intent.EXTRA_TEXT, finalLogText);
                 try {

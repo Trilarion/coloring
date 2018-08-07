@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="activity_horizontal_padding">16dp</dimen>
     <dimen name="activity_vertical_padding">16dp</dimen>
@@ -10,5 +11,6 @@
     <dimen name="navigation_button_margin">4dp</dimen>
     <dimen name="navigation_button_size">48dp</dimen>
     <dimen name="color_selection_button_size">38dp</dimen>
+    <dimen name="color_selection_button_corner_radius">24dp</dimen>
     <dimen name="color_selection_button_margin">3dp</dimen>
 </resources>
