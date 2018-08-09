@@ -9,9 +9,9 @@ android/build
 *.iml
 
 # pycharm / python
-tools/.idea
-tools/build
+artwork/.idea
+artwork/build
 __pycache__
 
 # own
-/tools/pngs
+artwork/raw
