@@ -1,0 +1,10 @@
+files: drawable-*/ic_*_48dp.png
+source: Google Material Design (https://material.io/tools/icons/)
+license: Apache-2.0 (https://www.apache.org/licenses/LICENSE-2.0.html)
+
+file: drawable-*/ic_launcher.png
+source: logo (see /artwork/logo/license.info)
+
+file: drawable/book_background.png
+
+file: drawable/page_background.png
