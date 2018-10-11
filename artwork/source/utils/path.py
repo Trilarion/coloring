@@ -11,9 +11,13 @@ root = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.par
 artwork = os.path.join(root, 'artwork')
 raw = os.path.join(artwork, 'raw')
 raw_openclipart = os.path.join(raw, 'org.openclipart')
+logo = os.path.join(artwork, 'logo')
+icons = os.path.join(artwork, 'icons')
 
 # app paths
 app = os.path.join(root, 'android', 'app', 'src', 'main')
 assets = os.path.join(app, 'assets')
 res = os.path.join(app, 'res')
 drawable = os.path.join(res, 'drawable')
+drawable_hdpi = os.path.join(res, 'drawable-hdpi')
+drawable_xxhdpi = os.path.join(res, 'drawable-xxhdpi')

@@ -26,7 +26,6 @@ import java.util.Date;
 
 import android.widget.Toast;
 import de.frype.coloring.ColoringUtils;
-import de.frype.coloring.error_log.SendLogActivity;
 import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 import de.frype.coloring.color_picker.ColorPickerActivity;

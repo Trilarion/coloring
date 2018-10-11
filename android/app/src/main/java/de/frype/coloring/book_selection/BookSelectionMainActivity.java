@@ -1,11 +1,9 @@
 package de.frype.coloring.book_selection;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
@@ -17,7 +15,6 @@ import de.frype.coloring.R;
 import de.frype.coloring.about.AboutActivity;
 import de.frype.coloring.page_selection.PageSelectionActivity;
 import de.frype.coloring.error_log.SendLogActivity;
-import de.frype.util.Utils;
 
 /**
  * Launcher activity of the app. Select a book for coloring in a grid view.

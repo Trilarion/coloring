@@ -19,57 +19,56 @@ public class UniversalGestureDetector {
          * @param detector
          * @return
          */
-        public boolean onDown(UniversalGestureDetector detector);
+        boolean onDown(UniversalGestureDetector detector);
 
         /**
          *
          * @param detector
          * @return
          */
-        public boolean onSingleTapUp(UniversalGestureDetector detector);
+        boolean onSingleTapUp(UniversalGestureDetector detector);
 
         /**
          *
          * @param detector
          */
-        public void onLongPress(UniversalGestureDetector detector);
-
-        /**
-         *
-         * @param detector
-         * @return
-         */
-        public boolean onSingleTapConfirmed(UniversalGestureDetector detector);
+        void onLongPress(UniversalGestureDetector detector);
 
         /**
          *
          * @param detector
          * @return
          */
-        public boolean onDoubleTap(UniversalGestureDetector detector);
+        boolean onSingleTapConfirmed(UniversalGestureDetector detector);
 
         /**
          *
          * @param detector
          * @return
          */
-        public boolean onDrag(UniversalGestureDetector detector);
+        boolean onDoubleTap(UniversalGestureDetector detector);
 
         /**
          *
          * @param detector
          * @return
          */
-        public boolean onPinch(UniversalGestureDetector detector);
+        boolean onDrag(UniversalGestureDetector detector);
+
+        /**
+         *
+         * @param detector
+         * @return
+         */
+        boolean onPinch(UniversalGestureDetector detector);
 
         /**
          *
          * @param detector
          */
-        public void onPinchEnd(UniversalGestureDetector detector);
+        void onPinchEnd(UniversalGestureDetector detector);
     }
 
-    private final Context context;
     private final OnUniversalGestureListener listener;
 
     private MotionEvent previousUpEvent;
@@ -82,7 +81,7 @@ public class UniversalGestureDetector {
      * @param listener
      */
     public UniversalGestureDetector(Context context, OnUniversalGestureListener listener) {
-        this.context = context;
+        Context context1 = context;
         this.listener = listener;
     }
 

@@ -1,11 +1,9 @@
 package de.frype.coloring.page_selection;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
@@ -14,7 +12,6 @@ import de.frype.coloring.library.Library;
 import de.frype.coloring.R;
 import de.frype.coloring.coloring.ColoringActivity;
 import de.frype.coloring.picture_gallery.PictureGalleryActivity;
-import de.frype.util.Utils;
 
 /**
  * Once a coloring book has been chosen, select a page here. Also a way to show the gallery for this book.

@@ -1,7 +1,5 @@
 package de.frype.util;
 
-import java.util.Comparator;
-
 /**
  * Immutable Point class.
  */

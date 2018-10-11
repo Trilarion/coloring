@@ -6,6 +6,7 @@ android {
 
     defaultConfig {
         applicationId "de.frype.coloring"
+        //noinspection MinSdkTooLow
         minSdkVersion 10
         targetSdkVersion 27
         versionCode 1
