@@ -1,0 +1,24 @@
+# https://openclipart.org/
+# license: CC0-1.0
+# all files with *.adapted.svg are also under CC0-1.0
+
+bee-forestgreen.svg, little bee, https://openclipart.org/detail/118099/bee
+
+bunny.svg, bunny, https://openclipart.org/detail/213759/bunny-outline
+
+Eid-Sheep1.svg, sheep, https://openclipart.org/detail/175473/eid-sheep-1
+
+Gerald-G-Boy-Driving-Car-Cartoon-bw.svg, car, https://openclipart.org/detail/49105/boy-driving-car-cartoon
+
+Gerald-G-Cartoon-Cat-Sitting-1.svg, cat, https://openclipart.org/detail/7738/g-cartoon-cat-sitting-1
+
+Gerald-G-KU-impatiens-aurella-bw.svg, flower, https://openclipart.org/detail/57343/ku-impatiens-aurella
+
+Gerald-G-Soft-Ice-Cream-Cones-FF-Menu-1.svg, ice cream cone, https://openclipart.org/detail/8333/fast-food-desserts-ice-cream-cones-soft-serve
+
+owl-line-art-lemmling-Cartoon-owl.svg, owl, https://openclipart.org/detail/75271/owl-line-art
+
+SAILING-BW.svg, boat, https://openclipart.org/detail/57385/sailing-dinghy
+
+version2-yellow-tiger-cat.svg, cat, https://openclipart.org/detail/179259/yellow-tiger-catfour-legs
+

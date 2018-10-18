@@ -15,6 +15,8 @@ def svg_to_png(svg_path, png_path):
     print(renderer)
     print(renderer.viewBoxF())
     print(renderer.defaultSize())
+    width = 200
+    height = 200
     image = QImage(width, height, QImage.Format_ARGB32)
     painter = QPainter(image)
     renderer.render(painter)

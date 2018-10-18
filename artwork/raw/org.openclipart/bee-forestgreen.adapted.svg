@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg14789"
+   sodipodi:docname="bee-forestgreen.adapted.svg"
+   inkscape:label="bitmap"
+   viewBox="0 0 95 95"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <title
+     id="title3076">Liitle Bee</title>
+  <defs
+     id="defs14793">
+    <linearGradient
+       id="linearGradient15922-5">
+      <stop
+         id="stop15924-76"
+         style="stop-color:#ffffff"
+         offset="0" />
+      <stop
+         id="stop15926-1"
+         style="stop-color:#a2ffff"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient15922-5"
+       id="linearGradient4350"
+       gradientUnits="userSpaceOnUse"
+       x1="45.1"
+       y1="61.154"
+       x2="84.952"
+       y2="61.154"
+       gradientTransform="rotate(-90,46.1482,28.0012)" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview14791"
+     inkscape:zoom="5"
+     borderopacity="1"
+     inkscape:current-layer="layer1"
+     inkscape:cx="-18.8"
+     inkscape:cy="46.3"
+     inkscape:window-maximized="1"
+     inkscape:snap-bbox="true"
+     showgrid="false"
+     inkscape:bbox-nodes="true"
+     bordercolor="#666666"
+     inkscape:window-x="-9"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:window-y="-9"
+     inkscape:window-width="2560"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     pagecolor="#ffffff"
+     gridtolerance="10"
+     inkscape:bbox-paths="false"
+     inkscape:window-height="1373" />
+  <g
+     id="layer1"
+     inkscape:label="vector"
+     inkscape:groupmode="layer">
+    <rect
+       id="rect15995"
+       style="color:#000000;fill:#ffffff"
+       height="86.646"
+       width="86.646"
+       y="4.1769"
+       x="4.1769" />
+    <circle
+       r="12.70048"
+       cy="34.891239"
+       cx="-40.834236"
+       transform="scale(-1,1)"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.5;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path15590" />
+    <path
+       d="m 39.599,58.2524 c 2.652,12.903 14.854,24.578 27.255,26.078 12.402,1.499 20.305,-7.745 17.654,-20.648 -2.652,-12.903 -14.854,-24.579 -27.255,-26.078 -12.401,-1.5 -20.305,7.744 -17.654,20.648 z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.5;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path15590-7" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;stroke:#000000;stroke-width:1.5;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       sodipodi:nodetypes="czc"
+       d="m 48.032,44.4934 c -18.6,1.6 -46.132,11.217 -35.8,26 10.332,14.783 31,-8.4 35.8,-26 z"
+       id="path14800" />
+    <path
+       d="m 70.188,42.8184 c 2.1876,1.5259 4.2297,3.3109 6.0625,5.3125 -1.6387,0.12654 -3.55,0.29768 -5.7188,0.59375 -5.408,0.73828 -11.766,2.2611 -14.781,4.3125 l -0.125,0.09375 c -2.9597,2.0849 -6.8656,7.6626 -9.7188,12.688 -0.64133,1.1295 -1.2095,2.1918 -1.75,3.2188 -1.4291,-2.1934 -2.6088,-4.5238 -3.4688,-6.9375 2.0446,-6.0895 4.5469,-12.949 9.0312,-16 4.526,-3.081 12.419,-3.328 19.063,-3.283 0.8146,0.0055 0.65187,-0.0039 1.4062,0 z m 10.282,10.906 c 1.1219,1.8295 2.0776,3.7435 2.8125,5.7188 -1.1796,0.11523 -2.4434,0.25486 -3.7812,0.4375 -5.6618,0.77294 -12.312,2.3523 -15.469,4.5 l -0.15625,0.09375 c -3.0986,2.1827 -7.1692,8.0205 -10.156,13.281 -0.17312,0.3049 -0.3019,0.57493 -0.46875,0.875 -1.8169,-1.3304 -3.5306,-2.8346 -5.0938,-4.5 2.1553,-6.434 4.8089,-13.766 9.5625,-17 4.7376,-3.2236 12.982,-3.4533 19.938,-3.4062 1.6259,0.01099 1.4328,-0.0051 2.8125,0 z m 4.2808,11.344 c 0.25363,1.6902 0.32088,3.3108 0.21875,4.8438 -4.3964,0.61259 -9.4961,1.8388 -11.938,3.5 l -0.09375,0.09375 c -2.425,1.7082 -5.6311,6.2579 -7.9688,10.375 -0.02442,0.043 -0.03824,0.08211 -0.0625,0.125 -1.6152,-0.33228 -3.2105,-0.82464 -4.7812,-1.4688 0.16236,-0.46518 0.30468,-0.8847 0.46875,-1.375 1.6925,-5.0575 3.7568,-10.859 7.5,-13.406 3.7077,-2.5228 10.182,-2.7243 15.625,-2.6875 0.59678,0.004 0.47333,-0.0031 1.0312,0 z"
+       inkscape:connector-curvature="0"
+       style="color:#000000;text-indent:0;text-transform:none;block-progression:tb;fill:#000000"
+       id="path15630" />
+    <path
+       style="color:#000000;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-y="18.599648"
+       inkscape:transform-center-x="-9.433676"
+       d="m 48.93,45.2124 c -11.847,9.186 -26.223,27.672 -12.812,33.138 13.411,5.466 17.245,-19.176 12.812,-33.138 z"
+       sodipodi:nodetypes="czc"
+       id="path14800-1" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px"
+       sodipodi:nodetypes="czzzc"
+       d="m 29.332,30.0934 c -9.875,-0.2 -11.102,-1.0525 -13.15,1.675 -2.0477,2.7275 -3.1495,7.2871 -0.6,7.3 2.5495,0.01295 2.405,-4.5076 3.1434,-6.3622 0.739,-1.855 5.507,-2.301 10.607,-2.613 z"
+       id="path15841" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px"
+       sodipodi:nodetypes="czzzc"
+       d="m 39.894,22.6524 c -3.35e-4,-9.877 -0.82783,-11.121 1.9405,-13.113 2.7683,-1.9921 7.3492,-3.0016 7.3106,-0.45231 -0.03859,2.5493 -4.5553,2.3134 -6.4244,3.0142 -1.8691,0.70077 -2.4112,5.459 -2.8267,10.552 z"
+       id="path15841-2" />
+    <path
+       id="path14800-4"
+       sodipodi:nodetypes="czc"
+       style="color:#000000;fill:#ffffff;stroke:#000000;stroke-width:1.5;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:connector-curvature="0"
+       d="m 48.43,44.2474 c 1.6,-18.6 11.217,-46.132 26,-35.8 14.783,10.332 -8.4,31 -26,35.8 z" />
+    <path
+       id="path14800-1-5"
+       style="color:#000000;fill:url(#linearGradient4350);stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 49.149,45.1444 c 9.186,-11.846 27.671,-26.222 33.137,-12.811 5.466,13.411 -19.176,17.245 -33.137,12.811 z"
+       sodipodi:nodetypes="czc"
+       inkscape:transform-center-y="18.599648"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="-9.433676" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke-width:0"
+       d="m 80.12,80.2444 5.328,9.4599 -8.1551,-7.394 z"
+       id="path15886" />
+  </g>
+  <metadata
+     id="metadata4346">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Liitle Bee</dc:title>
+        <dc:date>2011-02-13T11:40:20</dc:date>
+        <dc:description>A little bee with a sting</dc:description>
+        <dc:source>https://openclipart.org/detail/118099/bee-by-forestgreen</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>forestgreen</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>Animal</rdf:li>
+            <rdf:li>Bee</rdf:li>
+            <rdf:li>Insect</rdf:li>
+            <rdf:li>sting</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
