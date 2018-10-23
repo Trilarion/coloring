@@ -4,6 +4,7 @@ Useful routines. Will usually print some output.
 
 import os
 import shutil
+import json
 import utils.path as path
 
 
@@ -24,6 +25,14 @@ def read_text(file):
     return text
 
 
+def write_text(file, text):
+    """
+    Writes a whole text file (UTF-8 encoded).
+    """
+    with open(file, mode='w', encoding='utf-8') as f:
+        f.write(text)
+
+
 def clean_path(path):
     """
     Removes all files in path.
@@ -31,3 +40,11 @@ def clean_path(path):
     print(' clean folder {}'.format(path))
     for f in os.listdir(path):
         os.remove(os.path.join(path, f))
+
+
+def recreate_folder(folder):
+    """
+
+    """
+    shutil.rmtree(folder, ignore_errors=True)
+    os.mkdir(folder)

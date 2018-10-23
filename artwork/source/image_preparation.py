@@ -7,6 +7,7 @@ import numpy as np
 from scipy import ndimage
 from PIL import Image
 
+
 def clean_images():
     """
     Converts existing grayscale images to true black and white greatly reducing the size.
@@ -37,6 +38,7 @@ def clean_images():
         # save again
         im_out = Image.fromarray(a, mode=im.mode)
         im_out.save(os.path.join(output_path, file), compress_level=9)
+
 
 def segment_check():
     """
@@ -74,6 +76,7 @@ def segment_check():
         # save again if needed
         im_out = Image.fromarray(b, mode='RGB')
         im_out.save(os.path.join(output_path, file), compress_level=9)
+
 
 def set_background_transparent():
     """

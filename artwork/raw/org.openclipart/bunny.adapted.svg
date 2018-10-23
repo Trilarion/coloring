@@ -9,15 +9,45 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 744.09448819 1052.3622047"
+   width="477.78787"
+   height="616.92279"
+   viewBox="0 0 447.92612 578.36511"
    id="svg2"
    version="1.1"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="bunny.adapted.svg">
   <defs
      id="defs4">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect851"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect847"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect843"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
     <style
        id="style4140"
        type="text/css">
@@ -33,17 +63,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.90509668"
-     inkscape:cx="210.7186"
-     inkscape:cy="490.29154"
+     inkscape:zoom="7.4622936"
+     inkscape:cx="364.83561"
+     inkscape:cy="191.41679"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="Layer_x0020_1"
      showgrid="false"
      inkscape:window-width="2560"
      inkscape:window-height="1373"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="30"
+     fit-margin-left="30"
+     fit-margin-right="30"
+     fit-margin-bottom="30"
+     units="px" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -52,14 +87,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-133.37913,-212.63438)">
     <g
        style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
        id="g4173"
@@ -136,10 +172,25 @@
            style="fill:#2d2b2d;fill-rule:nonzero" />
         <path
            id="path4166"
-           d="m 10090163,11771615 c -39231,34614 -57146,84273 -87260,124331 -15990,21375 -19167,46777 -33173,67739 -11798,17537 -33126,30351 -45278,46530 -28402,37790 -32641,81745 -48395,124744 -10357,28154 -29217,51631 -40424,78344 l 254530,-441688 z"
+           d="m 10090163,11771615 c -39231,34614 -57146,84273 -87260,124331 -15990,21375 -19167,46777 -33173,67739 -11798,17537 -33126,30351 -45278,46530 -28402,37790 -32641,81745 -48395,124744 -10357,28154 -29217,51631 -40424,78344 z"
            class="fil0"
            inkscape:connector-curvature="0"
            style="fill:#2d2b2d;fill-rule:nonzero" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:46875px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 21021073,22310660 c -2094,290999 -4188,582046 -63547,817324 -59359,235277 -175980,414737 -292656,594278"
+           id="path845"
+           inkscape:connector-curvature="0"
+           inkscape:path-effect="#path-effect847"
+           inkscape:original-d="m 21021073,22310660 c -2049,290999 -4139,582046 -6282,873140 -116612,179469 -233234,358928 -349921,538462" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:46875px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 20191902,24760477 c 75419,-98464 150798,-196875 209414,-314133 58617,-117258 100494,-253359 142354,-389405"
+           id="path849"
+           inkscape:connector-curvature="0"
+           inkscape:path-effect="#path-effect851"
+           inkscape:original-d="m 20191902,24760477 c 75426,-98458 150805,-196870 226137,-295235 41924,-136147 83801,-272248 125631,-408303"
+           sodipodi:nodetypes="ccc" />
       </g>
     </g>
   </g>

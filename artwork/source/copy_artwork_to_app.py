@@ -46,6 +46,71 @@ def do_icons():
         zip.close()
 
 
+def process_entry(output, entry):
+    """
+
+    """
+    copy(entry[1], os.path.join(output, entry[0]))
+    return entry[0]
+
+
+def process_book(book):
+    """
+
+    """
+    output = os.path.join(path.library, book['folder'])
+    recreate_folder(output)
+
+    # cover photo
+    book['cover'] = process_entry(output, book['cover'])
+
+    # all pages
+    pages = book['pages']
+    for page in pages:
+        page['file'] = process_entry(output, page['file'])
+
+    book['pages'] = pages
+
+
+def create_library():
+    """
+
+    """
+
+    # recreate library path in assets
+    shutil.rmtree(path.library, ignore_errors=True)
+    os.mkdir(path.library)
+
+    # start with empty library definition
+    library = []
+
+    # define animals book
+    book = {
+        'name': 'Animals',
+        'folder': 'book_animals',
+        'cover': ('animals.png', os.path.join(path.raw_openclipart, 'bunny.adapted.colored.png')),
+        'pages': [
+            {
+                'name': 'Bunny',
+                'file': ('bunny.png', '')
+            },
+            {
+                'name': '',
+                'file': ('', '')
+            }
+        ]
+    }
+
+    # process the animals book (copy the files at the right place) and append the definition
+    process_book(book)
+    library.append(book)
+
+    # write the library definition
+    text = json.dumps(library, indent=1)
+    write_text(os.path.join(path.library, 'library.json'), text)
+
+
+
 def do_misc():
     """
     book and page background
@@ -60,8 +125,10 @@ def do_misc():
 if __name__ == '__main__':
 
     # copy icons
-    do_icons()
+    #do_icons()
 
+    # create library
+    create_library()
 
     # all the remaining stuff
-    do_misc()
+    #do_misc()
