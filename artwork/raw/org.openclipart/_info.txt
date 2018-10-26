@@ -2,23 +2,50 @@
 # license: CC0-1.0
 # all files with *.adapted.svg are also under CC0-1.0
 
+StudioFibonacci-Cartoon-zebra.svg, zebra, https://openclipart.org/detail/22287/cartoon-zebra
+StudioFibonacci-Cartoon-lion.svg, lion, https://openclipart.org/detail/22284/cartoon-lion
+StudioFibonacci-Cartoon-peacock.svg, peacock, https://openclipart.org/detail/22637/cartoon-peacock
+StudioFibonacci-Cartoon-leopard.svg, leopard, https://openclipart.org/detail/22343/cartoon-leopard
+StudioFibonacci-Cartoon-hippo.svg, hippo, https://openclipart.org/detail/22337/cartoon-hippo
+StudioFibonacci-Cartoon-monkey.svg, monkey, https://openclipart.org/detail/22291/cartoon-monkey
+StudioFibonacci-Cartoon-ostrich.svg, ostrich, https://openclipart.org/detail/22289/cartoon-ostrich
+StudioFibonacci-Cartoon-peacock.svg, peacock, https://openclipart.org/detail/22637/cartoon-peacock
+StudioFibonacci-Cartoon-llama.svg, llama, https://openclipart.org/detail/23065/cartoon-llama
+StudioFibonacci-Cartoon-bunny.svg, bunny, https://openclipart.org/detail/23052/cartoon-bunny
+StudioFibonacci-Cartoon-triceratops.svg, triceratops, https://openclipart.org/detail/23511/cartoon-triceratops
+StudioFibonacci-Cartoon-Panda.svg, panda, https://openclipart.org/detail/28473/cartoon-panda
+StudioFibonacci-Cartoon-Grasshopper.svg, grass hopper, https://openclipart.org/detail/28477/cartoon-grasshopper
+lemmling-Cartoon-moose.svg, moose, https://openclipart.org/detail/169960/cartoon-moose
+lemmling-Cartoon-polarbear.svg, polar bear, https://openclipart.org/detail/169961/cartoon-polar-bear
+lemmling-yak.svg, yak, https://openclipart.org/detail/169962/cartoon-yak
+lemmling-walrus.svg, walrus, https://openclipart.org/detail/169963/cartoon-walrus
+14thWarrior-Cartoon-Mallard.svg, mallard, https://openclipart.org/detail/83473/cartoon-mallard
+14thWarrior-Cartoon-Elephant.svg, elephant, https://openclipart.org/detail/83479/cartoon-elephant
 bee-forestgreen.svg, little bee, https://openclipart.org/detail/118099/bee
-
 bunny.svg, bunny, https://openclipart.org/detail/213759/bunny-outline
-
+bloodsong-Chicken-RoundCartoon.svg, chicken, https://openclipart.org/detail/26012/chickenroundcartoon
+bloodsong-Pig-RoundCartoon.svg, pig, https://openclipart.org/detail/26011/pigroundcartoon
 Eid-Sheep1.svg, sheep, https://openclipart.org/detail/175473/eid-sheep-1
-
 Gerald-G-Boy-Driving-Car-Cartoon-bw.svg, car, https://openclipart.org/detail/49105/boy-driving-car-cartoon
-
 Gerald-G-Cartoon-Cat-Sitting-1.svg, cat, https://openclipart.org/detail/7738/g-cartoon-cat-sitting-1
-
 Gerald-G-KU-impatiens-aurella-bw.svg, flower, https://openclipart.org/detail/57343/ku-impatiens-aurella
-
 Gerald-G-Soft-Ice-Cream-Cones-FF-Menu-1.svg, ice cream cone, https://openclipart.org/detail/8333/fast-food-desserts-ice-cream-cones-soft-serve
-
+lemmling-Cartoon-beaver.svg, beaver, https://openclipart.org/detail/17814/cartoon-beaver
+lemmling-Cartoon-cat.svg, cat, https://openclipart.org/detail/17683/cartoon-cat
+lemmling-Cartoon-cow.svg, cow, https://openclipart.org/detail/17676/cartoon-cow
+lemmling-Cartoon-dog.svg, dog, https://openclipart.org/detail/17692/cartoon-dog
+lemmling-Cartoon-elephant.svg, elephant, https://openclipart.org/download/17810/lemmling-Cartoon-elephant.svg
+lemmling-Cartoon-elk.svg, elk, https://openclipart.org/detail/17635/cartoon-elk
+lemmling-Cartoon-giraffe.svg, giraffe, https://openclipart.org/detail/17628/cartoon-giraffe
+lemmling-Cartoon-goat.svg, goat, https://openclipart.org/detail/17824/cartoon-goat
+lemmling-Cartoon-gnu.svg, gnu, https://openclipart.org/detail/17624/cartoon-gnu
+lemmling-Cartoon-owl.svg, owl, https://openclipart.org/detail/17566/cartoon-owl
+lemmling-Cartoon-penguin.svg, penguin, https://openclipart.org/detail/17535/cartoon-penguin
+lemmling-Cartoon-sheep.svg, sheep, https://openclipart.org/detail/17637/cartoon-sheep
+lemmling-Cartoon-squirrel.svg, squirrel, https://openclipart.org/detail/17595/cartoon-squirrel
+lemmling-Cartoon-turtle.svg, turtle, https://openclipart.org/detail/17592/cartoon-turtle
+lemmling-Ladybug.svg, ladybug, https://openclipart.org/detail/17678/ladybug
+lemmling-Little-penguin-5.svg, penguin, https://openclipart.org/detail/27563/little-penguin
 owl-line-art-lemmling-Cartoon-owl.svg, owl, https://openclipart.org/detail/75271/owl-line-art
-
 SAILING-BW.svg, boat, https://openclipart.org/detail/57385/sailing-dinghy
-
 version2-yellow-tiger-cat.svg, cat, https://openclipart.org/detail/179259/yellow-tiger-catfour-legs
-

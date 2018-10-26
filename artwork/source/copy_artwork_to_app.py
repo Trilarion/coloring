@@ -46,6 +46,13 @@ def do_icons():
         zip.close()
 
 
+def get_temp_file(raw_path, name):
+    """
+
+    """
+    return os.path.join(path.temp, os.path.relpath(raw_path, path.raw), name + '.adapted.cleaned.png')
+
+
 def process_entry(output, entry):
     """
 
@@ -78,26 +85,38 @@ def create_library():
     """
 
     # recreate library path in assets
-    shutil.rmtree(path.library, ignore_errors=True)
-    os.mkdir(path.library)
+    recreate_folder(path.library)
 
     # start with empty library definition
     library = []
 
     # define animals book
     book = {
-        'name': 'Animals',
-        'folder': 'book_animals',
-        'cover': ('animals.png', os.path.join(path.raw_openclipart, 'bunny.adapted.colored.png')),
+        'name': 'Cartoon animals',
+        'folder': 'book_cartoon_animals',
+        'cover': ('cover.png', os.path.join(path.raw_openclipart, 'lemmling-Cartoon-owl.png')),
         'pages': [
             {
                 'name': 'Bunny',
-                'file': ('bunny.png', '')
+                'file': ('bunny.png', get_temp_file(path.raw_openclipart, 'bunny'))
             },
             {
-                'name': '',
-                'file': ('', '')
+                'name': 'Bee',
+                'file': ('bee.png', get_temp_file(path.raw_openclipart, 'bee-forestgreen'))
+            },
+            {
+                'name': 'Sheep',
+                'file': ('sheep.png', get_temp_file(path.raw_openclipart, 'Eid-Sheep1'))
+            },
+            {
+                'name': 'Owl',
+                'file': ('owl.png', get_temp_file(path.raw_openclipart, 'owl-line-art-lemmling-Cartoon-owl'))
+            },
+            {
+                'name': 'Triceratops',
+                'file': ('triceratops.png', get_temp_file(path.raw_openclipart, 'StudioFibonacci-Cartoon-triceratops'))
             }
+
         ]
     }
 
@@ -108,7 +127,6 @@ def create_library():
     # write the library definition
     text = json.dumps(library, indent=1)
     write_text(os.path.join(path.library, 'library.json'), text)
-
 
 
 def do_misc():

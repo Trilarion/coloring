@@ -1,5 +1,5 @@
 """
-Collection of scripts for cleaning up images for coloring.
+ TODO can be removed
 """
 
 import os

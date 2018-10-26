@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" sodipodi:docname="pingu.svg" viewBox="0 0 131.01 143.95" sodipodi:version="0.32" version="1.0" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46">
+  <sodipodi:namedview id="base" inkscape:zoom="2" borderopacity="1.0" inkscape:current-layer="g3249" inkscape:cx="116.68596" inkscape:window-y="28" inkscape:object-paths="false" showgrid="false" inkscape:guide-bbox="true" showguides="true" bordercolor="#666666" inkscape:window-x="0" guidetolerance="10" objecttolerance="10" inkscape:object-nodes="true" inkscape:window-width="1280" inkscape:pageopacity="0.0" inkscape:pageshadow="2" pagecolor="#ffffff" gridtolerance="10000" inkscape:cy="82.045191" inkscape:document-units="px" inkscape:window-height="975"/>
+  <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(-276.26 -420.66)">
+    <g id="g3249">
+      <path id="path3176" sodipodi:nodetypes="csssssc" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:4;fill:#d45500" d="m380.91 553.93c0 4.08-6.3 8.67-24.74 8.67-8.29 0-10.01-5.25-15.03-5.24-4.79 0.01-5.64 5.23-14.52 5.23-18.27 0-25.26-4.6-25.26-8.66 0-4.62 17.82-8.36 39.78-8.36 21.95 0 39.77 3.74 39.77 8.36z"/>
+      <path id="path2387" style="fill-rule:evenodd;stroke:#000000;stroke-width:4;fill:#000000" d="m341.31 422.66v0.03c-30.52 0.73-27.69 29.76-38.65 46.09-11.37 16.92-27.42 33.95-23.91 54.16 3.97 22.87 8.79-1.27 24.53 13.84 9.68 9.29 9.84 17.06 37.28 17 0.8 0 1.53 0.02 2.38 0 27.46 0.06 27.6-7.71 37.28-17 15.74-15.11 20.59 9.03 24.56-13.84 3.51-20.21-12.54-37.24-23.9-54.16-10.97-16.33-8.16-45.36-38.69-46.09v-0.03c-0.15 0-0.29-0.01-0.44 0-0.15-0.01-0.29 0-0.44 0z"/>
+      <path id="path3230" style="fill:#333333" d="m305.53 468.75c-0.36 0.61-0.73 1.2-1.12 1.78-8.88 13.21-20.61 26.48-23.66 41.28 16.67-5.47 28.19-17.14 28.19-30.65 0-4.38-1.21-8.57-3.41-12.41z"/>
+      <path id="path3228" sodipodi:rx="20.375" sodipodi:ry="13" style="fill:#333333" sodipodi:type="arc" d="m364.75 439.36a20.375 13 0 1 1 -40.75 0 20.375 13 0 1 1 40.75 0z" transform="matrix(1 0 0 .85042 -2.5 62.025)" sodipodi:cy="439.36218" sodipodi:cx="344.375"/>
+      <path id="path2392" style="fill:#cccccc" d="m341.19 478.17c-20.85 0-37.76 19.02-37.76 42.47 0 5.25 0.85 10.29 2.41 14.94 8.89 8.62 9.21 15.81 34.76 15.75 0.75 0 1.44 0.02 2.23 0 23.92 0.06 25.73-6.23 33.15-14.11 0.01-0.01 0-0.03 0-0.03 1.92-5.09 2.99-10.69 2.99-16.55 0-23.45-16.94-42.47-37.78-42.47z"/>
+      <path id="path3239" style="fill:#ffffff" transform="translate(276.26 420.66)" d="m54.25 62.094c-12.123 4.235-20.781 15.432-20.781 28.562 0 16.764 14.121 30.374 31.531 30.374s31.531-13.61 31.531-30.374c0-12.799-8.23-23.751-19.875-28.218-1.6 5.274-6.834 12.687-11.156 12.687-3.922 0-9.733-7.479-11.25-13.031z"/>
+      <path id="path3167" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:4;fill:#ffffff" d="m332.56 438.69c-6.4 0-11.6 6.55-11.6 14.65s5.2 14.69 11.6 14.69c3.76 0 7.09-2.28 9.21-5.8 2.11 3.51 5.45 5.8 9.2 5.8 6.4 0 11.6-6.59 11.6-14.69s-5.2-14.65-11.6-14.65c-3.75 0-7.09 2.25-9.2 5.77-2.12-3.52-5.45-5.77-9.21-5.77z"/>
+      <path id="path3175" sodipodi:rx="5.0361724" sodipodi:ry="5.0361724" style="fill:#000000" sodipodi:type="arc" d="m360.72 458.09a5.0362 5.0362 0 1 1 -10.08 0 5.0362 5.0362 0 1 1 10.08 0z" transform="translate(-19.361 -3.4067)" sodipodi:cy="458.09384" sodipodi:cx="355.67969"/>
+      <path id="path3177" sodipodi:nodetypes="czssc" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:4;fill:#d45500" d="m353.41 469.7c0 4.86-6.47 15.46-11.64 15.46-4.54 0-11.65-10.01-11.65-15.46 0-5.5 5.22-7.83 11.65-7.83 6.42 0 11.64 3.63 11.64 7.83z"/>
+      <path id="path3196" sodipodi:rx="5.0361724" sodipodi:ry="5.0361724" style="fill:#666666" sodipodi:type="arc" d="m360.72 458.09a5.0362 5.0362 0 1 1 -10.08 0 5.0362 5.0362 0 1 1 10.08 0z" transform="matrix(.49103 0 0 .31552 161.4 307.94)" sodipodi:cy="458.09384" sodipodi:cx="355.67969"/>
+      <path id="path3198" sodipodi:rx="5.0361724" sodipodi:ry="5.0361724" style="fill:#000000" sodipodi:type="arc" d="m360.72 458.09a5.0362 5.0362 0 1 1 -10.08 0 5.0362 5.0362 0 1 1 10.08 0z" transform="translate(-8.7916 -3.4067)" sodipodi:cy="458.09384" sodipodi:cx="355.67969"/>
+      <path id="path3200" sodipodi:rx="5.0361724" sodipodi:ry="5.0361724" style="fill:#666666" sodipodi:type="arc" d="m360.72 458.09a5.0362 5.0362 0 1 1 -10.08 0 5.0362 5.0362 0 1 1 10.08 0z" transform="matrix(.49103 0 0 .31552 171.97 307.94)" sodipodi:cy="458.09384" sodipodi:cx="355.67969"/>
+      <path id="path3202" sodipodi:rx="6.3639612" sodipodi:ry="2.4748738" style="fill:#ff7f2a" sodipodi:type="arc" d="m348.43 469.71a6.364 2.4749 0 1 1 -12.73 0 6.364 2.4749 0 1 1 12.73 0z" transform="matrix(.5 0 .61246 2.2857 -121.06 -601.08)" sodipodi:cy="469.70621" sodipodi:cx="342.0629"/>
+      <path id="path3235" style="fill:#333333" d="m376.79 468.75c0.35 0.61 0.73 1.2 1.12 1.78 8.87 13.21 20.61 26.48 23.66 41.28-16.67-5.47-28.19-17.14-28.19-30.65 0-4.38 1.21-8.57 3.41-12.41z"/>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Little penguin</dc:title>
+        <dc:date>2009-09-25T06:59:58</dc:date>
+        <dc:description/>
+        <dc:source>https://openclipart.org/detail/27563/little-penguin-by-lemmling</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>lemmling</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>animal</rdf:li>
+            <rdf:li>bird</rdf:li>
+            <rdf:li>cartoon</rdf:li>
+            <rdf:li>colour</rdf:li>
+            <rdf:li>penguin</rdf:li>
+            <rdf:li>tux</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

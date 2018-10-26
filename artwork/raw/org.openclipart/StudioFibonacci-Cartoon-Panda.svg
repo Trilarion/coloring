@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="layer1" xml:space="preserve" version="1.0" viewBox="0 0 246.996 333.561" inkscape:version="0.91 r13725">
+<g id="panda_1_">
+	<g id="body">
+		<path id="path2385" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#ffffff" d="m245 204.83c0.02 67.1-54.36 121.51-121.46 121.54-67.101 0.02-121.52-54.35-121.54-121.46v-0.08c-0.024-67.1 54.353-121.52 121.45-121.54 67.11-0.027 121.52 54.35 121.55 121.45v0.09z"/>
+		<path id="path3276" style="fill-opacity:.3137" d="m123.49 83.331c-12.92 0-25.372 2.037-37.06 5.781 10.514-2.456 21.6-3.781 33.06-3.781 31.44 0 60.11 9.878 81.69 26.089-21.06-17.537-48.15-28.089-77.69-28.089zm115.07 82.379c1.59 6.48 2.43 13.18 2.43 20.06 0 55.44-54.43 100.44-121.5 100.44-56.081 0-103.31-31.46-117.28-74.19 3.726 63.72 56.63 114.31 121.28 114.31 67.07 0 121.5-54.43 121.5-121.5 0-13.68-2.26-26.85-6.43-39.12z"/>
+	</g>
+	<g id="rear_paws">
+		<g id="g8">
+			<path id="path3165" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round" d="m72.18 257.08c-30.406 0-55.063 24.69-55.063 55.1 0 6.28 1.058 12.3 3 17.93h104.15c1.95-5.63 3-11.65 3-17.93 0-30.41-24.68-55.1-55.09-55.1z"/>
+			<g id="g11">
+				<path id="path3220" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m67.305 314.22c0 9.67-6.604 17.5-14.75 17.5s-14.75-7.83-14.75-17.5c0-9.66 6.604-17.5 14.75-17.5 8.147 0 14.75 7.84 14.75 17.5z"/>
+				<path id="path3224" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m104.3 314.22c0 9.67-6.599 17.5-14.745 17.5s-14.75-7.83-14.75-17.5c0-9.66 6.604-17.5 14.75-17.5 8.147 0 14.745 7.84 14.745 17.5z"/>
+				<path id="path3222" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m86.805 314.22c0 9.67-6.604 17.5-14.75 17.5s-14.75-7.83-14.75-17.5c0-9.66 6.604-17.5 14.75-17.5 8.147 0 14.75 7.84 14.75 17.5z"/>
+			</g>
+		</g>
+		<g id="g16">
+			<path id="path3163" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round" d="m182.37 257.08c-30.41 0-55.1 24.69-55.1 55.1 0 6.28 1.06 12.3 3 17.93h104.16c1.94-5.63 3-11.65 3-17.93 0-30.41-24.66-55.1-55.06-55.1z"/>
+			<g id="g19">
+				<path id="path3226" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m180.8 314.22c0 9.67-6.6 17.5-14.74 17.5-8.15 0-14.76-7.83-14.76-17.5 0-9.66 6.61-17.5 14.76-17.5 8.14 0 14.74 7.84 14.74 17.5z"/>
+				<path id="path3228" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m217.8 314.22c0 9.67-6.6 17.5-14.74 17.5-8.15 0-14.76-7.83-14.76-17.5 0-9.66 6.61-17.5 14.76-17.5 8.14 0 14.74 7.84 14.74 17.5z"/>
+				<path id="path3230" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m200.3 314.22c0 9.67-6.6 17.5-14.74 17.5-8.15 0-14.76-7.83-14.76-17.5 0-9.66 6.61-17.5 14.76-17.5 8.14 0 14.74 7.84 14.74 17.5z"/>
+			</g>
+		</g>
+	</g>
+	<g id="shoulders_front_paws">
+		<path id="path25" d="m11.881 156.73s105.62 60.55 223.24 0c0 0-26.12-72.95-112.62-70.45-86.502 2.5-110.62 70.45-110.62 70.45z"/>
+		<g id="g27">
+			<g id="path3161_2_">
+				<path id="path30" style="fill:#ffffff" d="m90.728 161.87c3.898 0 7.849 0.99 11.472 3.08 10.98 6.35 14.75 20.4 8.41 31.39-4.26 7.37-11.983 11.49-19.925 11.49-3.898 0-7.848-0.99-11.467-3.08-10.99-6.35-14.756-20.4-8.41-31.39 4.256-7.37 11.98-11.49 19.92-11.49m0-5c-9.976 0-19.268 5.36-24.25 13.99-7.714 13.36-3.12 30.5 10.24 38.22 4.252 2.45 9.081 3.75 13.967 3.75 9.975 0 19.265-5.36 24.255-13.99 7.71-13.36 3.12-30.51-10.24-38.22-4.26-2.45-9.086-3.75-13.972-3.75z"/>
+			</g>
+			<path id="path3242" style="fill-opacity:.3137" d="m117.34 189.52c0 12.69-10.29 22.98-22.977 22.98-12.69 0-22.978-10.29-22.978-22.98s10.287-22.98 22.978-22.98c12.687 0 22.977 10.29 22.977 22.98z"/>
+			<g id="g33">
+				<path id="path3159" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round" d="m110.47 173.36c6.35 10.99 2.58 25.04-8.41 31.39-10.99 6.34-25.043 2.58-31.388-8.41s-2.58-25.04 8.411-31.39c10.989-6.35 25.037-2.58 31.387 8.41z"/>
+				<g id="g36">
+					<path id="path3264" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m97.804 190.35c4.306 2.49 6.026 7.57 3.836 11.35-2.18 3.78-7.439 4.83-11.744 2.35-4.305-2.49-6.024-7.57-3.84-11.35s7.444-4.84 11.748-2.35z"/>
+					<path id="path3266" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m107.72 173.17c4.31 2.49 6.03 7.57 3.84 11.35-2.18 3.78-7.44 4.83-11.745 2.35-4.305-2.49-6.024-7.57-3.84-11.35 2.183-3.78 7.445-4.84 11.745-2.35z"/>
+					<path id="path3268" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m107.01 184.19c4.31 2.49 6.03 7.57 3.84 11.35-2.18 3.78-7.44 4.84-11.745 2.35-4.305-2.48-6.024-7.57-3.84-11.35s7.445-4.83 11.745-2.35z"/>
+				</g>
+			</g>
+		</g>
+		<g id="g41">
+			<g id="path3161_3_">
+				<path id="path44" style="fill:#ffffff" d="m154.73 161.87c3.9 0 7.85 0.99 11.47 3.08 10.98 6.35 14.75 20.4 8.41 31.39-4.26 7.37-11.98 11.49-19.93 11.49-3.89 0-7.84-0.99-11.46-3.08-10.99-6.35-14.76-20.4-8.41-31.39 4.25-7.37 11.98-11.49 19.92-11.49m0-5c-9.98 0-19.27 5.36-24.25 13.99-7.72 13.36-3.12 30.5 10.24 38.22 4.25 2.45 9.08 3.75 13.96 3.75 9.98 0 19.27-5.36 24.26-13.99 7.71-13.36 3.12-30.51-10.24-38.22-4.26-2.45-9.09-3.75-13.97-3.75z"/>
+			</g>
+			<path id="path3244" style="fill-opacity:.3137" d="m181.4 189.88c0 12.68-10.28 22.97-22.98 22.97-12.69 0-22.97-10.28-22.97-22.97 0-12.7 10.28-22.98 22.97-22.98 12.7 0 22.98 10.28 22.98 22.98z"/>
+			<g id="g47">
+				<path id="path3161" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round" d="m174.61 196.34c-6.35 10.99-20.4 14.75-31.39 8.41-10.99-6.35-14.76-20.4-8.41-31.39 6.34-10.99 20.39-14.76 31.39-8.41 10.98 6.35 14.75 20.4 8.41 31.39z"/>
+				<g id="g50">
+					<path id="path3270" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m148.23 190.79c-4.3 2.48-6.02 7.56-3.84 11.35 2.19 3.78 7.45 4.83 11.75 2.34 4.3-2.48 6.02-7.56 3.84-11.34-2.18-3.79-7.44-4.84-11.75-2.35z"/>
+					<path id="path3272" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m138.31 173.61c-4.3 2.48-6.02 7.56-3.84 11.35 2.19 3.78 7.45 4.83 11.75 2.35 4.3-2.49 6.02-7.57 3.84-11.35-2.18-3.79-7.44-4.84-11.75-2.35z"/>
+					<path id="path3274" style="stroke-linejoin:round;stroke:#000000;stroke-width:3;stroke-linecap:round;fill:#635c5c" d="m139.02 184.63c-4.3 2.49-6.02 7.57-3.84 11.35s7.44 4.83 11.75 2.35c4.3-2.49 6.02-7.57 3.84-11.35s-7.44-4.83-11.75-2.35z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="face_shadows">
+		<path id="path3302" style="fill-opacity:.3137" d="m124.51 83.344c-24.5 0-47.311 7.255-66.404 19.746 8.651 30.49 36.665 52.85 69.904 52.85 31.77 0 58.8-20.42 68.69-48.85-20.19-14.935-45.16-23.746-72.19-23.746z"/>
+		<path id="path57" style="stroke:#000000;stroke-width:3;fill:#ffffff" d="m210.46 18.835c0-16.292-13.21-29.5-29.5-29.5-12.48 0-23.15 7.753-27.46 18.703-8.88-3.875-18.68-6.038-28.99-6.038-10.3 0-20.08 2.164-28.957 6.038-4.31-10.95-14.972-18.703-27.452-18.703-16.292 0-29.5 13.208-29.5 29.5 0 12.588 7.888 23.329 18.988 27.564-3.699 8.706-5.764 18.27-5.764 28.319 0 40.132 32.553 72.722 72.685 72.722 40.14 0 72.72-32.59 72.72-72.722 0-10.049-2.06-19.613-5.76-28.319 11.1-4.234 18.99-14.975 18.99-27.564z"/>
+		<path id="path2525" style="fill-opacity:.3137" d="m192.11 47.938c0.74 4.151 1.12 8.417 1.12 12.781 0 40.131-32.58 72.721-72.72 72.721-30.635 0-56.836-19-67.528-45.846 6.082 33.996 35.792 59.846 71.528 59.846 40.14 0 72.72-32.59 72.72-72.721 0-9.463-1.82-18.49-5.12-26.781z"/>
+	</g>
+	<g id="face">
+		<g id="g61">
+			<path id="path3179" style="stroke-linejoin:round;stroke:#000000;stroke-width:10;stroke-linecap:round;fill:#ffffff" d="m167.65 60.353c0 11.3-9.16 20.459-20.46 20.459s-20.46-9.16-20.46-20.459 9.16-20.459 20.46-20.459c11.3-0.001 20.46 9.159 20.46 20.459z"/>
+			<path id="path3183" d="m148.84 64.284c0 3.65-2.96 6.61-6.61 6.61s-6.61-2.959-6.61-6.61 2.96-6.61 6.61-6.61 6.61 2.959 6.61 6.61z"/>
+		</g>
+		<g id="g65">
+			<path id="path3177" style="stroke-linejoin:round;stroke:#000000;stroke-width:10;stroke-linecap:round;fill:#ffffff" d="m122.32 60.353c0 11.3-9.16 20.459-20.45 20.459-11.304 0-20.463-9.16-20.463-20.459s9.16-20.459 20.463-20.459c11.29-0.001 20.45 9.159 20.45 20.459z"/>
+			<path id="path2515" d="m114.43 64.284c0 3.65-2.96 6.61-6.61 6.61s-6.61-2.959-6.61-6.61 2.95-6.61 6.61-6.61c3.65 0 6.61 2.959 6.61 6.61z"/>
+		</g>
+		<path id="path3192" d="m108.26 104.09c5.22-5.562 27.11-5.587 31.99 0.7 4.63 5.96-6.96 22.94-16 22.25-9.01-0.7-20.87-17.74-15.99-22.95z"/>
+	</g>
+	<g id="ears">
+		<g id="g71">
+			<path id="path73" d="m202.66-2.087c-11.53-11.86-39.58-13.257-49.04 11.289l0.6 0.605c16.71 7.654 28.17 18.967 35.43 36.267l0.77 0.782c25.41-11.495 23.76-37.083 12.24-48.943z"/>
+		</g>
+		<g id="g75">
+			<path id="path77" d="m46.312-2.114c11.521-11.86 39.571-13.257 49.032 11.289l-0.599 1.022c-16.705 7.654-28.165 18.55-35.431 35.85l-0.771 0.782c-25.405-11.495-23.751-37.082-12.231-48.943z"/>
+		</g>
+	</g>
+</g>
+<metadata><rdf:RDF><cc:Work><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/><dc:publisher><cc:Agent rdf:about="http://openclipart.org/"><dc:title>Openclipart</dc:title></cc:Agent></dc:publisher><dc:title>Cartoon Panda</dc:title><dc:date>2009-11-24T16:57:49</dc:date><dc:description>Cartoon panda remixed from Lemmling's Cartoon Bear.</dc:description><dc:source>https://openclipart.org/detail/28473/cartoon-panda-by-studiofibonacci</dc:source><dc:creator><cc:Agent><dc:title>StudioFibonacci</dc:title></cc:Agent></dc:creator><dc:subject><rdf:Bag><rdf:li>bear</rdf:li><rdf:li>cartoon</rdf:li><rdf:li>china</rdf:li><rdf:li>panda</rdf:li><rdf:li>remix</rdf:li></rdf:Bag></dc:subject></cc:Work><cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/"><cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/><cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/><cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/></cc:License></rdf:RDF></metadata></svg>

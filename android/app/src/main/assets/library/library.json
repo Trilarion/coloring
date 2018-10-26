@@ -1,112 +1,29 @@
 [
-  {
-    "name": "Animals",
-    "folder": "book_animals",
-    "cover": "balloons.png",
-    "pages": [
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      }
-    ]
-  },
-  {
-    "name": "Abstract",
-    "folder": "book_animals",
-    "cover": "balloons.png",
-    "pages": [
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      }
-    ]
-  },
-  {
-    "name": "Abstract",
-    "folder": "book_animals",
-    "cover": "balloons.png",
-    "pages": [
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      }
-    ]
-  },
-  {
-    "name": "Abstract",
-    "folder": "book_animals",
-    "cover": "balloons.png",
-    "pages": [
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      }
-    ]
-  },
-  {
-    "name": "Abstract",
-    "folder": "book_animals",
-    "cover": "balloons.png",
-    "pages": [
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      }
-    ]
-  },
-  {
-    "name": "Abstract",
-    "folder": "book_animals",
-    "cover": "balloons.png",
-    "pages": [
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      },
-      {
-        "name": "Balloons",
-        "file": "balloons.png"
-      }
-    ]
-  }
+ {
+  "name": "Cartoon animals",
+  "folder": "book_cartoon_animals",
+  "cover": "cover.png",
+  "pages": [
+   {
+    "name": "Bunny",
+    "file": "bunny.png"
+   },
+   {
+    "name": "Bee",
+    "file": "bee.png"
+   },
+   {
+    "name": "Sheep",
+    "file": "sheep.png"
+   },
+   {
+    "name": "Owl",
+    "file": "owl.png"
+   },
+   {
+    "name": "Triceratops",
+    "file": "triceratops.png"
+   }
+  ]
+ }
 ]

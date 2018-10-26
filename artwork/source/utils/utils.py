@@ -5,6 +5,7 @@ Useful routines. Will usually print some output.
 import os
 import shutil
 import json
+import time
 import utils.path as path
 
 
@@ -47,4 +48,13 @@ def recreate_folder(folder):
 
     """
     shutil.rmtree(folder, ignore_errors=True)
-    os.mkdir(folder)
+    for attempts in range(10):
+        try:
+            os.mkdir(folder)
+        except PermissionError:
+            time.sleep(0.1)
+            continue
+        else:
+            break
+    else:
+        raise RuntimeError()
