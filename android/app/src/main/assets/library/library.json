@@ -13,16 +13,43 @@
     "file": "bee.png"
    },
    {
-    "name": "Sheep",
-    "file": "sheep.png"
+    "name": "Cat",
+    "file": "cat.png"
+   },
+   {
+    "name": "Elephant",
+    "file": "elephant.png"
+   },
+   {
+    "name": "Mallard",
+    "file": "mallard.png"
    },
    {
     "name": "Owl",
     "file": "owl.png"
    },
    {
+    "name": "Sheep",
+    "file": "sheep.png"
+   },
+   {
     "name": "Triceratops",
     "file": "triceratops.png"
+   }
+  ]
+ },
+ {
+  "name": "Misc",
+  "folder": "book_misc",
+  "cover": "cover.png",
+  "pages": [
+   {
+    "name": "Car",
+    "file": "car.png"
+   },
+   {
+    "name": "Ice cream cone",
+    "file": "ice_cream_cone.png"
    }
   ]
  }

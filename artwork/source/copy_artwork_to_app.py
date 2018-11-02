@@ -105,12 +105,24 @@ def create_library():
                 'file': ('bee.png', get_temp_file(path.raw_openclipart, 'bee-forestgreen'))
             },
             {
-                'name': 'Sheep',
-                'file': ('sheep.png', get_temp_file(path.raw_openclipart, 'Eid-Sheep1'))
+                'name': 'Cat',
+                'file': ('cat.png', get_temp_file(path.raw_openclipart, 'Gerald-G-Cartoon-Cat-Sitting-1'))
+            },
+            {
+                'name': 'Elephant',
+                'file': ('elephant.png', get_temp_file(path.raw_openclipart, '14thWarrior-Cartoon-Elephant'))
+            },
+            {
+                'name': 'Mallard',
+                'file': ('mallard.png', get_temp_file(path.raw_openclipart, '14thWarrior-Cartoon-Mallard'))
             },
             {
                 'name': 'Owl',
                 'file': ('owl.png', get_temp_file(path.raw_openclipart, 'owl-line-art-lemmling-Cartoon-owl'))
+            },
+            {
+                'name': 'Sheep',
+                'file': ('sheep.png', get_temp_file(path.raw_openclipart, 'Eid-Sheep1'))
             },
             {
                 'name': 'Triceratops',
@@ -121,6 +133,25 @@ def create_library():
     }
 
     # process the animals book (copy the files at the right place) and append the definition
+    process_book(book)
+    library.append(book)
+
+    # define others book
+    book = {
+        'name': 'Misc',
+        'folder': 'book_misc',
+        'cover': ('cover.png', os.path.join(path.raw_openclipart, 'lemmling-Cartoon-owl.png')),
+        'pages': [
+            {
+                'name': 'Car',
+                'file': ('car.png', get_temp_file(path.raw_openclipart, 'Gerald-G-Boy-Driving-Car-Cartoon-bw'))
+            },
+            {
+                'name': 'Ice cream cone',
+                'file': ('ice_cream_cone.png', get_temp_file(path.raw_openclipart, 'Gerald-G-Soft-Ice-Cream-Cones-FF-Menu-1'))
+            }
+        ]
+    }
     process_book(book)
     library.append(book)
 
