@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   viewBox="0 0 648.52875 738.5162"
+   version="1.0"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="lemmling-Ladybug.adapted.svg"
+   width="648.52875"
+   height="738.51617">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1373"
+     id="namedview29"
+     showgrid="false"
+     fit-margin-top="50"
+     fit-margin-left="50"
+     fit-margin-right="50"
+     fit-margin-bottom="50"
+     inkscape:zoom="1.5977985"
+     inkscape:cx="324.26437"
+     inkscape:cy="369.25809"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs4">
+    <radialGradient
+       id="radialGradient3225"
+       gradientUnits="userSpaceOnUse"
+       cy="565.32001"
+       cx="411.32999"
+       gradientTransform="matrix(0,-1.2392,1.1275,1.6466e-6,-212.98,1086.1)"
+       r="104.49">
+      <stop
+         id="stop3221"
+         style="stop-color:#ff0000"
+         offset="0" />
+      <stop
+         id="stop3223"
+         style="stop-color:#7f0000"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient3287"
+       gradientUnits="userSpaceOnUse"
+       cy="491.28"
+       cx="314.89999"
+       gradientTransform="matrix(0.5904,1.0226,-1.374,0.7933,843.26,-174.76)"
+       r="83.844002">
+      <stop
+         id="stop3273"
+         style="stop-color:#ffffff"
+         offset="0" />
+      <stop
+         id="stop3289"
+         style="stop-color:#ffffff"
+         offset=".30189" />
+      <stop
+         id="stop3275"
+         style="stop-color:#4d4d4d"
+         offset="1" />
+    </radialGradient>
+    <linearGradient
+       id="linearGradient3346"
+       y2="521.44"
+       gradientUnits="userSpaceOnUse"
+       x2="311"
+       gradientTransform="translate(2,-16)"
+       y1="313.35999"
+       x1="311">
+      <stop
+         id="stop3201"
+         style="stop-color:#ffffff"
+         offset="0" />
+      <stop
+         id="stop3203"
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1"
+     transform="matrix(2,0,0,2,-305.42487,-606.94681)">
+    <path
+       id="path2383"
+       style="fill:#000000;stroke:#000000;stroke-width:1.5659716;stroke-linecap:round;stroke-linejoin:round;fill-opacity:0;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 528.8,576.44 a 102.93,113.94 0 1 1 -205.86,0 102.93,113.94 0 1 1 205.86,0 z"
+       transform="matrix(1.1063,-0.63872,0.63846,1.1058,-524.33,107.2)"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path2390"
+       style="fill:#000000;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 327.7,494.93 c -43.26,24.98 -72.09,61.94 -78.42,95.47 41.98,28.21 95.06,33.24 138.32,8.27 43.25,-24.98 65.47,-73.47 62.03,-123.94 -32.21,-11.28 -78.67,-4.77 -121.93,20.2 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path2397"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 242.41,347.19 85.93,148.84"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3173"
+       style="fill:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
+       d="m 389.13552,381.26288 a 20.493276,17.188076 45 1 1 -24.30761,24.30761 20.493276,17.188076 45 1 1 24.30761,-24.30761 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3175"
+       style="fill:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
+       d="m 315.97375,352.01774 a 20.493334,17.187946 15.000908 1 1 -8.89699,33.2046 20.493334,17.187946 15.000908 1 1 8.89699,-33.2046 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3177"
+       style="fill:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
+       d="m 372.08705,435.1634 a 20.493342,20.493342 0 1 1 -35.4955,20.49336 20.493342,20.493342 0 1 1 35.4955,-20.49336 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3179"
+       style="fill:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
+       d="m 202.60017,488.95857 a 20.493334,17.187946 74.999092 1 0 33.2046,-8.89699 20.493334,17.187946 74.999092 1 0 -33.2046,8.89699 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3181"
+       style="fill:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
+       d="m 213.85295,410.97645 a 17.187946,20.493334 15.000908 1 0 33.2046,8.89699 17.187946,20.493334 15.000908 1 0 -33.2046,-8.89699 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3183"
+       style="fill:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
+       d="m 257.80587,501.14768 a 20.493342,20.493342 0 1 0 35.4955,-20.49336 20.493342,20.493342 0 1 0 -35.4955,20.49336 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3194"
+       style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 311.81,569.53 c -13.84,7.99 -18.59,25.73 -10.6,39.57 0.73,1.27 1.57,2.45 2.45,3.56 15,2.71 30.26,2.85 45.14,0.18 7.3,-9.05 8.72,-22.02 2.56,-32.69 -8,-13.85 -25.71,-18.61 -39.55,-10.62 z m 91.58,-52.88 c -13.84,8 -18.59,25.73 -10.6,39.58 5.83,10.09 16.84,15.35 27.74,14.36 10.23,-12.52 17.91,-26.98 22.85,-42.56 -0.14,-0.25 -0.27,-0.52 -0.41,-0.77 -8,-13.85 -25.73,-18.6 -39.58,-10.61 z"
+       inkscape:connector-curvature="0" />
+  </g>
+  <metadata
+     id="metadata26">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title></dc:title>
+        <dc:date>2008-07-09T17:33:21</dc:date>
+        <dc:description />
+        <dc:source>https://openclipart.org/detail/17678/ladybug-by-lemmling-17678</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>lemmling</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>animal</rdf:li>
+            <rdf:li>beetle</rdf:li>
+            <rdf:li>bug</rdf:li>
+            <rdf:li>colour</rdf:li>
+            <rdf:li>how i did it</rdf:li>
+            <rdf:li>insect</rdf:li>
+            <rdf:li>ladybug</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
