@@ -1,5 +1,5 @@
 """
-Lots of manual tweaking of raw content to make it suitable.
+Rasterizing scalable vector graphics and cleaning resulting images and test colorings.
 """
 
 from utils.utils import *

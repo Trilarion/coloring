@@ -5,20 +5,36 @@
   "cover": "cover.png",
   "pages": [
    {
-    "name": "Bunny",
-    "file": "bunny.png"
+    "name": "Beaver",
+    "file": "beaver.png"
    },
    {
     "name": "Bee",
     "file": "bee.png"
    },
    {
+    "name": "Bunny",
+    "file": "bunny.png"
+   },
+   {
     "name": "Cat",
     "file": "cat.png"
    },
    {
+    "name": "Cat",
+    "file": "cat2.png"
+   },
+   {
+    "name": "Chicken",
+    "file": "chicken.png"
+   },
+   {
     "name": "Elephant",
     "file": "elephant.png"
+   },
+   {
+    "name": "Pig",
+    "file": "pig.png"
    },
    {
     "name": "Mallard",

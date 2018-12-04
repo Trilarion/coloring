@@ -97,20 +97,36 @@ def create_library():
         'cover': ('cover.png', os.path.join(path.raw_openclipart, 'lemmling-Cartoon-owl.png')),
         'pages': [
             {
-                'name': 'Bunny',
-                'file': ('bunny.png', get_temp_file(path.raw_openclipart, 'bunny'))
+                'name': 'Beaver',
+                'file': ('beaver.png', get_temp_file(path.raw_openclipart, 'lemmling-Cartoon-beaver'))
             },
             {
                 'name': 'Bee',
                 'file': ('bee.png', get_temp_file(path.raw_openclipart, 'bee-forestgreen'))
             },
             {
+                'name': 'Bunny',
+                'file': ('bunny.png', get_temp_file(path.raw_openclipart, 'bunny'))
+            },
+            {
                 'name': 'Cat',
                 'file': ('cat.png', get_temp_file(path.raw_openclipart, 'Gerald-G-Cartoon-Cat-Sitting-1'))
             },
             {
+                'name': 'Cat',
+                'file': ('cat2.png', get_temp_file(path.raw_openclipart, 'lemmling-Cartoon-cat'))
+            },
+            {
+                'name': 'Chicken',
+                'file': ('chicken.png', get_temp_file(path.raw_openclipart, 'bloodsong-Chicken-RoundCartoon'))
+            },
+            {
                 'name': 'Elephant',
                 'file': ('elephant.png', get_temp_file(path.raw_openclipart, '14thWarrior-Cartoon-Elephant'))
+            },
+            {
+                'name': 'Pig',
+                'file': ('pig.png', get_temp_file(path.raw_openclipart, 'bloodsong-Pig-RoundCartoon'))
             },
             {
                 'name': 'Mallard',
