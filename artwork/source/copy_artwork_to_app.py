@@ -121,8 +121,24 @@ def create_library():
                 'file': ('chicken.png', get_temp_file(path.raw_openclipart, 'bloodsong-Chicken-RoundCartoon'))
             },
             {
+                'name': 'Cow',
+                'file': ('cow.png', get_temp_file(path.raw_openclipart, 'lemmling-Cartoon-cow'))
+            },
+            {
+                'name': 'Dog',
+                'file': ('dog.png', get_temp_file(path.raw_openclipart, 'lemmling-Cartoon-dog'))
+            },
+            {
                 'name': 'Elephant',
                 'file': ('elephant.png', get_temp_file(path.raw_openclipart, '14thWarrior-Cartoon-Elephant'))
+            },
+            {
+                'name': 'Elephant',
+                'file': ('elephant2.png', get_temp_file(path.raw_openclipart, 'lemmling-Cartoon-elephant'))
+            },
+            {
+                'name': 'Giraffe',
+                'file': ('giraffe.png', get_temp_file(path.raw_openclipart, 'lemmling-Cartoon-giraffe'))
             },
             {
                 'name': 'Pig',

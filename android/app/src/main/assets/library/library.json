@@ -29,8 +29,24 @@
     "file": "chicken.png"
    },
    {
+    "name": "Cow",
+    "file": "cow.png"
+   },
+   {
+    "name": "Dog",
+    "file": "dog.png"
+   },
+   {
     "name": "Elephant",
     "file": "elephant.png"
+   },
+   {
+    "name": "Elephant",
+    "file": "elephant2.png"
+   },
+   {
+    "name": "Giraffe",
+    "file": "giraffe.png"
    },
    {
     "name": "Pig",
