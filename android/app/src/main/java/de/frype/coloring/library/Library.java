@@ -1,6 +1,7 @@
 package de.frype.coloring.library;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -24,7 +25,7 @@ public class Library {
 
     private static Library instance = null;
 
-    private final Context context;
+    private final AssetManager assets;
     private final String libraryFileRootFolder;
     private final JSONArray books;
     private JSONObject currentBook;
@@ -32,15 +33,15 @@ public class Library {
 
     private int selectedColor = Color.BLUE; // of the color picker on the coloring activity
 
-    private Library(Context context) {
-        this.context = context;
+    private Library(final Context context) {
+        this.assets = context.getAssets();
         libraryFileRootFolder = context.getString(R.string.library_root_folder) + File.separator;
 
         String libraryFilePath = libraryFileRootFolder + context.getString(R.string.library_file);
         // read json
         String json;
         try {
-            InputStream is = context.getAssets().open(libraryFilePath);
+            InputStream is = assets.open(libraryFilePath);
             json = Utils.readText(is);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -64,7 +65,7 @@ public class Library {
     /**
      * Reads the library information about coloring books and pages from a json file.
      *
-     * @param context App context.
+     * @param context app context
      */
     public static void initialize(Context context) {
         if (instance != null) {
@@ -128,8 +129,6 @@ public class Library {
         return bitmap;
     }
 
-
-
     public void setCurrentPage(int position) {
         try {
             JSONArray pages = currentBook.getJSONArray("pages");
@@ -180,7 +179,7 @@ public class Library {
             public InputStream getStream() {
                 InputStream is;
                 try {
-                    is = context.getAssets().open(pathName);
+                    is = assets.open(pathName);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

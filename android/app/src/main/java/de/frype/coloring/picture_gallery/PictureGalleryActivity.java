@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Locale;
 
 /**
  * A picture gallery (book specific). Sorted by page and date. Ability to show stored images, delete images and
@@ -190,6 +191,6 @@ public class PictureGalleryActivity extends Activity {
 
         // set actual image
         imageSwitcher.setImageURI(Uri.fromFile(pictures[currentPicture]));
-        imageDescription.setText(String.format("%d/%d", currentPicture, pictures.length));
+        imageDescription.setText(String.format(Locale.US, "%d/%d", currentPicture, pictures.length));
     }
 }

@@ -59,7 +59,7 @@ def rasterize_adapted_svg():
         svg_to_png(svg_path, png_path)
 
 
-def clean_images():
+def binarize_adapted_images():
     """
     Converts existing grayscale images to true black and white greatly reducing the size.
     """
@@ -67,10 +67,10 @@ def clean_images():
     for dirpath, dirnames, filenames in os.walk(path.temp):
         for f in filenames:
             if f.endswith('.adapted.png'):
-                clean_image(os.path.join(dirpath, f))
+                binarize_image(os.path.join(dirpath, f))
 
 
-def clean_image(file):
+def binarize_image(file):
     """
     Makes a single rasterized image black and white.
     """
@@ -113,7 +113,7 @@ if __name__ == '__main__':
     rasterize_adapted_svg()
 
     # clean images
-    clean_images()
+    binarize_adapted_images()
 
 
 

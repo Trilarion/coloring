@@ -23,6 +23,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import android.widget.Toast;
 import de.frype.coloring.ColoringUtils;
@@ -101,7 +102,7 @@ public class ColoringActivity extends Activity {
                             // TODO encode date and time in file name
                             String name = Library.getInstance().getStringFromCurrentPage("file");
                             name = name.substring(0, name.length()-4);
-                            SimpleDateFormat sdf = new SimpleDateFormat("_yyyy-MM-dd_HH-mm");
+                            SimpleDateFormat sdf = new SimpleDateFormat("_yyyy-MM-dd_HH-mm", Locale.US); // or should we use getDateInstance(), getDateTimeInstance() for locale formatting
                             name += sdf.format(new Date());
                             name += ".png";
                             Log.v("COL", name);

@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 31
+    buildToolsVersion '30.0.3'
+    // use whatever is the latest at https://developer.android.com/studio/releases/build-tools
 
     defaultConfig {
         applicationId "de.frype.coloring"
         //noinspection MinSdkTooLow
         minSdkVersion 10
-        targetSdkVersion 27
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
@@ -24,6 +25,5 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
 }
