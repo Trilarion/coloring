@@ -16,16 +16,30 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
 /**
- * Various general methods.
+ * Various helper methods.
  */
 public final class Utils {
 
     private Utils() {}
 
+    /**
+     * Convenience method.
+     *
+     * @param is
+     * @return
+     * @throws IOException
+     */
     public static String readText(InputStream is) throws IOException {
         return readText(is, "UTF8");
     }
 
+    /**
+     *
+     * @param is
+     * @param charSetName
+     * @return
+     * @throws IOException
+     */
     public static String readText(InputStream is, String charSetName) throws IOException {
 
         InputStreamReader isr = new InputStreamReader(is, charSetName);
@@ -44,10 +58,23 @@ public final class Utils {
         return sb.toString();
     }
 
+    /**
+     *
+     * @param os
+     * @param content
+     * @throws IOException
+     */
     public static void writeText(OutputStream os, String content) throws IOException {
         writeText(os, content, "UTF8");
     }
 
+    /**
+     *
+     * @param os
+     * @param content
+     * @param charSetName
+     * @throws IOException
+     */
     public static void writeText(OutputStream os, String content, String charSetName) throws IOException {
 
         // final OutputStream out = context.openFileOutput(fileName, Context.MODE_PRIVATE);
@@ -58,18 +85,13 @@ public final class Utils {
     }
 
     /**
-     * Removes an OnGlobalLayoutListener from a view. Also works for SDK version below 16.
+     * Removes an OnGlobalLayoutListener from a view.
      *
      * @param view the view
      * @param listener the listener
      */
     public static void removeOnGlobalLayoutListener(View view, ViewTreeObserver.OnGlobalLayoutListener listener) {
-        if (Build.VERSION.SDK_INT < 16) {
-            //noinspection deprecation
-            view.getViewTreeObserver().removeGlobalOnLayoutListener(listener);
-        } else {
-            view.getViewTreeObserver().removeOnGlobalLayoutListener(listener);
-        }
+        view.getViewTreeObserver().removeOnGlobalLayoutListener(listener);
     }
 
     /**
@@ -91,12 +113,7 @@ public final class Utils {
     }
 
     public static void setBackground(View view, Drawable drawable) {
-        if (Build.VERSION.SDK_INT < 16) {
-            //noinspection deprecation
-            view.setBackgroundDrawable(drawable);
-        } else {
-            view.setBackground(drawable);
-        }
+        view.setBackground(drawable);
     }
 
     /**

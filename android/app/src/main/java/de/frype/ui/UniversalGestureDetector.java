@@ -5,7 +5,9 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
 /**
- * Created by Jan on 02.08.2016.
+ * Simple universal gesture detector.
+ *
+ * TODO Is this needed anymore?
  */
 public class UniversalGestureDetector {
 

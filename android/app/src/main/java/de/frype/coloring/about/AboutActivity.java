@@ -12,11 +12,18 @@ import de.frype.coloring.R;
 import de.frype.coloring.settings.SettingsActivity;
 
 /**
- * The about activity. Shows a button which shows preferences and a web view which shows an about web page stored
+ * The "about" activity. Shows a button which shows preferences and a web view which shows an "about" web page stored
  * in the assets.
  */
 public class AboutActivity extends Activity {
 
+    /**
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

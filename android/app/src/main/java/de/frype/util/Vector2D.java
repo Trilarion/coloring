@@ -1,7 +1,7 @@
 package de.frype.util;
 
 /**
- * Immutable Point class.
+ * Immutable 2D-Point class.
  */
 public class Vector2D implements Comparable<Vector2D> {
 

@@ -25,6 +25,13 @@ public class ColorPickerActivity extends Activity {
 
     public static final int PICK_COLOR_REQUEST = 1;
 
+    /**
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,17 +97,9 @@ public class ColorPickerActivity extends Activity {
                         // get gradient colors around given color
                         int[] gradientColors = ColoringUtils.colorSelectionButtonBackgroundGradient(color);
 
-                        if (Build.VERSION.SDK_INT < 16) {
-                            GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
-                            newGradientDrawable.setStroke(1, Color.parseColor("#bbbbbb"));
-                            newGradientDrawable.setCornerRadius(context.getResources().getDimension(R.dimen.color_selection_button_corner_radius));
-                            //noinspection deprecation
-                            view.setBackgroundDrawable(newGradientDrawable);
-                        } else {
-                            GradientDrawable drawable = (GradientDrawable) view.getBackground();
-                            drawable.mutate();
-                            drawable.setColors(gradientColors);
-                        }
+                        GradientDrawable drawable = (GradientDrawable) view.getBackground();
+                        drawable.mutate();
+                        drawable.setColors(gradientColors);
 
                         // for each button set the action to an outer "color selected" method with the color as parameter
                         view.setOnClickListener(new View.OnClickListener() {

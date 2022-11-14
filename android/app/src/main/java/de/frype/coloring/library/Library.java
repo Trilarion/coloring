@@ -33,6 +33,10 @@ public class Library {
 
     private int selectedColor = Color.BLUE; // of the color picker on the coloring activity
 
+    /**
+     *
+     * @param context
+     */
     private Library(final Context context) {
         this.assets = context.getAssets();
         libraryFileRootFolder = context.getString(R.string.library_root_folder) + File.separator;
@@ -83,6 +87,11 @@ public class Library {
         return books.length();
     }
 
+    /**
+     *
+     * @param position
+     * @return
+     */
     private JSONObject getBook(int position) {
         try {
             return books.getJSONObject(position);
@@ -91,6 +100,10 @@ public class Library {
         }
     }
 
+    /**
+     *
+     * @param position
+     */
     public void setCurrentBook(int position) {
         if (position < 0 || position >= books.length()) {
             throw new RuntimeException("Invalid book position.");
@@ -98,6 +111,11 @@ public class Library {
         currentBook = getBook(position);
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public String getStringFromCurrentBook(String name) {
         try {
             return currentBook.getString(name);
@@ -106,6 +124,10 @@ public class Library {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getNumberPagesFromCurrentBook() {
         try {
             JSONArray pages = currentBook.getJSONArray("pages");
@@ -115,10 +137,20 @@ public class Library {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     private String getCurrentBookCoverFilePath() {
         return libraryFileRootFolder + getStringFromCurrentBook("folder") + File.separator + getStringFromCurrentBook("cover");
     }
 
+    /**
+     *
+     * @param requiredWidth
+     * @param requiredHeight
+     * @return
+     */
     public Bitmap loadCurrentBookCoverBitmapDownscaled(int requiredWidth, int requiredHeight) {
         String pathName = getCurrentBookCoverFilePath();
         InputStreamProvider inputStreamProvider = getInputStreamProviderForAssetPath(pathName);
@@ -129,6 +161,10 @@ public class Library {
         return bitmap;
     }
 
+    /**
+     *
+     * @param position
+     */
     public void setCurrentPage(int position) {
         try {
             JSONArray pages = currentBook.getJSONArray("pages");
@@ -141,6 +177,11 @@ public class Library {
         }
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public String getStringFromCurrentPage(String name) {
         try {
             return currentPage.getString(name);
@@ -149,10 +190,18 @@ public class Library {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     private String getCurrentPageFilePath() {
         return libraryFileRootFolder + getStringFromCurrentBook("folder") + File.separator + getStringFromCurrentPage("file");
     }
 
+    /**
+     *
+     * @return
+     */
     public Bitmap loadCurrentPageBitmap() {
         String pathName = getCurrentPageFilePath();
         Bitmap bitmap = BitmapFactory.decodeStream(getInputStreamProviderForAssetPath(pathName).getStream());
@@ -162,6 +211,12 @@ public class Library {
         return bitmap;
     }
 
+    /**
+     *
+     * @param requiredWidth
+     * @param requiredHeight
+     * @return
+     */
     public Bitmap loadCurrentPageBitmapDownscaled(int requiredWidth, int requiredHeight) {
         String pathName = getCurrentPageFilePath();
         InputStreamProvider inputStreamProvider = getInputStreamProviderForAssetPath(pathName);
@@ -172,6 +227,11 @@ public class Library {
         return bitmap;
     }
 
+    /**
+     *
+     * @param pathName
+     * @return
+     */
     private InputStreamProvider getInputStreamProviderForAssetPath(final String pathName) {
         return new InputStreamProvider() {
 
@@ -188,10 +248,18 @@ public class Library {
         };
     }
 
+    /**
+     *
+     * @param color
+     */
     public void setSelectedColor(int color) {
         selectedColor = color;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSelectedColor() {
         return selectedColor;
     }

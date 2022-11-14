@@ -1,15 +1,15 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion '30.0.3'
-    // use whatever is the latest at https://developer.android.com/studio/releases/build-tools
+    compileSdk 32
+    buildToolsVersion '33.0.0'
 
     defaultConfig {
         applicationId "de.frype.coloring"
-        //noinspection MinSdkTooLow
-        minSdkVersion 10
-        targetSdkVersion 31
+        minSdk 16
+        targetSdk 32
         versionCode 1
         versionName "1.0"
     }
@@ -19,11 +19,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    lintOptions {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }    
+    lint {
         disable 'IconMissingDensityFolder'
     }
+    namespace 'de.frype.coloring'
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 }

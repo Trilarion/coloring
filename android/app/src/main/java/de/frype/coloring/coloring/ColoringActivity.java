@@ -168,19 +168,22 @@ public class ColoringActivity extends Activity {
         int color = Library.getInstance().getSelectedColor();
         int[] gradientColors = ColoringUtils.colorSelectionButtonBackgroundGradient(color);
 
-        if (Build.VERSION.SDK_INT < 16) {
-            GradientDrawable newGradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, gradientColors);
-            newGradientDrawable.setStroke(1, Color.parseColor("#bbbbbb"));
-            newGradientDrawable.setCornerRadius(ColoringActivity.this.getResources().getDimension(R.dimen.color_selection_button_corner_radius));
-            //noinspection deprecation
-            view.setBackgroundDrawable(newGradientDrawable);
-        } else {
-            GradientDrawable drawable = (GradientDrawable) view.getBackground();
-            drawable.mutate();
-            drawable.setColors(gradientColors);
-        }
+        GradientDrawable drawable = (GradientDrawable) view.getBackground();
+        drawable.mutate();
+        drawable.setColors(gradientColors);
     }
 
+    /**
+     *
+     * @param requestCode The integer request code originally supplied to
+     *                    startActivityForResult(), allowing you to identify who this
+     *                    result came from.
+     * @param resultCode The integer result code returned by the child activity
+     *                   through its setResult().
+     * @param data An Intent, which can return result data to the caller
+     *               (various data can be attached to Intent "extras").
+     *
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // handling of color picker activity result

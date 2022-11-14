@@ -17,12 +17,14 @@ public class FloodFill {
     /**
      * Simple version (testing one by one), which is very slow. Only for testing purposes.
      *
-     * @param position
-     * @param mask
-     * @param data
-     * @param width
-     * @param height
-     * @param value
+     * Nonzero areas of mask should be filled, zero areas should be avoided.
+     *
+     * @param position initial position
+     * @param mask map of possible positions
+     * @param data actual data
+     * @param width width of array
+     * @param height height of array
+     * @param value matching value
      */
     public static void simple_fill(Vector2D position, byte[] mask, int[] data, int width, int height, int value) {
 
@@ -66,7 +68,9 @@ public class FloodFill {
     }
 
     /**
-     * nonzero areas of mask should be filled, zero areas should be avoided.
+     * Line (flood) fill algorithm implementation.
+     *
+     * Nonzero areas of mask should be filled, zero areas should be avoided.
      *
      * @param position initial position
      * @param mask map of possible positions
